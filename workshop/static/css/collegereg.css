@@ -1,0 +1,88 @@
+.form-submit {
+  width: auto;
+  border: none;
+  background: #fff;
+  color: #b18757;
+  padding: 20px;
+  }
+ .form-submit:hover {
+    background-color: #e6e6e6;
+
+    }
+
+
+.submit {
+
+  margin-top:10px;
+  background:white;
+  text-transform: uppercase;
+  font-size: 23px;
+  height:auto;
+  width:auto;
+  cursor: pointer; }
+
+input:focus{
+    outline: none;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #ff9900;
+  background: black;
+  width: 100%;
+  color: #ff9900;
+  font-weight: bold;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 18px;
+  padding: 3px 0;
+  height:30px;
+  margin:5px;
+  }
+
+
+  input::-webkit-input-placeholder {
+    font-weight: 400;
+    color: #fff; }
+  input::-moz-placeholder {
+    font-weight: 400;
+    color: #fff; }
+  input:-ms-input-placeholder {
+    font-weight: 400;
+    color: #fff; }
+  input:-moz-placeholder {
+    font-weight: 400;
+    color: #fff; }
+  input:focus {
+    font-weight: bold; }
+
+
+
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
+.title {
+  color: #ff9900;
+  text-align: center;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 35px;
+  margin: 40px 0px;
+}
+
+.sub {
+  color: #ff9900;
+  text-align: center;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+
+.box {
+	padding: 10px;
+	border: 2px solid #ff9900;
+	background:black;
+
+}
+.deta {
+    color:white;
+    font-size:20px;
+    font-family: 'Open Sans Condensed', sans-serif;
+}

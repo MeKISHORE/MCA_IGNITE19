@@ -1,0 +1,49 @@
+{% extends 'workshop/basic.html'%}
+
+{% block title %}About Us{% endblock %}
+{% load static %}
+{% block style %}
+
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+{% endblock %}
+{% block body%}
+
+<div style="position:absolute;top:0px;width:100vw;height:100vh;padding:10px;">
+    <div class="container">
+        <div class="row">
+            <div align="center" class="col-sm-12">
+                <h1 class="title">Contact Us</h1>
+            </div>
+        </div>
+        <div class="row box">
+            <div class="col-sm-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15549.558728495796!2d74.7943104!3d13.0108387!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6b1144ac2d5dadf3!2sNational+Institute+of+Technology+Karnataka!5e0!3m2!1sen!2sin!4v1565087861091!5m2!1sen!2sin"  frameborder="10" style="border:10" allowfullscreen></iframe>
+
+                <div class="col-sm-12" >
+                    <p>Contact Info</p>
+                    <div class="col-sm-12">
+                        <p>E-mail : rockeykumar1901@gmail.com</p>
+                        <p>Mobile no. : 8102306237</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <p>Send Us a Message</p>
+                <form action="{% url 'contact_reg' %}" method="POST">{% csrf_token %}
+                    <input type="text" name="first_name" class="form-control input_box" placeholder="First Name" required>
+                    <input type="text" name="last_name" class="form-control input_box" placeholder="Last Name" required>
+                    <input type="email" name="email" class="form-control input_box" placeholder="Your Email" required>
+                    <input type="text" name="subject" class="form-control input_box" placeholder="Subject" required>
+                    <input type="text" name="college_name" class="form-control input_box" placeholder="Your College Name" required>
+                    <textarea name="message" class="form-control input_box" placeholder="Message" required></textarea>
+                    <button type="submit" class="btn send">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- partial -->
+{% endblock %}
+{% block script %}
+{% endblock %}

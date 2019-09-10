@@ -1,0 +1,43 @@
+{% extends 'workshop/basic.html'%}
+{% block title%}Register{% endblock%}
+{% block style%}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/stylecolegreg.css'%}">
+<style>
+
+</style>
+{% endblock%}
+
+{% block body%}
+
+<div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <form method="POST"  class="signup-form">
+                    <h2>College Registration Form</h2>
+                    <div class="form-group">
+                        <input type="text" class="form-input" name="name" id="name" placeholder="College Name"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" name="email" id="email" placeholder=" College HOD Email id"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-input" name="mobno" id="mobile" placeholder="HOD mobile no"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="submit" id="submit" class="form-submit submit" value="Register"/>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+
+{% endblock%}
+{% block script%}
+
+{% endblock%}

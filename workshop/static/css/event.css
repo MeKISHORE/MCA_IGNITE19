@@ -1,0 +1,96 @@
+div {
+	box-sizing: border-box;
+	transition: all ease-in-out .5s;
+	-moz-transition: all ease-in-out .5s;
+	-webkit-transition: all ease-in-out .5s;
+}
+.icetab {
+	border: 2px solid #ff9900;
+
+	display: inline-block;
+	border-bottom: 0px;
+	margin: 0px;
+    color: #fff;
+	cursor: pointer;
+	border-right: 0px;
+}
+.icetab:last-child {
+	border-right: 2px solid #ff9900;
+}
+
+#icetab-content {
+	overflow: hidden;
+	position: relative;
+	border-top: 2px solid #ff9900;
+}
+
+
+.tabcontent {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background: black;
+	width: 100%;
+	border-top: 0px;
+	border: 2px solid #ff9900;
+	border-top: 0px;
+	transform: translateY(-100%);
+	-moz-transform: translateY(-100%);
+	-webkit-transform: translateY(-100%);
+}
+
+.tabcontent:first-child {
+	position: relative;
+}
+.tabcontent.tab-active {
+	border-top: 0px;
+	display: block;
+	transform: translateY(0%);
+	-moz-transform: translateY(0%);
+	-webkit-transform: translateY(0%);
+}
+
+
+/* A tiny wee bit of visual formating */
+body {
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	/*background: #666;*/
+	color: #454545;
+}
+.codepen-container {
+  max-width: 700px;
+  margin: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.title {
+  color: #ff9900;
+  text-align: center;
+  letter-spacing: 14px;
+  text-transform: uppercase;
+  font-size: 35px;
+  margin: 40px 0px;
+}
+.events {
+  color: #ff9900;
+  text-align: center;
+
+  text-transform: uppercase;
+  font-size: 17px;
+  margin: 10px 0px;
+}
+
+
+.tabcontent {
+	padding: 40px;
+}
+.icetab {
+	padding: 8px;
+	text-transform: uppercase;
+	text-transform: uppercase;
+	border: 2px solid #ff9900;
+
+}
+.current-tab {
+	background: #ff9900;
+}

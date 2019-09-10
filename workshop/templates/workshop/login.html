@@ -1,0 +1,46 @@
+{% extends 'workshop/basic.html'%}
+{% block title%}Login{% endblock%}
+{% block style%}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/collegereg.css'%}">
+<style>
+
+</style>
+{% endblock%}
+
+{% block body%}
+
+<div style="position:absolute;top:0px;width:100vw;height:100vh;padding:10px;">
+    <div class="container">
+        <div class="row">
+            <div align="center" class="col-sm-12">
+                <h1 class="title">Registration Form</h1>
+            </div>
+            <div class="col-sm-12 col-xs-12 col-md-12 box" >
+                <form action="{% url 'sign_in' %}" method="POST">{% csrf_token %}
+
+                    <select name="cname">
+                        <option value="select">select</option>
+                        {% for i in obj %}
+                        <option value="{{ i.collegename }}">{{ i.collegename }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <input type="password" class="form-input" name="college_code" placeholder="College Code"/>
+
+                    <input type="submit" name="submit" id="submit" class="btn btn-default submit" value="Login"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock%}
+{% block script%}
+
+{% endblock%}

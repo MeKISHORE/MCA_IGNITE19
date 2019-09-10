@@ -1,0 +1,78 @@
+{% extends 'workshop/basic.html '%}
+{% block title %}{% endblock %}
+{% block style %}
+{% load static %}
+
+
+    <link rel="stylesheet" href="{% static 'css/stylegallery.css'%}">
+    <style>
+
+    </style>
+{% endblock %}
+{% block body %}
+
+<div class="container">
+     <div class="row">
+        <div align="center" class="col-sm-12">
+            <h1 style='color:#ff9900;font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;letter-spacing: 14px;
+  text-transform: uppercase;
+  font-size: 35px;'>Gallery</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <section id="photogrid" style="border: 1px solid #ff9900;">
+              <!--<a href="#img1" class="imgbox box1" id="box1"><div class="boxtitle"><p></p></div></a>-->
+              <a href="#img1" class="imgbox box1" id="box1"><div class="boxtitle"></div></a>
+              <a href="#img2" class="imgbox box2" id="box2"><div class="boxtitle"></div></a>
+              <a href="#img3" class="imgbox box3" id="box3"><div class="boxtitle"></div></a>
+              <a href="#img4" class="imgbox box4" id="box4"><div class="boxtitle"></div></a>
+              <a href="#img5" class="imgbox box5" id="box5"><div class="boxtitle"></div></a>
+              <a href="#img6" class="imgbox box6" id="box6"><div class="boxtitle"></div></a>
+              <a href="#img7" class="imgbox box7" id="box7"><div class="boxtitle"></div></a>
+              <a href="#img8" class="imgbox box8" id="box8"><div class="boxtitle"></div></a>
+              <a href="#img9" class="imgbox box9" id="box9"><div class="boxtitle"></div></a>
+              <a href="#img10" class="imgbox box10" id="box10"><div class="boxtitle"></div></a>
+              <a href="#img11" class="imgbox box11" id="box11"><div class="boxtitle"></div></a>
+              <a href="#img12" class="imgbox box12" id="box12"><div class="boxtitle"></div></a>
+
+
+        <!--Lightbox Images are hidden and will display as full-page overlays -->
+
+              <a href="#box1" class="lightbox" id="img1">
+                <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80"></a>
+              <a href="#box2" class="lightbox" id="img2">
+                <img src="https://images.unsplash.com/photo-1496857239036-1fb137683000?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"></a>
+              <a href="#box3" class="lightbox" id="img3">
+                <img src="https://images.unsplash.com/photo-1500111709600-7761aa8216c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"></a>
+              <a href="#box4" class="lightbox" id="img4">
+                <img src="https://images.unsplash.com/photo-1473294312123-83488e2f8e8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=800"></a>
+              <a href="#box5" class="lightbox" id="img5">
+                <img src="https://images.unsplash.com/photo-1541873676-a18131494184?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1922&q=80"></a>
+              <a href="#box6" class="lightbox" id="img6">
+                <img src="https://images.unsplash.com/photo-1465848059293-208e11dfea17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1789&q=80"></a>
+              <a href="#box7" class="lightbox" id="img7">
+                <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"></a>
+              <a href="#box8" class="lightbox" id="img8">
+                <img src="https://images.unsplash.com/photo-1524856781660-e5c92f4ac62a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"></a>
+              <a href="#box9" class="lightbox" id="img9">
+                <img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1957&q=80"></a>
+              <a href="#box10" class="lightbox" id="img10">
+                <img src="https://images.unsplash.com/photo-1515876879333-013aa5ea1472?ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80"></a>
+              <a href="#box11" class="lightbox" id="img11">
+                <img src="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80"></a>
+              <a href="#box12" class="lightbox" id="img12">
+                <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"></a>
+
+
+            </section>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}
+{% block script %}
+
+{% endblock %}

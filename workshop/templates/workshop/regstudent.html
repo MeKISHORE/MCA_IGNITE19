@@ -1,0 +1,130 @@
+{% extends 'workshop/basic.html'%}
+{% block title%}Register{% endblock%}
+{% block style%}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/collegereg.css'%}">
+<style>
+
+</style>
+{% endblock%}
+
+{% block body%}
+
+<div style="position:absolute;top:0px;width:100vw;height:100vh;padding:10px;">
+    <div class="container">
+        <div class="row">
+            <div align="center" class="col-sm-12">
+                <h1 class="title">Registration Form</h1>
+            </div>
+            <div class="col-sm-12 col-xs-12 col-md-12 box" >
+                <form action="{% url 'team_ignite' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+                    <input type="text" class="form-input" name="college_name" maxlength="100" value="{{ obj.collegename }}" disabled/>
+
+                    <input type="text" class="form-input" name="invitation_code" value="{{ obj.collegecode }}" />
+
+                    <label class="deta">Invitation file</label>
+                    <input type="file" class="form-input" name="invitation_file" id="invitation" />
+
+
+                    <input type="text" class="form-input" name="leader_name" minlength="3" maxlength="50" placeholder="Leader Name"/>
+                    <label class="deta">College Id Of Leader</label>
+                    <input type="file" class="form-input" name="college_id_of_leader" />
+                    <input type="text" class="form-input" name="leader_mobile" minlength="10" maxlength="10" placeholder="Mobile"/>
+                    <input type="email" class="form-input" name="leader_mail_id" maxlength="50" placeholder="Leader Mail Id"/>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <input type="text" class="form-input" name="member1_name" maxlength="50" placeholder="Member 1 Name"/>
+                        </div>
+                        <div class="col-sm-3">
+
+                            <input type="email" class="form-input" name="member1_e_mail" maxlength="50" placeholder="E mail"/>
+
+                        </div>
+                        <div class="col-sm-3">
+
+                            <input type="text" class="form-input" name="member1_mobile" minlength="10" maxlength="10" placeholder="Mobile"/>
+
+                        </div>
+                        <div class="col-sm-3">
+
+                            <input type="file" class="form-input" name="member1_file" placeholder=""/>
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+
+                            <input type="text" class="form-input" name="member2_name" maxlength="50" placeholder="Member 2 Name"/>
+
+                        </div>
+                        <div class="col-sm-3">
+
+                            <input type="email" class="form-input" name="member2_e_mail" maxlength="50" placeholder="E mail"/>
+
+                        </div>
+                        <div class="col-sm-3">
+
+                            <input type="text" class="form-input" name="member2_mobile" minlength="10" maxlength="10" placeholder="Mobile"/>
+
+                        </div>
+                        <div class="col-sm-3">
+
+                            <input type="file" class="form-input" name="member2_file" placeholder=""/>
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+
+                            <input type="text" class="form-input" name="member3_name" maxlength="50" placeholder="Member 3 Name"/>
+
+                        </div>
+                        <div class="col-sm-3">
+
+                            <input type="email" class="form-input" name="member3_e_mail" maxlength="50" placeholder="E mail"/>
+
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-input" name="member3_mobile" minlength="10" maxlength="10" placeholder="Mobile"/>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="file" class="form-input" name="member3_file" placeholder=""/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+
+                            <input type="text" class="form-input" name="member4_name" maxlength="50" placeholder="Member 4 Name"/>
+
+                        </div>
+                        <div class="col-sm-3">
+
+                            <input type="email" class="form-input" name="member4_e_mail" maxlength="50" placeholder="E mail"/>
+
+                        </div>
+                        <div class="col-sm-3">
+
+                            <input type="text" class="form-input" name="member4_mobile" minlength="10" maxlength="10" placeholder="Mobile"/>
+
+                        </div>
+                        <div class="col-sm-3">
+
+                            <input type="file" class="form-input" name="member4_file" id="" placeholder=""/>
+                        </div>
+                    </div>
+                    <input type="submit" name="submit" id="submit" class="btn btn-default submit" value="Register"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock%}
+{% block script%}
+
+{% endblock%}

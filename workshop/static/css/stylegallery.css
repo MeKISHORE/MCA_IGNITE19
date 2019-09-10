@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:400,800&display=swap');
+
+body{
+  margin: 0px;
+  background: black;
+}
+/*
+nav {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  width: 200px;
+  background: grey;
+}
+
+main{
+  position: absolute;
+  left: 200px;
+}
+*/
+a.imgbox{
+  text-decoration: none;
+}
+
+#photogrid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.imgbox {
+  display: flex;
+  width: 250px;
+  height: 250px;
+  flex-grow: 1;
+  border: 0px;
+  margin: 10px;
+  box-shadow: 0px 0px 0px 5000px rgba(0,0,0,.5) inset;
+  transition: transform 200ms;
+  -moz-transition: -moz-transform 200ms;
+  -webkit-transition: -webkit-transform 200ms;
+  -o-transition: -o-transform 200ms;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.boxtitle {
+  position: relative;
+  display: flex;
+  font-family: 'Muli', sans-serif;
+  font-size: 800;
+  width: 92%;
+  background: rgba(0,0,0,.7);
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  margin: 0px;
+  color: white;
+  visibility: hidden;
+  margin-bottom: 10px;
+}
+
+.boxtitle p {
+  margin: 10px;
+}
+
+
+.box1 {
+  background: url("https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80");
+  background-position: center center;
+  background-size: cover;
+}
+
+.box2 {
+  background: url("https://images.unsplash.com/photo-1496857239036-1fb137683000?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+  background-position: center center;
+  background-size: cover;
+}
+
+.box3 {
+  background: url("https://images.unsplash.com/photo-1500111709600-7761aa8216c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+  background-position: center center;
+  background-size: cover;
+}
+
+.box4 {
+  background: url("https://images.unsplash.com/photo-1473294312123-83488e2f8e8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=800");
+  background-position: center center;
+  background-size: cover;
+}
+
+.box5 {
+  background: url("https://images.unsplash.com/photo-1541873676-a18131494184?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1922&q=80");
+  background-position: center center;
+  background-size: cover;
+}
+
+.box6 {
+  background: url("https://images.unsplash.com/photo-1465848059293-208e11dfea17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1789&q=80");
+  background-position: center center;
+  background-size: cover;
+}
+
+.box7 {
+  background: url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background-position: center center;
+  background-size: cover;
+}
+
+.box8 {
+  background: url("https://images.unsplash.com/photo-1524856781660-e5c92f4ac62a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background-position: center center;
+  background-size: cover;
+}
+
+.box9 {
+  background: url("https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1957&q=80");
+  background-position: center center;
+  background-size: cover;
+}
+
+.box10 {
+  background: url("https://images.unsplash.com/photo-1515876879333-013aa5ea1472?ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80");
+  background-position: center center;
+  background-size: cover;
+}
+
+.box11 {
+  background: url("https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80");
+  background-position: center center;
+  background-size: cover;
+}
+
+.box12 {
+  background: url("https://images.unsplash.com/photo-1519689680058-324335c77eba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background-position: center center;
+  background-size: cover;
+}
+
+.imgbox:hover {
+  transform: scale(1.03);
+  -moz-transform: scale(1.03);
+  -webkit-transform:  scale(1.03);
+  -o-transform: scale(1.03);
+  box-shadow: 0px 0px 0px 9000px rgba(0,0,0,0) inset;
+  box-shadow: 0px 0px 0px 1px grey inset;
+}
+
+.imgbox:hover .boxtitle {
+  visibility: visible;
+}
+
+
+.lightbox {
+	display: none;
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,.5);
+}
+
+.lightbox:target {
+	outline: none;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+  border: solid 2px grey;
+}
+
+

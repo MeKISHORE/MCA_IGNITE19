@@ -1,0 +1,37 @@
+{% extends 'workshop/basic.html'%}
+{% block title%}Profile{% endblock%}
+{% block style%}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/collegereg.css'%}">
+<style>
+
+</style>
+{% endblock%}
+
+{% block body%}
+
+<div style="position:absolute;top:0px;width:100vw;height:100vh;padding:10px;">
+    <div class="container">
+        <div class="row">
+            <div align="center" class="col-sm-12">
+                <h1 class="title">Your Profile</h1>
+            </div>
+            <div class="col-sm-12 col-xs-12 col-md-12 box" >
+                <form action="" method="POST">{% csrf_token %}
+                    <center>
+                        <h1 style="color: orange">{{ obj.leader_name}}</h1>
+                        <h3 style="color: orange">{{ obj.member1_name}}</h3>
+                        <h3 style="color: orange">{{ obj.member2_name}}</h3>
+                        <h3 style="color: orange">{{ obj.member3_name}}</h3>
+                        <h3 style="color: orange">{{ obj.member4_name}}</h3>
+                    </center>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
+{% block script%}
+
+{% endblock%}

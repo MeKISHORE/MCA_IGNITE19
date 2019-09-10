@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>profile</title>
+</head>
+<body>
+<table border="1">
+    <tr >
+        <td colspan="5"> {{ obj.collegename }}</td>
+    </tr>
+    <tr>
+        <td>leder name </td>
+        <td>{{ sobj.leader_name }}</td>
+        <td>{{ sobj.leader_mobile }}</td>
+        <td>{{ sobj.leader_email }}</td>
+        <td>{{ sobj.leader_id}}</td>
+    </tr>
+
+    <tr>
+        <td>Member1 name </td>
+        <td>{{ sobj.member1_name }}</td>
+        <td>{{ sobj.member1_mobile }}</td>
+        <td>{{ sobj.member1_id }}</td>
+        <td>{{ sobj.member1_file}}</td>
+    </tr>
+
+    <tr>
+        <td>Member2 name </td>
+        <td>{{ sobj.member2_name }}</td>
+        <td>{{ sobj.member2_mobile }}</td>
+        <td>{{ sobj.member2_id }}</td>
+        <td>{{ sobj.member2_file}}</td>
+    </tr>
+
+    <tr>
+        <td>Member3 name </td>
+        <td>{{ sobj.member3_name }}</td>
+        <td>{{ sobj.member3_mobile }}</td>
+        <td>{{ sobj.member3_id }}</td>
+        <td>{{ sobj.member3_file}}</td>
+    </tr>
+
+    <tr>
+        <td>Member4 name </td>
+        <td>{{ sobj.member4_name }}</td>
+        <td>{{ sobj.member4_mobile }}</td>
+        <td>{{ sobj.member4_id }}</td>
+        <td>{{ sobj.member4_file}}</td>
+    </tr>
+</table>
+<a href="{% url 'logout' %}">logout</a>
+
+</body>
+</html>

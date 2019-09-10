@@ -1,0 +1,24 @@
+body {
+  
+  overflow: hidden;
+  text-align: center;
+}
+svg {
+  display: block;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.logo img{
+
+		margin:5px;
+		height:80px;
+
+}
+
+@media screen and (max-width: 600px) {
+  .logo img{
+		height:130px;
+	}
+
+}
