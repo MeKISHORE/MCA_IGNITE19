@@ -58,6 +58,8 @@ class events(models.Model):
         event_name = models.CharField(max_length=100)
         belongs_to = models.CharField(max_length=100)
         active = models.BooleanField(default=True)
+        short_url=models.CharField(max_length=100,unique=True)
+        event_image = models.FileField(upload_to='event/images/', default='', blank=True)
 
         def __str__(self):
             return self.event_name

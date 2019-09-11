@@ -21,7 +21,11 @@
 
             <div class="tabcontent tab-active">
                             {% for i in tech %}
+                                <a href="{% url 'event_data' i.short_url %}">
                                 <p class="events">{{ i.event_name }}</p>
+                                <img src="{{ i.event_image.url }}" alt="img">
+
+                                </a><br>
                             {% endfor %}
 
             </div>
