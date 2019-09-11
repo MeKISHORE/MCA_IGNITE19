@@ -74,12 +74,27 @@ WSGI_APPLICATION = 'main.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# Database
+# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'ignite_db',
+        'USER': 'root',
+        'PASSWORD': 'deepak17',
+        'HOST': '127.0.0.1',   # Or an IP Address that your DB is hosted on
+         'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",},
+        'PORT': '3306',
     }
 }
+
 
 
 # Password validation
