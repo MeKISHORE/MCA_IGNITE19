@@ -1,54 +1,94 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>profile</title>
-</head>
-<body>
-<table border="1">
-    <tr >
-        <td colspan="5"> {{ obj.collegename }}</td>
-    </tr>
-    <tr>
-        <td>leder name </td>
-        <td>{{ sobj.leader_name }}</td>
-        <td>{{ sobj.leader_mobile }}</td>
-        <td>{{ sobj.leader_email }}</td>
-        <td>{{ sobj.leader_id}}</td>
-    </tr>
+{% extends 'workshop/basic.html'%}
 
-    <tr>
-        <td>Member1 name </td>
-        <td>{{ sobj.member1_name }}</td>
-        <td>{{ sobj.member1_mobile }}</td>
-        <td>{{ sobj.member1_id }}</td>
-        <td>{{ sobj.member1_file}}</td>
-    </tr>
+{% block title %}About Us{% endblock %}
+{% load static %}
+{% block style %}
 
-    <tr>
-        <td>Member2 name </td>
-        <td>{{ sobj.member2_name }}</td>
-        <td>{{ sobj.member2_mobile }}</td>
-        <td>{{ sobj.member2_id }}</td>
-        <td>{{ sobj.member2_file}}</td>
-    </tr>
+<link rel="stylesheet" href="{% static 'css/registered.css' %}">
 
-    <tr>
-        <td>Member3 name </td>
-        <td>{{ sobj.member3_name }}</td>
-        <td>{{ sobj.member3_mobile }}</td>
-        <td>{{ sobj.member3_id }}</td>
-        <td>{{ sobj.member3_file}}</td>
-    </tr>
 
-    <tr>
-        <td>Member4 name </td>
-        <td>{{ sobj.member4_name }}</td>
-        <td>{{ sobj.member4_mobile }}</td>
-        <td>{{ sobj.member4_id }}</td>
-        <td>{{ sobj.member4_file}}</td>
-    </tr>
-</table>
-<a href="{% url 'logout' %}">logout</a>
 
-</body>
-</html>
+
+{% endblock %}
+{% block body%}
+
+<div style="position:absolute;top:0px;width:100vw;height:100vh;padding:8px;">
+    <div class="container">
+        <div class="row">
+            <div align="center" class="col-sm-12">
+                <h1 class="title">About U</h1>
+                <div class="container box">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <p class="sub"> {{ obj.collegename }}</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="{% url 'logout' %}">logout</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container stud box">
+                    <div class="row stud">
+                        <div class="col-sm-3">{{ sobj.leader_name }} (LEADER)</div>
+                        <div class="col-sm-3">{{ sobj.leader_mobile }}</div>
+                        <div class="col-sm-3">{{ sobj.leader_email }}</div>
+                        <div class="col-sm-3">
+                            <!--{{ sobj.leader_id}}-->
+                        </div>
+                    </div>
+
+                    <div class="row stud">
+                        <div class="col-sm-3">{{ sobj.member1_name }}</div>
+                        <div class="col-sm-3">{{ sobj.member1_mobile }}</div>
+                        <div class="col-sm-3">{{ sobj.member1_id }}</div>
+                        <div class="col-sm-3">
+                            <!--{{ sobj.member1_file}}-->
+                        </div>
+                    </div>
+
+                    <div class="row stud">
+                        <div class="col-sm-3">{{ sobj.member2_name }}</div>
+                        <div class="col-sm-3">{{ sobj.member2_mobile }}</div>
+                        <div class="col-sm-3">{{ sobj.member2_id }}</div>
+                        <div class="col-sm-3">
+                            <!--{{ sobj.member2_file}}-->
+                        </div>
+                    </div>
+                    <div class="row stud">
+                        <div class="col-sm-3">{{ sobj.member3_name }}</div>
+                        <div class="col-sm-3">{{ sobj.member3_mobile }}</div>
+                        <div class="col-sm-3">{{ sobj.member3_id }}</div>
+                        <div class="col-sm-3">
+                            <!--{{ sobj.member3_file}}-->
+                        </div>
+                    </div>
+                    <div class="row stud">
+                        <div class="col-sm-3">{{ sobj.member4_name }}</div>
+                        <div class="col-sm-3">{{ sobj.member4_mobile }}</div>
+                        <div class="col-sm-3">{{ sobj.member4_id }}</div>
+                        <div class="col-sm-3">
+                            <!--{{ sobj.member4_file}}-->
+                        </div>
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- partial -->
+
+
+{% endblock %}
+{% block script %}
+
+
+{% endblock %}

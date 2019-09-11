@@ -30,7 +30,8 @@
             <div align="center" class="col-sm-12">
                 <h1 class="title">Login</h1>
             </div>
-            <div align="center" class="col-sm-12 col-xs-12 col-md-12 box" >
+            <div class="col-md-3"></div>
+            <div align="center" class="col-sm-12 col-xs-12 col-md-6 box" >
                 <img class="log_img" src="{% static 'media/login.gif'%}">
                 <form action="{% url 'sign_in' %}" method="POST">{% csrf_token %}
 
@@ -41,6 +42,7 @@
                         {% endfor %}
                     </select>
 
+                    <input type="email" class="form-input" name="college_mail" placeholder="Leader mail"/>
                     <input type="password" class="form-input" name="college_code" placeholder="College Code"/>
 
                     <input type="submit" name="submit" id="submit" class="btn submit" value="Login"/>
