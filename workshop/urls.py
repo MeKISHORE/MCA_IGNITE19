@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.urls import reverse
+
 
 from.import views
 
@@ -15,6 +17,7 @@ urlpatterns = [
     path('aboutus', views.aboutus, name='aboutus'),
     path('gallery', views.gallery, name='gallery'),
     path('event', views.event, name='event'),
+    path('event/<slug:slug>', views.event_detail, name='event_data'),
     path('contact', views.contact, name='contact'),
     path('contact_reg', views.contact_reg, name='contact_reg'),
     path('basic', views.basic, name='basic'),
