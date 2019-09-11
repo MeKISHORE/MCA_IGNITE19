@@ -50,5 +50,25 @@ class contact_us(models.Model):
     college_name = models.CharField(max_length=100)
     message = models.TextField()
 
+
     def __str__(self):
         return self.college_name
+
+class events(models.Model):
+        event_name = models.CharField(max_length=100)
+        belongs_to = models.CharField(max_length=100)
+        active = models.BooleanField(default=True)
+
+        def __str__(self):
+            return self.event_name
+
+
+class event_details(models.Model):
+        event_name = models.ForeignKey(events, on_delete=models.CASCADE)
+        description=models.TextField()
+        rules=models.TextField()
+
+        def __str__(self):
+            return self.event_name.event_name
+
+

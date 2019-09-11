@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.db.models import Q
 from django.contrib.auth.models import auth
 
-from .models import studentregistration, collegeverification, contact_us
+from .models import studentregistration, collegeverification, contact_us, events
 
 
 def index(request):
@@ -138,7 +138,11 @@ def gallery(request):
 
 
 def event(request):
-    return render(request, 'workshop/event.html')
+    tech = events.objects.filter(belongs_to="tech_event",active=1)
+    non_tech=events.objects.filter(belongs_to="non_tech_event",active=1)
+    online=events.objects.filter(belongs_to="online_event",active=1)
+    return render(request, 'workshop/event.html', {'tech': tech, 'non_tech': non_tech, 'online': online})
+
 
 
 def contact(request):

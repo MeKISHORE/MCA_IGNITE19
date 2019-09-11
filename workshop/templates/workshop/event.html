@@ -17,43 +17,24 @@
             <div class="icetab">Non Tech Events</div>
             <!--<div class="icetab">Submission</div>-->
         </div>
-
         <div id="icetab-content">
+
             <div class="tabcontent tab-active">
-                <p class="events">CodeStorm</p>
-                <p class="events">The Incredible Hunt</p>
-                <p class="events">C for Codetta(Avenge the codes)</p>
-                <p class="events">The Search of Gauntlet</p>
-                <p class="events">ORM Master</p>
-                <p class="events">Code Infinity</p>
-                <p class="events">Tesseract Endeavour</p>
-                <p class="events">Strange Bugs</p>
-                <p class="events">Agomotto’s Amet</p>
-                <p class="events">Captain Algorika</p>
-                <p class="events">Krypthon</p>
-
+                            {% for i in tech %}
+                                <p class="events">{{ i.event_name }}</p>
+                            {% endfor %}
 
             </div>
+
+
             <div class="tabcontent">
+                            {% for i in non_tech %}
+                                <p class="events">{{ i.event_name }}</p>
+                            {% endfor %}
 
-                <p class="events">Scattergories</p>
-                <p class="events">Death’s Head</p>
-                <p class="events">Cerebro</p>
-                <p class="events">Rage of Ultron</p>
-                <p class="events">Merc with the mouth</p>
-                <p class="events">Dormammu,s Loop</p>
 
             </div>
-            <!--<div class="tabcontent">-->
 
-            <!--<h1 class="title">Events</h1>-->
-            <!--<h1 class="title">Events</h1>-->
-            <!--<h1 class="title">Events</h1>-->
-            <!--<h1 class="title">Events</h1>-->
-            <!--<h1 class="title">Events</h1>-->
-
-
-            <!--</div>-->
         </div>
 
 
