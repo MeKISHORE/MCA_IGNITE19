@@ -67,73 +67,138 @@ a.imgbox{
 
 
 .box1 {
-  background: url("https://images.unsplash.com/photo-1433086966358-54859d0ed716?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80");
+  background: url("../media/gallery/DSC_0009.jpg");
   background-position: center center;
   background-size: cover;
 }
 
 .box2 {
-  background: url("https://images.unsplash.com/photo-1496857239036-1fb137683000?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+  background: url("../media/gallery/DSC_0023.jpg");
   background-position: center center;
   background-size: cover;
 }
 
 .box3 {
-  background: url("https://images.unsplash.com/photo-1500111709600-7761aa8216c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+  background: url("../media/gallery/DSC_0039.jpg");
   background-position: center center;
   background-size: cover;
 }
 
 .box4 {
-  background: url("https://images.unsplash.com/photo-1473294312123-83488e2f8e8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=800");
+  background: url("../media/gallery/DSC_0050.jpg");
   background-position: center center;
   background-size: cover;
 }
 
 .box5 {
-  background: url("https://images.unsplash.com/photo-1541873676-a18131494184?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1922&q=80");
+  background: url("../media/gallery/DSC_0051.jpg");
   background-position: center center;
   background-size: cover;
 }
 
 .box6 {
-  background: url("https://images.unsplash.com/photo-1465848059293-208e11dfea17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1789&q=80");
+  background: url("../media/gallery/DSC_0059.jpg");
   background-position: center center;
   background-size: cover;
 }
 
 .box7 {
-  background: url("https://images.unsplash.com/photo-1558981806-ec527fa84c39?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background: url("../media/gallery/DSC_0079.jpg");
   background-position: center center;
   background-size: cover;
 }
 
 .box8 {
-  background: url("https://images.unsplash.com/photo-1524856781660-e5c92f4ac62a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background: url("../media/gallery/DSC_0084.jpg");
   background-position: center center;
   background-size: cover;
 }
 
 .box9 {
-  background: url("https://images.unsplash.com/photo-1465101162946-4377e57745c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1957&q=80");
+  background: url("../media/gallery/DSC_0086.jpg");
   background-position: center center;
   background-size: cover;
 }
 
 .box10 {
-  background: url("https://images.unsplash.com/photo-1515876879333-013aa5ea1472?ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80");
+  background: url("../media/gallery/DSC_0104.jpg");
   background-position: center center;
   background-size: cover;
 }
 
 .box11 {
-  background: url("https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1868&q=80");
+  background: url("../media/gallery/DSC_0108.jpg");
   background-position: center center;
   background-size: cover;
 }
 
 .box12 {
-  background: url("https://images.unsplash.com/photo-1519689680058-324335c77eba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80");
+  background: url("../media/gallery/DSC_0111.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.box13 {
+  background: url("../media/gallery/DSC_0134.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.box14 {
+  background: url("../media/gallery/DSC_0141.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.box15 {
+  background: url("../media/gallery/DSC_0157.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.box16 {
+  background: url("../media/gallery/DSC_0158.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.box17 {
+  background: url("../media/gallery/DSC_0185.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.box18 {
+  background: url("../media/gallery/DSC_0242.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.box19 {
+  background: url("../media/gallery/DSC_0249.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.box20 {
+  background: url("../media/gallery/DSC_0267.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.box21 {
+  background: url("../media/gallery/DSC_0268.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.box22 {
+  background: url("../media/gallery/DSC_0341.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.box23 {
+  background: url("../media/gallery/DSC_0372.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.box24 {
+  background: url("../media/gallery/DSC_0400.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+.box25 {
+  background: url("../media/gallery/DSC_0403.jpg");
   background-position: center center;
   background-size: cover;
 }

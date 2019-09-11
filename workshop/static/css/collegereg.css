@@ -3,6 +3,7 @@
   border: none;
   background: #fff;
   color: #b18757;
+
   padding: 20px;
   }
  .form-submit:hover {
@@ -14,14 +15,14 @@
 .submit {
 
   margin-top:10px;
-  background:white;
+   background:#ff9900;
   text-transform: uppercase;
   font-size: 23px;
   height:auto;
   width:auto;
   cursor: pointer; }
 
-input:focus{
+input,select:focus{
     outline: none;
 }
 
@@ -38,6 +39,12 @@ input {
   height:30px;
   margin:5px;
   }
+
+.clg_list{
+
+    width:100%;height:40px;font-size:25px;background:black;color:white;border:1px solid #ff9900;
+
+}
 
 
   input::-webkit-input-placeholder {
@@ -74,6 +81,12 @@ input {
   text-transform: uppercase;
 }
 
+.log_img{
+    width:150px;
+    border-radius:50%;
+    margin-bottom:20px;
+
+}
 
 .box {
 	padding: 10px;

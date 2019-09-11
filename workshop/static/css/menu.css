@@ -8,6 +8,10 @@ ul {
 }
 a {
   cursor: pointer;
+
+}
+a:link{
+    text-decoration: none;
 }
 /* Relative Code Starts Here */
 #top-nav {
@@ -23,16 +27,16 @@ a {
   height: 80px;
   top: 0;
   right: 15px;
-  -webkit-transition: width 0.2s ease, height 0.4s ease;
-	-moz-transition: width 0.2s ease, height 0.4s ease;
-	-o-transition: width 0.2s ease, height 0.4s ease;
-	transition: width 0.2s ease, height 0.4s ease;
+  -webkit-transition: width 0.2s ease, width 0.4s ease;
+	-moz-transition: width 0.2s ease, width 0.4s ease;
+	-o-transition: width 0.2s ease, width 0.4s ease;
+	transition: width 0.2s ease, width 0.4s ease;
 }
 .open {
   position: fixed;
   background: #280201;
   /*background-image: url('https://i.pinimg.com/originals/81/66/ce/8166ce752069e7df3a55b993fe9ae1d4.jpg');*/
-  
+
   width: 100%;
   height: 100%;
   top: 0;
@@ -43,10 +47,12 @@ a {
   text-align: center;
   font-family: 'Open Sans', Helvetica;
   font-size: 30px;
-  opacity: 0;
+  display:none;
+  opacity:0;
 }
 .list-open {
-  opacity: 1;
+  display:block;
+  opacity:1;
   -webkit-transition: opacity 0.3s ease;
 	-moz-transition: opacity 0.3s ease;
 	-o-transition: opacity 0.3s ease;

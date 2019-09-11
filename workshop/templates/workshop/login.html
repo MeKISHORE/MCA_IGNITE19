@@ -6,6 +6,19 @@
 <link rel="stylesheet" href="{% static 'css/collegereg.css'%}">
 <style>
 
+
+@media screen and (max-width: 600px) {
+
+  .clg_list{
+
+        font-size:13px;
+
+  }
+
+}
+
+
+
 </style>
 {% endblock%}
 
@@ -15,12 +28,13 @@
     <div class="container">
         <div class="row">
             <div align="center" class="col-sm-12">
-                <h1 class="title">Registration Form</h1>
+                <h1 class="title">Login</h1>
             </div>
-            <div class="col-sm-12 col-xs-12 col-md-12 box" >
+            <div align="center" class="col-sm-12 col-xs-12 col-md-12 box" >
+                <img class="log_img" src="{% static 'media/login.gif'%}">
                 <form action="{% url 'sign_in' %}" method="POST">{% csrf_token %}
 
-                    <select name="cname">
+                    <select name="cname" class="clg_list">
                         <option value="select">select</option>
                         {% for i in obj %}
                         <option value="{{ i.collegename }}">{{ i.collegename }}</option>
@@ -29,7 +43,7 @@
 
                     <input type="password" class="form-input" name="college_code" placeholder="College Code"/>
 
-                    <input type="submit" name="submit" id="submit" class="btn btn-default submit" value="Login"/>
+                    <input type="submit" name="submit" id="submit" class="btn submit" value="Login"/>
                 </form>
             </div>
         </div>
