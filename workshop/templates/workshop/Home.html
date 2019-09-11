@@ -16,6 +16,124 @@
     <link rel="stylesheet" href="{% static 'css/preloader.css'%}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/bluestar.css'%}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+    <link rel="stylesheet" href="    http://weloveiconfonts.com/api/?family=fontawesome">
+    <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
+
+    <style>
+
+/* ---------- FONTAWESOME ---------- */
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+/* ---------- GENERAL ---------- */
+
+body {
+	background-color: #6e6056;
+}
+
+a { text-decoration: none; }
+
+.clearfix { *zoom: 1; }
+.clearfix:before, .clearfix:after {
+	display: table;
+	content: "";
+}
+.clearfix:after { clear: both; }
+
+/* ---------- NAVIGATION ---------- */
+
+nav {
+    position: absolute;
+    bottom: 5%;
+	margin: 50px auto;
+	width: 218px;
+    left: 50%;
+}
+
+nav ul li {
+	margin-bottom: 50px;
+	position: relative;
+}
+
+nav > ul > li > a {
+	{#background-color: #ded0bb;#}
+	border: 4px solid #5a504a;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	color: #645650;
+	display: block;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	width: 32px;
+}
+
+nav ul li ul {
+	{#background: #f6eddb; /* Old browsers */#}
+	{#background: -moz-linear-gradient(top,  #f6eddb 0%, #ccbba4 100%); /* FF3.6+ */#}
+	{#background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6eddb), color-stop(100%,#ccbba4)); /* Chrome,Safari4+ */#}
+	{#background: -webkit-linear-gradient(top,  #f6eddb 0%,#ccbba4 100%); /* Chrome10+,Safari5.1+ */#}
+	{#background: -o-linear-gradient(top,  #f6eddb 0%,#ccbba4 100%); /* Opera 11.10+ */#}
+	{#background: -ms-linear-gradient(top,  #f6eddb 0%,#ccbba4 100%); /* IE10+ */#}
+	{#background: linear-gradient(to bottom,  #f6eddb 0%,#ccbba4 100%); /* W3C */#}
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6eddb', endColorstr='#ccbba4',GradientType=0 ); /* IE6-9 */
+	border-radius: 16px;
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 16px;
+	box-shadow: 0px 1px 2px #352f2c;
+	display: block;
+	height: 40px;
+	left: 52px;
+	padding: 0 8px;
+	position: absolute;
+	top: 0;
+}
+
+nav ul li ul:before {
+	background: #e7dbc7; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e7dbc7 0%, #dbcdb8 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e7dbc7), color-stop(100%,#dbcdb8)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #e7dbc7 0%,#dbcdb8 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #e7dbc7 0%,#dbcdb8 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #e7dbc7 0%,#dbcdb8 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #e7dbc7 0%,#dbcdb8 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7dbc7', endColorstr='#dbcdb8',GradientType=0 ); /* IE6-9 */
+	content: "";
+	display: block;
+	height: 8px;
+	left: -4px;
+	position: absolute;
+	top: 16px;
+	transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	width: 8px;
+}
+
+nav ul li ul li {
+	float: left;
+}
+
+nav ul li ul li a {
+	border: none;
+	color: #645650;
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	width: 30px;
+}
+
+.facebook:hover { color: #3B5998; }
+.twitter:hover { color: #00aced; }
+.google-plus:hover { color: #C63D2D; }
+.linkedin:hover { color: #4875B4; }
+.github:hover { color: #000; }</style>
 
 
 
@@ -319,7 +437,27 @@
         <img src="./image/ignite.png" style="margin:5px;width:120px;">
     </div> -->
 
+<nav>
 
+		<ul class="clearfix">
+
+			<li><a href="#"><span class="fontawesome-user"></span></a>
+
+				<ul>
+
+					<li><a href="#" class="facebook"><span class="fontawesome-facebook"></span></a></li>
+					<li><a href="#" class="twitter"><span class="fontawesome-twitter"></span></a></li>
+					<li><a href="#" class="google-plus"><span class="fontawesome-google-plus"></span></a></li>
+					<li><a href="#" class="linkedin"><span class="fontawesome-linkedin"></span></a></li>
+					<li><a href="#" class="github"><span class="fontawesome-github"></span></a></li>
+
+				</ul>
+
+			</li>
+
+		</ul>
+
+	</nav>
     <!-- Menu -->
 
 
@@ -342,6 +480,7 @@
             <a class="burger"><span></span></a>
         </div>
     </div>
+
 
 </div>
 <!--</div>-->

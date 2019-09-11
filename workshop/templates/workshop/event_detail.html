@@ -1,0 +1,44 @@
+{% extends 'workshop/basic.html'%}
+
+{% block title %}Events{% endblock %}
+{% load static %}
+{% block style %}
+
+<link rel="stylesheet" href='{% static "./css/event.css" %}'>
+
+{% endblock %}
+{% block body%}
+
+<div style="position:absolute;top:0px;width:100vw;height:100vh;padding:8px;">
+    <h1 class="title">{{ event.event_name }}</h1>
+    <div class="codepen-container">
+        <div id="icetab-container">
+            <div class="icetab current-tab">About</div>
+            <div class="icetab">Rules</div>
+        </div>
+        <div id="icetab-content">
+
+            <div class="tabcontent tab-active">
+                                <p class="events">{{ event_detail.description }}</p>
+
+            </div>
+
+
+            <div class="tabcontent">
+                                <p class="events">{{ event_detail.rules }}</p>
+
+               </div>
+
+        </div>
+
+
+    </div>
+</div>
+    <!-- partial -->
+
+
+    {% endblock %}
+    {% block script %}
+
+    <script  src="{% static './js/events.js' %}"></script>
+    {% endblock %}

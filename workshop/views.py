@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.db.models import Q
 from django.contrib.auth.models import auth
 
-from .models import studentregistration, collegeverification, contact_us, events
+from .models import studentregistration, collegeverification, contact_us, events,event_details
 
 
 def index(request):
@@ -179,4 +179,13 @@ def contact_reg(request):
 def logout(request):
     auth.logout(request)
     return redirect('index')
+
+def event_detail(request, slug):
+    event = events.objects.get(short_url=slug)
+    event_detail=event_details.objects.get(event_name_id=event.id)
+    return render(request, 'workshop/event_detail.html',{'event': event, 'event_detail': event_detail })
+
+
+
+
 
