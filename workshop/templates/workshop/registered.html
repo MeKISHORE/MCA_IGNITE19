@@ -6,7 +6,15 @@
 
 <link rel="stylesheet" href="{% static 'css/registered.css' %}">
 
+<style>
+    .stud>div:hover{
 
+        color:black;
+        background:white;
+        transform:scale(0.98)
+    }
+
+</style>
 
 
 {% endblock %}
@@ -29,7 +37,7 @@
                 </div>
                 <div class="container stud box">
                     <div class="row stud">
-                        <div class="col-sm-3">{{ sobj.leader_name }} (LEADER)</div>
+                        <div class="col-sm-3">{{ sobj.leader_name }} (Leader)</div>
                         <div class="col-sm-3">{{ sobj.leader_mobile }}</div>
                         <div class="col-sm-3">{{ sobj.leader_email }}</div>
                         <div class="col-sm-3">
