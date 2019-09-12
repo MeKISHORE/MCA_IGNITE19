@@ -41,15 +41,15 @@
                 <div align="center" class="col-sm-12 col-xs-12 col-md-6 box" >
                     <img src="{% static 'media/login.gif'%}" style="width:150px;border-radius:50%;margin-bottom:30px;">
                     <form action="{% url 'sign_in' %}" method="POST">{% csrf_token %}
-                        <select class="clg_list" name="cname" required>
+                        <select class="clg_list " name="cname" required>
                             <option value="">select</option>
                             {% for i in obj %}
                                 <option value="{{ i.collegename }}">{{ i.collegename }}</option>
                             {% endfor %}
                         </select>
 
-                        <input type="email" class="form-input" name="leader_email" placeholder="leader email id" required/>
-                        <input type="password" class="form-input" name="college_code" placeholder="College Code"required/>
+                        <input type="email" class="form-input placeholder-fix" name="leader_email" placeholder="leader email id" required/>
+                        <input type="password" class="form-input placeholder-fix" name="college_code" placeholder="College Code"required/>
                         <input type="submit" name="submit" id="submit" class="btn btn-default submit" value="Login"/>
                     </form>
 
