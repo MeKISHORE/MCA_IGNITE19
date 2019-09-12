@@ -99,3 +99,7 @@ input {
     font-size:20px;
     font-family: 'Open Sans Condensed', sans-serif;
 }
+
+.placeholder-fix:focus::-webkit-input-placeholder  {color:transparent;}
+.placeholder-fix:focus::-moz-placeholder   {color:transparent;}
+.placeholder-fix:-moz-placeholder   {color:transparent;}
