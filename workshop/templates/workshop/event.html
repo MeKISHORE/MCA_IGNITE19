@@ -23,7 +23,7 @@
                             {% for i in tech %}
                                 <a href="{% url 'event_data' i.short_url %}">
                                 <p class="events">{{ i.event_name }}</p>
-                                <img src="{{ i.event_image.url }}" alt="img">
+                                <img class="event_img" src="{{ i.event_image.url }}" alt="img" style="width:100px;height:auto">
 
                                 </a><br>
                             {% endfor %}

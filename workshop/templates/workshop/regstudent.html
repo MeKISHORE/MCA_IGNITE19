@@ -10,18 +10,74 @@
 <script language="JavaScript">
     var formOK = false;
 
-    function validatePDF(objFileControl){
-     var file = objFileControl.value;
-     var len = file.length;
-     var ext = file.slice(len - 4, len);
-     if(ext.toUpperCase() == ".PDF"){
-       formOK = true;
-     }
-     else{
-       formOK = false;
-       alert("Only PDF files allowed.");
-     }
+    function validatePDF(objFileControl,id){
+        var file = objFileControl.value;
+         var len = file.length;
+         var ext = file.slice(len - 4, len);
+         if(ext.toUpperCase() == ".PDF"){
+            var FileSize = objFileControl.files[0].size / 1024 / 1024; // in MB
+            if (FileSize > 1) {
+                alert('File size exceeds 1 MB');
+               // $(file).val(''); //for clearing with Jquery
+                document.getElementById(id).value="";
+            }
+            else{
+                formOK = true;
+            }
+         }
+         else{
+           formOK = false;
+           alert("Only PDF files allowed.");
+           document.getElementById(id).value="";
+         }
     }
+
+
+
+function validateForm()
+{
+
+    var leadername=document.forms["vforms"]["leader_name"].value;
+    var colid=document.forms["vforms"]["college_id_of_leader"].value;
+    var leadermobile=document.forms["vfomms"]["leader_mobile"].value;
+    var email=document.forms["vforms"]["leader_mail_id"].value;
+
+    if(formOK == false){
+        alert("required pdf file only");
+        return false;
+    }
+    if(leadername=="" && invitationcode=="" && colid=="" && leadermobile=="" && email=="")
+    {
+        alert("leader filed must be filled");
+        return false;
+    }
+    if(document.forms["vforms"]["member1_name"].value=="" && document.forms["vforms"]["member1_e_mail"].value=="" && document.forms["vforms"]["member1_mobile"].value=="" && document.forms["vforms"]["member1_file"].value=="")
+    {
+        alert("member 1 filed must be filled");
+        return false;
+    }
+    if(document.forms["vforms"]["member2_name"].value=="" && document.forms["vforms"]["member2_e_mail"].value=="" && document.forms["vforms"]["member2_mobile"].value=="" && document.forms["vforms"]["member2_file"].value=="")
+    {
+        alert("member 2 filed must be filled");
+        return false;
+    }
+     if(document.forms["vforms"]["member3_name"].value=="" && document.forms["vforms"]["member3_e_mail"].value=="" && document.forms["vforms"]["member3_mobile"].value=="" && document.forms["vforms"]["member3_file"].value=="")
+    {
+        alert("member 3 filed must be filled");
+        return false;
+    }
+
+    if(document.forms["vforms"]["member4_name"].value=="" && document.forms["vforms"]["member4_e_mail"].value=="" && document.forms["vforms"]["member4_mobile"].value=="" && document.forms["vforms"]["member4_file"].value=="")
+    {
+        alert("member 4 filed must be filled");
+        return false;
+    }
+
+
+
+
+}
+
 </script>
 {% endblock%}
 
@@ -34,26 +90,17 @@
                 <h1 class="title">Registration Form</h1>
             </div>
             <div class="col-sm-12 col-xs-12 col-md-12 box" >
-                <form action="{% url 'team_ignite' %}" method="POST" onsubmit="return formOK;" enctype="multipart/form-data">{% csrf_token %}
+                <form action="{% url 'team_ignite' %}" name="vform" method="POST" onsubmit="return validateForm()" enctype="multipart/form-data">{% csrf_token %}
                     <table style="width:100%">
                         <tr><td colspan="2"><input type="text" class="form-input" name="college_name" maxlength="100" value="{{ obj.collegename }}" disabled/></td></tr>
                         <tr><td colspan="2"><input type="text" class="form-input" name="invitation_code" value="{{ obj.collegecode }}" READONLY/></td></tr>
-                        <tr><td class="deta" style="width:120px;font-size:18px;">Invitation file</td><td> <input type="file" class="form-input" name="invitation_file" id="invitation" onchange="validatePDF(this)" required/></td></tr>
+                        <tr><td class="deta" style="width:120px;font-size:18px;">Invitation file</td><td> <input type="file" class="form-input" name="invitation_file" id="invitation" onchange="validatePDF(this,this.id)" required /></td></tr>
                         <tr><td colspan="2">  <input type="text" class="form-input placeholder-fix" name="leader_name" minlength="3" maxlength="50" placeholder="Leader Name" required/></td></tr>
-                        <tr><td class="deta" style="width:120px;font-size:18px;">College Id Of Leader</td><td><input type="file" class="form-input" name="college_id_of_leader" onchange="validatePDF(this)" required/></td></tr>
+                        <tr><td class="deta" style="width:120px;font-size:18px;">College Id Of Leader</td><td><input type="file" class="form-input" name="college_id_of_leader" onchange="validatePDF(this,this.id)" required/></td></tr>
                         <tr><td colspan="2">  <input type="text" class="form-input placeholder-fix" name="leader_mobile" minlength="10" maxlength="10" placeholder="Mobile" required/></td></tr>
                         <tr><td colspan="2">    <input type="email" class="form-input placeholder-fix" name="leader_mail_id" maxlength="50" value="{{ email }}" readonly /></td></tr>
 
                     </table>
-
-
-
-
-
-
-
-
-
 
 
                     <div class="row">
@@ -72,7 +119,7 @@
                         </div>
                         <div class="col-sm-3">
 
-                            <input type="file" class="form-input" name="member1_file" placeholder="" onchange="validatePDF(this)" required/>
+                            <input type="file" class="form-input" name="member1_file" placeholder="" onchange="validatePDF(this,this.id)" required/>
 
                         </div>
 
@@ -95,7 +142,7 @@
                         </div>
                         <div class="col-sm-3">
 
-                            <input type="file" class="form-input" name="member2_file" placeholder="" onchange="validatePDF(this)" required/>
+                            <input type="file" class="form-input" name="member2_file" placeholder="" onchange="validatePDF(this,this.id)" required/>
 
                         </div>
 
@@ -115,7 +162,7 @@
                             <input type="text" class="form-input placeholder-fix" name="member3_mobile" minlength="10" maxlength="10" placeholder="Mobile" required/>
                         </div>
                         <div class="col-sm-3">
-                            <input type="file" class="form-input" name="member3_file" placeholder="" onchange="validatePDF(this)" required/>
+                            <input type="file" class="form-input" name="member3_file" placeholder="" onchange="validatePDF(this,this.id)" required/>
                         </div>
                     </div>
                     <div class="row">
@@ -136,7 +183,7 @@
                         </div>
                         <div class="col-sm-3">
 
-                            <input type="file" class="form-input" name="member4_file" id="" placeholder="" onchange="validatePDF(this)" required/>
+                            <input type="file" class="form-input" name="member4_file" id="" placeholder="" onchange="validatePDF(this,this.id)" required/>
                         </div>
                     </div>
                     <input type="submit" name="submit" id="submit" class="btn btn-default submit" value="Register"/>
