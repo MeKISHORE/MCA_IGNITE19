@@ -7,43 +7,70 @@ from .models import studentregistration, collegeverification, contact_us, events
 
 
 def index(request):
-    # if request.session.get('session_name') is not None:
-    #     return redirect('index')
+    if request.session.get('session_name') is not None:
+        sobj = studentregistration.objects.filter(college_code=request.session.get('session_name')).first()
+        obj = collegeverification.objects.filter(collegecode=request.session.get('session_name')).first()
+        ob = request.session.get('session_name')
+        return render(request, 'workshop/Home.html', {'sobj': sobj, 'obj': obj, 'ob': ob})
     return render(request, 'workshop/Home.html')
 
 
-def basic(request):
-    return render(request, 'workshop/basic.html')
-
-
-def regstudent(request):
-    return render(request, 'workshop/regstudent.html')
+def profile(request):
+    return redirect('login')
 
 
 def login(request):
-    obj = collegeverification.objects.all()
-    return render(request, 'workshop/login.html', {'obj': obj})
+    if request.session.get('session_name') is not None:
+        print("session")
+        sobj = studentregistration.objects.filter(college_code=request.session.get('session_name')).first()
+        obj = collegeverification.objects.filter(collegecode=request.session.get('session_name')).first()
+        ob = request.session.get('session_name')
+        return render(request, 'workshop/registered.html', {'sobj': sobj, 'obj': obj, 'ob': ob})
+    else:
+        obj = collegeverification.objects.all()
+        print("ref")
+        return render(request, 'workshop/login.html', {'obj': obj})
 
 
 def sign_in(request):
     try:
         if request.method == 'POST':
             cname = request.POST['cname']
+            leader_email = request.POST['leader_email']
             college_code = request.POST['college_code']
             obj = collegeverification.objects.filter(Q(collegecode=college_code) & Q(collegename=cname)).first()
+            print(obj)
             if obj is not None:
                 sobj = studentregistration.objects.filter(college_code=obj).first()
                 if sobj is not None:
-                    request.session['session_name'] = obj.collegecode
-                    ob = request.session['session_name']
-                    return render(request, 'workshop/registered.html', {'sobj': sobj, 'obj': obj, 'ob': ob})
+                    if sobj.leader_email == leader_email:
+                        request.session['session_name'] = obj.collegecode
+                        ob = request.session.get('session_name')
+                        print("err")
+                        return render(request, 'workshop/registered.html', {'sobj': sobj, 'obj': obj, 'ob': ob})
+                    else:
+                        print('1')
+                        # error = {'error': 'Invalid E-mail id and #Code'}
+                        obj = collegeverification.objects.all()
+                        return render(request, 'workshop/login.html',
+                                      {'obj': obj, 'error': 'Invalid E-mail id and #Code'})
                 else:
-                    return render(request, 'workshop/regstudent.html', {'obj': obj})
+                    print('2')
+                    # create 10 min sission
+                    request.session.set_expiry(60)
+                    request.session['session_email'] = leader_email
+                    return render(request, 'workshop/regstudent.html',
+                                  {'sobj': sobj, 'obj': obj, 'email': leader_email})
+                    # return render(request, 'workshop/login.html', {'obj': obj})
             else:
-                return redirect('login')
+                print('3')
+                obj = collegeverification.objects.all()
+                return render(request, 'workshop/login.html', {'obj': obj, 'error': 'Invalid e-mail id or #code'})
         else:
+            print('4')
             return redirect('login')
     except:
+        print('5')
         return redirect('login')
 
 
@@ -52,6 +79,12 @@ def team_ignite(request):
         if request.method == 'POST':
             invitation_code = request.POST['invitation_code']
             invitation_file = request.FILES['invitation_file']
+
+            print(invitation_file.size)
+            splt = invitation_file.name
+
+            if splt.endswith('.pdf'):
+                print('successfully validate the file')
 
             leader_name = request.POST['leader_name']
             college_id_of_leader = request.FILES['college_id_of_leader']
@@ -111,9 +144,9 @@ def team_ignite(request):
                     member4_mobile=member4_mobile,
                     member4_file=member4_file
                 )
-                print(stu_obj)
+
                 stu_obj.save()
-                return HttpResponse('successfully')
+                return redirect('login')
             else:
                 print('else')
                 return HttpResponse('you are already registered')
@@ -126,26 +159,51 @@ def team_ignite(request):
 
 
 def teams(request):
+    if request.session.get('session_name') is not None:
+        sobj = studentregistration.objects.filter(college_code=request.session.get('session_name')).first()
+        obj = collegeverification.objects.filter(collegecode=request.session.get('session_name')).first()
+        ob = request.session.get('session_name')
+        return render(request, 'workshop/teams.html', {'sobj': sobj, 'obj': obj, 'ob': ob})
     return render(request, 'workshop/teams.html')
 
 
 def aboutus(request):
+    if request.session.get('session_name') is not None:
+        sobj = studentregistration.objects.filter(college_code=request.session.get('session_name')).first()
+        obj = collegeverification.objects.filter(collegecode=request.session.get('session_name')).first()
+        ob = request.session.get('session_name')
+        return render(request, 'workshop/aboutus.html', {'sobj': sobj, 'obj': obj, 'ob': ob})
     return render(request, 'workshop/aboutus.html')
 
 
 def gallery(request):
+    if request.session.get('session_name') is not None:
+        sobj = studentregistration.objects.filter(college_code=request.session.get('session_name')).first()
+        obj = collegeverification.objects.filter(collegecode=request.session.get('session_name')).first()
+        ob = request.session.get('session_name')
+        return render(request, 'workshop/gallery.html', {'sobj': sobj, 'obj': obj, 'ob': ob})
     return render(request, 'workshop/gallery.html')
 
 
 def event(request):
-    tech = events.objects.filter(belongs_to="tech_event",active=1)
-    non_tech=events.objects.filter(belongs_to="non_tech_event",active=1)
-    online=events.objects.filter(belongs_to="online_event",active=1)
-    return render(request, 'workshop/event.html', {'tech': tech, 'non_tech': non_tech, 'online': online})
-
+    tech = events.objects.filter(belongs_to="tech_event", active=1)
+    non_tech = events.objects.filter(belongs_to="non_tech_event", active=1)
+    online = events.objects.filter(belongs_to="online_event", active=1)
+    if request.session.get('session_name') is not None:
+        # sobj = studentregistration.objects.filter(college_code=request.session.get('session_name')).first()
+        # obj = collegeverification.objects.filter(collegecode=request.session.get('session_name')).first()
+        ob = request.session.get('session_name')
+        return render(request, 'workshop/event.html', {'ob': ob, 'tech': tech, 'non_tech': non_tech, 'online': online})
+    else:
+        return render(request, 'workshop/event.html', {'tech': tech, 'non_tech': non_tech, 'online': online})
 
 
 def contact(request):
+    if request.session.get('session_name') is not None:
+        sobj = studentregistration.objects.filter(college_code=request.session.get('session_name')).first()
+        obj = collegeverification.objects.filter(collegecode=request.session.get('session_name')).first()
+        ob = request.session.get('session_name')
+        return render(request, 'workshop/contactus.html', {'sobj': sobj, 'obj': obj, 'ob': ob})
     return render(request, 'workshop/contactus.html')
 
 

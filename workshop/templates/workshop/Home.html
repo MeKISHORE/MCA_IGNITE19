@@ -141,6 +141,8 @@ nav ul li ul li a {
 .linkedin:hover { color: #4875B4; }
 .github:hover { color: #000; }
 
+
+
 .nav-menu{
             display:none;
         }
@@ -170,6 +172,11 @@ nav ul li ul li a {
 
 
 <!--menu top-->
+.menu{
+   position:absolute;
+   top:0px;
+
+}
 .main-contain .dock {
   position: fixed;
   top: 0px;
@@ -192,11 +199,11 @@ nav ul li ul li a {
 .main-contain a{
 
     font-size:17px;
-    text-decoration:none;
     margin:5px;
     margin-top:15px;
     color:white;
     text-transform :uppercase;
+    z-index:1;
 }
 
 
@@ -504,7 +511,7 @@ nav ul li ul li a {
         <img class="nitk_logo" src="{% static 'media/nitk.png'%}" style="margin:5px;height:40px;"> <br><img class="jubliee_logo" src="{% static 'media/DJFinal.png'%}" style="margin:5px;height:40px;">
     </div>
     <div style="position: absolute;top:0px;right:0px;height:98.5vh;">
-         <img class="engi_logo" src="{% static 'media/Engi19.png'%}">
+        <img class="engi_logo" src="{% static 'media/Engi19.png'%}">
     </div>
 
 
@@ -514,6 +521,8 @@ nav ul li ul li a {
         <span>
 						<img src="{% static 'media/nav1.png'%}" class="img-fluid" alt="nav" >
 					</span>
+        <div class="menu">
+            <button onclick="<script>">Alert</button>
             <a href="aboutus">About Us</a>
             <!--            <a class='glowBtn hover' href="regstudent">Register</a><br>-->
             <!--<a href="{% url 'logout' %}">Logout</a>-->
@@ -522,7 +531,7 @@ nav ul li ul li a {
             <a href="event">Events</a>
             <a href="gallery">Gallery</a>
             <a href="contact">Contact Us</a>
-
+        </div>
 
 
     </div>
@@ -555,18 +564,18 @@ nav ul li ul li a {
 
     <div class="nav-menu" >
         <div class="menu-list">
-            <a class='glowBtn hover' href="ignite">Home</a><br>
-            <a class='glowBtn hover' href="aboutus">About Us</a><br>
-            <!--            <a class='glowBtn hover' href="regstudent">Register</a><br>-->
+            <a class='glowBtn hover' href="{% url 'index' %}">Home</a><br>
             {% if ob is not None %}
+            <a class='glowBtn hover' href="{% url 'profile' %}">Profile</a><br>
             <a class='glowBtn hover' href="{% url 'logout' %}">Logout</a><br>
             {% else %}
             <a class='glowBtn hover' href="{% url 'login' %}">Login</a><br>
-            <a class='glowBtn hover' href="teams">Teams</a><br>
-            <a class='glowBtn hover' href="event">Events</a><br>
-            <a class='glowBtn hover' href="gallery">Gallery</a><br>
-            <a class='glowBtn hover' href="contact">Contact Us</a><br>
             {% endif %}
+            <a class='glowBtn hover' href="{% url 'event' %}">Events</a><br>
+            <a class='glowBtn hover' href="{% url 'gallery' %}">Gallery</a><br>
+            <a class='glowBtn hover' href="{% url 'teams' %}">Teams</a><br>
+            <a class='glowBtn hover' href="{% url 'aboutus' %}">About Us</a><br>
+            <a class='glowBtn hover' href="{% url 'contact' %}">Contact Us</a><br>
         </div>
         <div id="burger-wrap">
             <a class="burger"><span></span></a>

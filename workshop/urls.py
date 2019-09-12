@@ -9,7 +9,7 @@ from.import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('regstudent', views.regstudent, name='regstudent'),
+    # path('regstudent', views.regstudent, name='regstudent'),
     path('login', views.login, name='login'),
     path('sign_in', views.sign_in, name='sign_in'),
     path('team_ignite', views.team_ignite, name='team_ignite'),
@@ -20,8 +20,9 @@ urlpatterns = [
     path('event/<slug:slug>', views.event_detail, name='event_data'),
     path('contact', views.contact, name='contact'),
     path('contact_reg', views.contact_reg, name='contact_reg'),
-    path('basic', views.basic, name='basic'),
+    # path('basic', views.basic, name='basic'),
     path('logout', views.logout, name='logout'),
+    path('profile', views.profile, name='profile'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
