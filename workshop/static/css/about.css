@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
 .title {
-  color: #ff9900;
+
+  color: #8b0c03;
   text-align: center;
   letter-spacing: 14px;
   text-transform: uppercase;
@@ -9,7 +10,7 @@
 }
 
 .sub {
-  color: #ff9900;
+  color: #8b0c03;
   text-align: center;
   letter-spacing: 5px;
   text-transform: uppercase;
@@ -18,7 +19,7 @@
 
 .box {
 	padding: 8px;
-	border: 2px solid #ff9900;
+	border: 2px solid #8b0c03;
 	background:black;
 
 }
