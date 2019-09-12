@@ -33,13 +33,17 @@
 <div class="nav-menu" style="position:fixed;top:0px;">
     <div class="menu-list">
         <a class='glowBtn hover' href="{% url 'index' %}">Home</a><br>
-        <a class='glowBtn hover' href="{% url 'aboutus' %}">About Us</a><br>
-<!--        <a class='glowBtn hover' href="{% url 'regstudent' %}">Register</a><br>-->
-        <a class='glowBtn hover' href="{% url 'login' %}">Login</a><br>
-        <a class='glowBtn hover' href="{% url 'teams' %}">Teams</a><br>
+        {% if ob is not None %}
+            <a class='glowBtn hover' href="{% url 'profile' %}">Profile</a><br>
+            <a class='glowBtn hover' href="{% url 'logout' %}">Logout</a><br>
+        {% else %}
+            <a class='glowBtn hover' href="{% url 'login' %}">Login</a><br>
+        {% endif %}
         <a class='glowBtn hover' href="{% url 'event' %}">Events</a><br>
         <a class='glowBtn hover' href="{% url 'gallery' %}">Gallery</a><br>
-        <a class='glowBtn hover' href="{% url 'contact' %}">Contact</a><br>
+        <a class='glowBtn hover' href="{% url 'teams' %}">Teams</a><br>
+        <a class='glowBtn hover' href="{% url 'aboutus' %}">About Us</a><br>
+        <a class='glowBtn hover' href="{% url 'contact' %}">Contact Us</a><br>
     </div>
     <div id="burger-wrap">
         <a class="burger"><span></span></a>

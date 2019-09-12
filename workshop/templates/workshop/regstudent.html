@@ -26,14 +26,11 @@
 
                     <label class="deta">Invitation file</label>
                     <input type="file" class="form-input" name="invitation_file" id="invitation" />
-
-
                     <input type="text" class="form-input" name="leader_name" minlength="3" maxlength="50" placeholder="Leader Name"/>
                     <label class="deta">College Id Of Leader</label>
                     <input type="file" class="form-input" name="college_id_of_leader" />
                     <input type="text" class="form-input" name="leader_mobile" minlength="10" maxlength="10" placeholder="Mobile"/>
-                    <input type="email" class="form-input" name="leader_mail_id" maxlength="50" placeholder="Leader Mail Id"/>
-
+                    <input type="email" class="form-input" name="leader_mail_id" maxlength="50" value="{{ email }}" readonly />
                     <div class="row">
                         <div class="col-sm-3">
                             <input type="text" class="form-input" name="member1_name" maxlength="50" placeholder="Member 1 Name"/>
