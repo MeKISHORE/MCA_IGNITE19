@@ -20,6 +20,10 @@
     <link rel="stylesheet" href="http://meyerweb.com/eric/tools/css/reset/reset.css">
 
     <style>
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
+
+
+
 
 /* ---------- FONTAWESOME ---------- */
 
@@ -153,13 +157,40 @@ nav ul li ul li a {
         height:50px;
 
 }
+.main,.links {
+
+      position:absolute;
+      top:0px;
+      width:100vw;
+
+}
+.links a{
+
+    font-size:20px;
+    text-decoration:none;
+    text-transform:uppercase;
+    margin:15px 5px 5px 5px;
+    color:white;
+    font-weight:bold;
+     font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
+.title {
+  color: #ff9900;
+  text-align: center;
+  letter-spacing: 14px;
+  text-transform: uppercase;
+  font-size: 35px;
+  margin: 40px 0px;
+}
 
 @media screen and (max-width: 769px) {
 
         .nav-menu{
             display:block;
         }
-        .main-contain{
+        .main{
             display:none;
         }
         .engi_logo{
@@ -168,45 +199,6 @@ nav ul li ul li a {
             margin-right:20px;
         }
 }
-
-
-
-<!--menu top-->
-.menu{
-   position:absolute;
-   top:0px;
-
-}
-.main-contain .dock {
-  position: fixed;
-  top: 0px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  left: 0;
-}
-
-.main-contain span {
-  position: fixed;
-  top:0px;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  display: block;
-  opacity: 0.2;
-}
-.main-contain a{
-
-    font-size:17px;
-    margin:5px;
-    margin-top:15px;
-    color:white;
-    text-transform :uppercase;
-    z-index:1;
-}
-
-
 
 
   </style>
@@ -514,27 +506,28 @@ nav ul li ul li a {
         <img class="engi_logo" src="{% static 'media/Engi19.png'%}">
     </div>
 
-
-    <div class="main-contain">
-
-        <!-- Nav Background -->
-        <span>
-						<img src="{% static 'media/nav1.png'%}" class="img-fluid" alt="nav" >
+    <div class="main" align="center" >
+                     <span>
+						<img src="{% static 'media/nav1.png'%}" class="img-fluid" alt="nav" style="opacity:0.3">
 					</span>
-        <div class="menu">
-            <button onclick="<script>">Alert</button>
-            <a href="aboutus">About Us</a>
-            <!--            <a class='glowBtn hover' href="regstudent">Register</a><br>-->
-            <!--<a href="{% url 'logout' %}">Logout</a>-->
-            <a href="{% url 'login' %}">Login</a>
-            <a href="teams">Teams</a>
-            <a href="event">Events</a>
-            <a href="gallery">Gallery</a>
-            <a href="contact">Contact Us</a>
+        <div class="links" align="center" >
+         <!--<a  href="{% url 'index' %}">Home</a>-->
+            {% if ob is not None %}
+            <a  href="{% url 'profile' %}">Profile</a>
+            <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+            <a  href="{% url 'login' %}">Login</a>
+            {% endif %}
+            <a href="{% url 'event' %}">Events</a>
+            <a  href="{% url 'gallery' %}">Gallery</a>
+            <a  href="{% url 'teams' %}">Teams</a>
+            <a href="{% url 'aboutus' %}">About Us</a>
+            <a href="{% url 'contact' %}">Contact Us</a>
         </div>
 
-
     </div>
+
+
 
 
 

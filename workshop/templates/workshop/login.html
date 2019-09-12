@@ -7,6 +7,11 @@
 <style>
 
 
+.clg_list{
+
+    width:100%;
+
+}
 @media screen and (max-width: 600px) {
 
   .clg_list,.form-input {
@@ -14,8 +19,6 @@
         font-size:13px;
 
   }
-
-
 
 
 }
@@ -33,9 +36,11 @@
                 <div align="center" class="col-sm-12">
                     <h1 class="title">Registration Form</h1>
                 </div>
-                <div class="col-sm-12 col-xs-12 col-md-12 box" >
+                <div class="col-md-3"></div>
+                <div align="center" class="col-sm-12 col-xs-12 col-md-6 box" >
+                    <img src="{% static 'media/login.gif'%}" style="width:150px;border-radius:50%;margin-bottom:30px;">
                     <form action="{% url 'sign_in' %}" method="POST">{% csrf_token %}
-                        <select name="cname" required>
+                        <select class="clg_list" name="cname" required>
                             <option value="">select</option>
                             {% for i in obj %}
                                 <option value="{{ i.collegename }}">{{ i.collegename }}</option>
