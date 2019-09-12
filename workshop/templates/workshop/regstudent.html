@@ -7,6 +7,22 @@
 <style>
 
 </style>
+<script language="JavaScript">
+    var formOK = false;
+
+    function validatePDF(objFileControl){
+     var file = objFileControl.value;
+     var len = file.length;
+     var ext = file.slice(len - 4, len);
+     if(ext.toUpperCase() == ".PDF"){
+       formOK = true;
+     }
+     else{
+       formOK = false;
+       alert("Only PDF files allowed.");
+     }
+    }
+</script>
 {% endblock%}
 
 {% block body%}
@@ -18,59 +34,36 @@
                 <h1 class="title">Registration Form</h1>
             </div>
             <div class="col-sm-12 col-xs-12 col-md-12 box" >
-                <form action="{% url 'team_ignite' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+                <form action="{% url 'team_ignite' %}" method="POST" onsubmit="return formOK;" enctype="multipart/form-data">{% csrf_token %}
 
                     <input type="text" class="form-input" name="college_name" maxlength="100" value="{{ obj.collegename }}" disabled/>
 
-                    <input type="text" class="form-input" name="invitation_code" value="{{ obj.collegecode }}" />
+                    <input type="text" class="form-input" name="invitation_code" value="{{ obj.collegecode }}" READONLY/>
 
                     <label class="deta">Invitation file</label>
-                    <input type="file" class="form-input" name="invitation_file" id="invitation" />
-                    <input type="text" class="form-input" name="leader_name" minlength="3" maxlength="50" placeholder="Leader Name"/>
+                    <input type="file" class="form-input" name="invitation_file" id="invitation" onchange="validatePDF(this)" required/>
+                    <input type="text" class="form-input" name="leader_name" minlength="3" maxlength="50" placeholder="Leader Name" required/>
                     <label class="deta">College Id Of Leader</label>
-                    <input type="file" class="form-input" name="college_id_of_leader" />
-                    <input type="text" class="form-input" name="leader_mobile" minlength="10" maxlength="10" placeholder="Mobile"/>
+                    <input type="file" class="form-input" name="college_id_of_leader" onchange="validatePDF(this)" required/>
+                    <input type="text" class="form-input" name="leader_mobile" minlength="10" maxlength="10" placeholder="Mobile" required/>
                     <input type="email" class="form-input" name="leader_mail_id" maxlength="50" value="{{ email }}" readonly />
                     <div class="row">
                         <div class="col-sm-3">
-                            <input type="text" class="form-input" name="member1_name" maxlength="50" placeholder="Member 1 Name"/>
+                            <input type="text" class="form-input" name="member1_name" maxlength="50" placeholder="Member 1 Name" required/>
                         </div>
                         <div class="col-sm-3">
 
-                            <input type="email" class="form-input" name="member1_e_mail" maxlength="50" placeholder="E mail"/>
-
-                        </div>
-                        <div class="col-sm-3">
-
-                            <input type="text" class="form-input" name="member1_mobile" minlength="10" maxlength="10" placeholder="Mobile"/>
+                            <input type="email" class="form-input" name="member1_e_mail" maxlength="50" placeholder="E mail" required/>
 
                         </div>
                         <div class="col-sm-3">
 
-                            <input type="file" class="form-input" name="member1_file" placeholder=""/>
-
-                        </div>
-
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3">
-
-                            <input type="text" class="form-input" name="member2_name" maxlength="50" placeholder="Member 2 Name"/>
+                            <input type="text" class="form-input" name="member1_mobile" minlength="10" maxlength="10" placeholder="Mobile" required/>
 
                         </div>
                         <div class="col-sm-3">
 
-                            <input type="email" class="form-input" name="member2_e_mail" maxlength="50" placeholder="E mail"/>
-
-                        </div>
-                        <div class="col-sm-3">
-
-                            <input type="text" class="form-input" name="member2_mobile" minlength="10" maxlength="10" placeholder="Mobile"/>
-
-                        </div>
-                        <div class="col-sm-3">
-
-                            <input type="file" class="form-input" name="member2_file" placeholder=""/>
+                            <input type="file" class="form-input" name="member1_file" placeholder="" onchange="validatePDF(this)" required/>
 
                         </div>
 
@@ -78,40 +71,63 @@
                     <div class="row">
                         <div class="col-sm-3">
 
-                            <input type="text" class="form-input" name="member3_name" maxlength="50" placeholder="Member 3 Name"/>
+                            <input type="text" class="form-input" name="member2_name" maxlength="50" placeholder="Member 2 Name" required/>
 
                         </div>
                         <div class="col-sm-3">
 
-                            <input type="email" class="form-input" name="member3_e_mail" maxlength="50" placeholder="E mail"/>
+                            <input type="email" class="form-input" name="member2_e_mail" maxlength="50" placeholder="E mail" required/>
 
                         </div>
                         <div class="col-sm-3">
-                            <input type="text" class="form-input" name="member3_mobile" minlength="10" maxlength="10" placeholder="Mobile"/>
+
+                            <input type="text" class="form-input" name="member2_mobile" minlength="10" maxlength="10" placeholder="Mobile" required/>
+
                         </div>
                         <div class="col-sm-3">
-                            <input type="file" class="form-input" name="member3_file" placeholder=""/>
+
+                            <input type="file" class="form-input" name="member2_file" placeholder="" onchange="validatePDF(this)" required/>
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+
+                            <input type="text" class="form-input" name="member3_name" maxlength="50" placeholder="Member 3 Name" required/>
+
+                        </div>
+                        <div class="col-sm-3">
+
+                            <input type="email" class="form-input" name="member3_e_mail" maxlength="50" placeholder="E mail" required/>
+
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-input" name="member3_mobile" minlength="10" maxlength="10" placeholder="Mobile" required/>
+                        </div>
+                        <div class="col-sm-3">
+                            <input type="file" class="form-input" name="member3_file" placeholder="" onchange="validatePDF(this)" required/>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-3">
 
-                            <input type="text" class="form-input" name="member4_name" maxlength="50" placeholder="Member 4 Name"/>
+                            <input type="text" class="form-input" name="member4_name" maxlength="50" placeholder="Member 4 Name" required/>
 
                         </div>
                         <div class="col-sm-3">
 
-                            <input type="email" class="form-input" name="member4_e_mail" maxlength="50" placeholder="E mail"/>
+                            <input type="email" class="form-input" name="member4_e_mail" maxlength="50" placeholder="E mail" required/>
 
                         </div>
                         <div class="col-sm-3">
 
-                            <input type="text" class="form-input" name="member4_mobile" minlength="10" maxlength="10" placeholder="Mobile"/>
+                            <input type="text" class="form-input" name="member4_mobile" minlength="10" maxlength="10" placeholder="Mobile" required/>
 
                         </div>
                         <div class="col-sm-3">
 
-                            <input type="file" class="form-input" name="member4_file" id="" placeholder=""/>
+                            <input type="file" class="form-input" name="member4_file" id="" placeholder="" onchange="validatePDF(this)" required/>
                         </div>
                     </div>
                     <input type="submit" name="submit" id="submit" class="btn btn-default submit" value="Register"/>
