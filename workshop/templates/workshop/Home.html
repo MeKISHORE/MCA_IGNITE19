@@ -141,8 +141,31 @@ nav ul li ul li a {
 .linkedin:hover { color: #4875B4; }
 .github:hover { color: #000; }
 
+.nav-menu{
+            display:none;
+        }
+.engi_logo{
 
 
+        margin:5px;
+        height:50px;
+
+}
+
+@media screen and (max-width: 769px) {
+
+        .nav-menu{
+            display:block;
+        }
+        .main-contain{
+            display:none;
+        }
+        .engi_logo{
+
+            margin-top:55px;
+            margin-right:20px;
+        }
+}
 
 
 
@@ -175,6 +198,9 @@ nav ul li ul li a {
     color:white;
     text-transform :uppercase;
 }
+
+
+
 
   </style>
 
@@ -467,7 +493,7 @@ nav ul li ul li a {
         <div class="bg"><div class="flare"><div class="grid">
             <div class="container">
 
-                <div onclick='setTimeout("showIt2()", 6000);'  class="start">IGNITE'19</div>
+                <div onclick='setTimeout("showIt2()", 6000);'  class="start"><img class="ignite_center" src="{% static 'media/ignitelogo.png'%}" style="margin:5px;width:100%;margin-top:27%"></div>
                 <div class="shape-contain"><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
 
             </div>
@@ -475,9 +501,11 @@ nav ul li ul li a {
         </div>
     </div>
     <div class="logo" style="position: absolute;top:0px;padding:5px">
-        <img class="nitk_logo" src="{% static 'media/nitk.png'%}" style="margin:5px;height:60px;"><img class="engi_logo" src="{% static 'media/engi.png'%}"  style="margin:5px;height:60px;">
+        <img class="nitk_logo" src="{% static 'media/nitk.png'%}" style="margin:5px;height:40px;"> <br><img class="jubliee_logo" src="{% static 'media/DJFinal.png'%}" style="margin:5px;height:40px;">
     </div>
-
+    <div style="position: absolute;top:0px;right:0px;height:98.5vh;">
+         <img class="engi_logo" src="{% static 'media/Engi19.png'%}">
+    </div>
 
 
     <div class="main-contain">
@@ -499,9 +527,7 @@ nav ul li ul li a {
 
     </div>
 
-    <!-- <div style="position: absolute;top:0px;right:0px;height:98.5vh;">
-        <img src="./image/ignite.png" style="margin:5px;width:120px;">
-    </div> -->
+
 
     <nav>
 
@@ -527,7 +553,7 @@ nav ul li ul li a {
     <!-- Menu -->
 
 
-    <div class="nav-menu" style="display:none">
+    <div class="nav-menu" >
         <div class="menu-list">
             <a class='glowBtn hover' href="ignite">Home</a><br>
             <a class='glowBtn hover' href="aboutus">About Us</a><br>
