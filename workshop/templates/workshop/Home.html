@@ -44,17 +44,23 @@ a { text-decoration: none; }
 
 /* ---------- NAVIGATION ---------- */
 
+
+
 nav {
-    position: absolute;
-    bottom: 5%;
-	margin: 50px auto;
+   position:absolute;
+   bottom:20px;
+	margin: 10px auto;
 	width: 218px;
-    left: 50%;
+	display: inline-block;
+	margin-left:-100px;
+	transform:scale(1.3);
+
 }
 
 nav ul li {
 	margin-bottom: 50px;
 	position: relative;
+
 }
 
 nav > ul > li > a {
@@ -89,7 +95,7 @@ nav ul li ul {
 	left: 52px;
 	padding: 0 8px;
 	position: absolute;
-	top: 0;
+	bottom: 0;
 }
 
 nav ul li ul:before {
@@ -106,7 +112,7 @@ nav ul li ul:before {
 	height: 8px;
 	left: -4px;
 	position: absolute;
-	top: 16px;
+	bottom: 16px;
 	transform: rotate(45deg);
 	-o-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
@@ -133,7 +139,45 @@ nav ul li ul li a {
 .twitter:hover { color: #00aced; }
 .google-plus:hover { color: #C63D2D; }
 .linkedin:hover { color: #4875B4; }
-.github:hover { color: #000; }</style>
+.github:hover { color: #000; }
+
+
+
+
+
+
+<!--menu top-->
+.main-contain .dock {
+  position: fixed;
+  top: 0px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  left: 0;
+}
+
+.main-contain span {
+  position: fixed;
+  top:0px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: block;
+  opacity: 0.2;
+}
+.main-contain a{
+
+    font-size:17px;
+    text-decoration:none;
+    margin:5px;
+    margin-top:15px;
+    color:white;
+    text-transform :uppercase;
+}
+
+  </style>
+
 
 
 
@@ -433,47 +477,69 @@ nav ul li ul li a {
     <div class="logo" style="position: absolute;top:0px;padding:5px">
         <img class="nitk_logo" src="{% static 'media/nitk.png'%}" style="margin:5px;height:60px;"><img class="engi_logo" src="{% static 'media/engi.png'%}"  style="margin:5px;height:60px;">
     </div>
+
+
+
+    <div class="main-contain">
+
+        <!-- Nav Background -->
+        <span>
+						<img src="{% static 'media/nav1.png'%}" class="img-fluid" alt="nav" >
+					</span>
+            <a href="aboutus">About Us</a>
+            <!--            <a class='glowBtn hover' href="regstudent">Register</a><br>-->
+            <!--<a href="{% url 'logout' %}">Logout</a>-->
+            <a href="{% url 'login' %}">Login</a>
+            <a href="teams">Teams</a>
+            <a href="event">Events</a>
+            <a href="gallery">Gallery</a>
+            <a href="contact">Contact Us</a>
+
+
+
+    </div>
+
     <!-- <div style="position: absolute;top:0px;right:0px;height:98.5vh;">
         <img src="./image/ignite.png" style="margin:5px;width:120px;">
     </div> -->
 
-<nav>
+    <nav>
 
-		<ul class="clearfix">
+        <ul class="clearfix">
 
-			<li><a href="#"><span class="fontawesome-user"></span></a>
+            <li><a href="#"><span class="fontawesome-user"></span></a>
 
-				<ul>
+                <ul>
 
-					<li><a href="#" class="facebook"><span class="fontawesome-facebook"></span></a></li>
-					<li><a href="#" class="twitter"><span class="fontawesome-twitter"></span></a></li>
-					<li><a href="#" class="google-plus"><span class="fontawesome-google-plus"></span></a></li>
-					<li><a href="#" class="linkedin"><span class="fontawesome-linkedin"></span></a></li>
-					<li><a href="#" class="github"><span class="fontawesome-github"></span></a></li>
+                    <li><a href="#" class="facebook"><span class="fontawesome-facebook"></span></a></li>
+                    <li><a href="#" class="twitter"><span class="fontawesome-twitter"></span></a></li>
+                    <li><a href="#" class="google-plus"><span class="fontawesome-google-plus"></span></a></li>
+                    <li><a href="#" class="linkedin"><span class="fontawesome-linkedin"></span></a></li>
+                    <li><a href="#" class="github"><span class="fontawesome-github"></span></a></li>
 
-				</ul>
+                </ul>
 
-			</li>
+            </li>
 
-		</ul>
+        </ul>
 
-	</nav>
+    </nav>
     <!-- Menu -->
 
 
-    <div class="nav-menu" style="position:fixed;top:0px;">
+    <div class="nav-menu" style="display:none">
         <div class="menu-list">
             <a class='glowBtn hover' href="ignite">Home</a><br>
             <a class='glowBtn hover' href="aboutus">About Us</a><br>
-<!--            <a class='glowBtn hover' href="regstudent">Register</a><br>-->
+            <!--            <a class='glowBtn hover' href="regstudent">Register</a><br>-->
             {% if ob is not None %}
-                <a class='glowBtn hover' href="{% url 'logout' %}">Logout</a><br>
+            <a class='glowBtn hover' href="{% url 'logout' %}">Logout</a><br>
             {% else %}
-                <a class='glowBtn hover' href="{% url 'login' %}">Login</a><br>
-                <a class='glowBtn hover' href="teams">Teams</a><br>
-                <a class='glowBtn hover' href="event">Events</a><br>
-                <a class='glowBtn hover' href="gallery">Gallery</a><br>
-                <a class='glowBtn hover' href="contact">Contact Us</a><br>
+            <a class='glowBtn hover' href="{% url 'login' %}">Login</a><br>
+            <a class='glowBtn hover' href="teams">Teams</a><br>
+            <a class='glowBtn hover' href="event">Events</a><br>
+            <a class='glowBtn hover' href="gallery">Gallery</a><br>
+            <a class='glowBtn hover' href="contact">Contact Us</a><br>
             {% endif %}
         </div>
         <div id="burger-wrap">
