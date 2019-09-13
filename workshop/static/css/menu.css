@@ -43,7 +43,7 @@ a:link{
   right: 0;
 }
 .menu-list {
-  margin-top: 100px;
+  margin-top: 70px;
   text-align: center;
   font-family: 'Open Sans', Helvetica;
   font-size: 30px;
@@ -88,7 +88,7 @@ li .social-icons:hover {
 }
 .burger {
   position: fixed;
-  top: 9px;
+  top: 0px;
   right: 15px;
   overflow: hidden;
   cursor: pointer;

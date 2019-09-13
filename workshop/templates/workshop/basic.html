@@ -16,6 +16,63 @@
     <title>{% block title %}{% endblock %}</title>
     {% block style %}{% endblock %}
 </head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
+
+.main,.links {
+
+      position:absolute;
+      top:0px;
+      width:100vw;
+
+}
+.links a{
+
+    font-size:20px;
+    text-decoration:none;
+    text-transform:uppercase;
+    margin:15px 10px 5px 10px;
+    color:white;
+
+     font-family: 'Open Sans Condensed', sans-serif;
+     transition: 1s transform;
+
+}
+.links a:hover{
+
+    transform:scale(1.25)
+}
+.topmenu{
+            display:none;
+        }
+@media screen and (max-width: 769px) {
+
+        .nav-menu{
+            display:block;
+        }
+        .main{
+            display:none;
+        }
+        .engi_logo{
+
+            margin-top:55px;
+            margin-right:20px;
+        }
+        .topmenu{
+            display:block;
+        }
+}
+@media screen and (min-width: 769px) {
+
+        nav {
+            bottom: -42px;
+        }
+        .nav-menu{
+            display:none;
+        }
+}
+
+</style>
 <body>
 <!--PRELOADER-->
 
@@ -29,25 +86,57 @@
 <canvas id="c" style="position:fixed;top:0px;"></canvas>
 
 {% block body %}{% endblock %}
+<nav class="navbar navbar-inverse topmenu" style="position:fixed;top:0px;background:#000;width:100%;opacity:0.8;">
+     <img src="{% static 'media/nitk.png' %}" style="height:30px;width:auto;margin:15px 0px 0px 1px;">
+        <!--<ul class="nav navbar-nav" style="height:45px;">-->
+
+        <!--</ul>-->
+
+    </nav>
+
+ <div class="main" align="center" >
+                     <span>
+						<img src="{% static 'media/nav1.png'%}" class="img-fluid" alt="nav" style="opacity:0.3;width:800px;height:100px;">
+					</span>
+        <div class="links" align="center" >
+         <a  href="{% url 'index' %}">Home</a>
+            {% if ob is not None %}
+            <a  href="{% url 'profile' %}">Profile</a>
+            <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+            <a  href="{% url 'login' %}">Login</a>
+            {% endif %}
+            <a href="{% url 'event' %}">Events</a>
+            <a  href="{% url 'gallery' %}">Gallery</a>
+            <a  href="{% url 'teams' %}">Teams</a>
+            <a href="{% url 'aboutus' %}">About Us</a>
+            <a href="{% url 'contact' %}">Contact Us</a>
+        </div>
+
+    </div>
 
 <div class="nav-menu" style="position:fixed;top:0px;">
     <div class="menu-list">
         <a class='glowBtn hover' href="{% url 'index' %}">Home</a><br>
         {% if ob is not None %}
-            <a class='glowBtn hover' href="{% url 'profile' %}">Profile</a><br>
-            <a class='glowBtn hover' href="{% url 'logout' %}">Logout</a><br>
+        <a class='glowBtn hover' href="{% url 'profile' %}">Profile</a><br>
+        <a class='glowBtn hover' href="{% url 'logout' %}">Logout</a><br>
         {% else %}
-            <a class='glowBtn hover' href="{% url 'login' %}">Login</a><br>
+        <a class='glowBtn hover' href="{% url 'login' %}">Login</a><br>
         {% endif %}
         <a class='glowBtn hover' href="{% url 'event' %}">Events</a><br>
         <a class='glowBtn hover' href="{% url 'gallery' %}">Gallery</a><br>
         <a class='glowBtn hover' href="{% url 'teams' %}">Teams</a><br>
         <a class='glowBtn hover' href="{% url 'aboutus' %}">About Us</a><br>
         <a class='glowBtn hover' href="{% url 'contact' %}">Contact Us</a><br>
+        <img src="{% static 'media/Engi19.png' %}" style="height:50px"> <img src="{% static 'media/DJFinal.png' %}" style="height:40px;">
+        <p style="font-size:15px;color:white;">Nit Surathkal Developer's</p>
     </div>
+
     <div id="burger-wrap">
         <a class="burger"><span></span></a>
     </div>
+
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
