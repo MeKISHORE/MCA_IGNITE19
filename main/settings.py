@@ -25,7 +25,7 @@ SECRET_KEY = '8)9*(sg67k=3b5$584(^98vj#!d$7li*$-fuoxaq-z@0k328s4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -87,8 +87,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ignite_db',
-        'USER': 'root',
-        'PASSWORD': 'deepak17',
+        'USER': 'ignite2019',
+        'PASSWORD': 'Ignite@2019',
         'HOST': '127.0.0.1',   # Or an IP Address that your DB is hosted on
          'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",},
         'PORT': '3306',
@@ -134,6 +134,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
