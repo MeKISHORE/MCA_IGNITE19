@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.db.models import Q
 from django.contrib.auth.models import auth
 
-from .models import studentregistration, collegeverification, contact_us, events,event_details
+from .models import studentregistration, collegeverification, contact_us, events, event_details
 
 
 def index(request):
