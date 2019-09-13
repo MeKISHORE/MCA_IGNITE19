@@ -11,12 +11,13 @@
 
 <div style="position:absolute;top:0px;width:100vw;height:100vh;padding:10px;">
     <div class="container">
+
         <div class="row">
             <div align="center" class="col-sm-12">
-                <h1 class="title">Contact Us</h1>
+                <h1 class="title" style="margin-top:60px;">Contact Us</h1>
             </div>
         </div>
-        <div class="row box">
+        <div class="row box" style="box-shadow: 0px 0px 30px 3px #5cdaed;">
             <div class="col-sm-6">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15549.558728495796!2d74.7943104!3d13.0108387!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6b1144ac2d5dadf3!2sNational+Institute+of+Technology+Karnataka!5e0!3m2!1sen!2sin!4v1565087861091!5m2!1sen!2sin"  frameborder="10" style="border:10" allowfullscreen></iframe>
 
@@ -36,7 +37,16 @@
                     <input type="text" name="subject" class="form-control input_box" placeholder="Subject" required>
                     <input type="text" name="college_name" class="form-control input_box" placeholder="Your College Name" required>
                     <textarea name="message" class="form-control input_box" placeholder="Message" required></textarea>
+                    {% if success is not None %}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert" style="width:200px;">
+                            <strong></strong> {{ success }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+        {% endif %}
                     <button type="submit" class="btn send">Send Message</button>
+
                 </form>
             </div>
         </div>
