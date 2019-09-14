@@ -13,11 +13,16 @@
     <link rel="stylesheet" type="text/css" href="{% static './css/preloader.css'%}" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/animate.css'%}">
+    <script src="{% static 'js/wow.min.js' %}"></script>
 
     <title>{% block title %}{% endblock %}</title>
     {% block style %}{% endblock %}
 </head>
 <style>
+.wow{
+
+    visibility:hidden;
+}
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
 
 .main,.links {
@@ -156,7 +161,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
 <script  src="{% static './js/menu.js' %}"></script>
-<script src="{% static 'js/wow.min.js' %}"></script>
+
               <script>
               new WOW().init();
               </script>
