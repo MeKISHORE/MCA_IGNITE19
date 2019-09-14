@@ -5,7 +5,34 @@
 {% block style %}
 
 <link rel="stylesheet" href='{% static "./css/event.css" %}'>
+<style>
+    .card {
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  height: 180px;
+  margin: 1rem;
+  position: relative;
+  width: 180px;
+}
 
+.card-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card-1:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+@media only screen and (max-width: 600px) {
+  .tabcontent {
+
+	    height:1400px;
+
+    }
+}
+
+</style>
 {% endblock %}
 {% block body%}
 
@@ -22,10 +49,11 @@
             <div class="tabcontent tab-active">
                             {% for i in tech %}
                                 <a href="{% url 'event_data' i.short_url %}">
-                                <p class="events">{{ i.event_name }}</p>
-                                <img class="event_img" src="{{ i.event_image.url }}" alt="img" style="width:100px;height:auto">
-
-                                </a>
+                                    <div class="card card-1" style="background:url('{{ i.event_image.url }}');background-size:cover;border:1px solid white;">
+                                         <p class="events" style="color:white;font-size:100%;margin-top:30%;">{{ i.event_name }}</p>
+                                    </div>
+                                     <!--<img class="event_img" src="{{ i.event_image.url }}" alt="img" style="width:100px;height:auto">-->
+                                 </a>
                             {% endfor %}
 
             </div>
@@ -36,12 +64,14 @@
                             {% for i in non_tech %}
 
                                  <a href="{% url 'event_data' i.short_url %}">
-                                <p class="events">{{ i.event_name }}</p>
-                                     <img class="event_img" src="{{ i.event_image.url }}" alt="img" style="width:100px;height:auto">
+
+                                    <div class="card card-1" style="background:url('{{ i.event_image.url }}');background-size:cover;border:1px solid white;">
+                                         <p class="events" style="color:white;font-size:100%;margin-top:30%;">{{ i.event_name }}</p>
+                                    </div>
+                                     <!--<img class="event_img" src="{{ i.event_image.url }}" alt="img" style="width:100px;height:auto">-->
                                  </a>
 
                             {% endfor %}
-
 
             </div>
 
