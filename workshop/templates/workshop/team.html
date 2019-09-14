@@ -1,6 +1,6 @@
 {% extends 'workshop/basic.html'%}
 
-{% block title %}About Us{% endblock %}
+{% block title %}TEAMS{% endblock %}
 {% load static %}
 {% block style %}
     <!--<link rel="stylesheet" href="{% static 'css/stylestar.css' %}">-->
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="row box wow zoomIn" style="box-shadow: 0px 0px 10px 3px #f20e0e;">
-                <div align="center" class="col-sm-12" style="height: 500px;color:white;">
+                <div align="center" class="col-sm-12" style="height: auto;color:white;">
 
                      {% for i in tm %}
                                 <a href="{% url 'team_image' i.short_url %}">
