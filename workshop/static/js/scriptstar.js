@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 
-        console.clear();
+        // console.clear();
             class Star {
           constructor() {
             this.position = {
