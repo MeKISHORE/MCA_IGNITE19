@@ -74,3 +74,22 @@ class event_details(models.Model):
             return self.event_name.event_name
 
 
+class teams(models.Model):
+    team_name = models.CharField(max_length=100)
+    short_url = models.CharField(max_length=100, unique=True)
+    active = models.BooleanField(default=True)
+    event_image = models.FileField(upload_to='teams/thumbnail/', default='', blank=True)
+
+    def __str__(self):
+        return self.team_name
+
+
+class team_images(models.Model):
+        team_name = models.ForeignKey(teams, on_delete=models.CASCADE)
+        image = models.FileField(upload_to='teams/images/', default='', blank=True)
+
+        def __str__(self):
+            return self.team_name.team_name
+
+
+

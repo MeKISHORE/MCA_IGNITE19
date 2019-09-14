@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.db.models import Q
 from django.contrib.auth.models import auth
 
-from .models import studentregistration, collegeverification, contact_us, events, event_details
+from .models import studentregistration, collegeverification, contact_us, events, event_details,teams,team_images
 
 
 def index(request):
@@ -20,6 +20,7 @@ def profile(request):
 
 
 def login(request):
+    array=collegeverification.objects.values_list('collegename')
     if request.session.get('session_name') is not None:
         print("session")
         sobj = studentregistration.objects.filter(college_code=request.session.get('session_name')).first()
@@ -28,8 +29,8 @@ def login(request):
         return render(request, 'workshop/registered.html', {'sobj': sobj, 'obj': obj, 'ob': ob})
     else:
         obj = collegeverification.objects.all()
-        print("ref")
-        return render(request, 'workshop/login.html', {'obj': obj})
+        print(array)
+        return render(request, 'workshop/login.html', {'obj': obj,'array':array})
 
 
 def sign_in(request):
@@ -158,13 +159,14 @@ def team_ignite(request):
         return redirect('regstudent')
 
 
-def teams(request):
+def team(request):
+    tm = teams.objects.all
     if request.session.get('session_name') is not None:
         sobj = studentregistration.objects.filter(college_code=request.session.get('session_name')).first()
         obj = collegeverification.objects.filter(collegecode=request.session.get('session_name')).first()
         ob = request.session.get('session_name')
-        return render(request, 'workshop/teams.html', {'sobj': sobj, 'obj': obj, 'ob': ob})
-    return render(request, 'workshop/teams.html')
+        return render(request, 'workshop/team.html', {'sobj': sobj, 'obj': obj, 'ob': ob,'tm':tm})
+    return render(request, 'workshop/team.html',{'tm':tm})
 
 
 def aboutus(request):
@@ -242,6 +244,11 @@ def event_detail(request, slug):
     event = events.objects.get(short_url=slug)
     event_detail=event_details.objects.get(event_name_id=event.id)
     return render(request, 'workshop/event_detail.html',{'event': event, 'event_detail': event_detail })
+
+def team_image(request, slug):
+    team = teams.objects.get(short_url=slug)
+    team_image = team_images.objects.filter(team_name_id=team.id)
+    return render(request, 'workshop/team_image.html',{'team': team, 'team_image': team_image })
 
 
 
