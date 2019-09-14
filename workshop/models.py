@@ -86,6 +86,7 @@ class teams(models.Model):
 
 class team_images(models.Model):
         team_name = models.ForeignKey(teams, on_delete=models.CASCADE)
+        person_name=models.CharField(max_length=100)
         image = models.FileField(upload_to='teams/images/', default='', blank=True)
 
         def __str__(self):
