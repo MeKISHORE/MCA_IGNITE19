@@ -20,6 +20,7 @@ def profile(request):
 
 
 def login(request):
+    array_obj=collegeverification.objects.values_list('collegename')
     if request.session.get('session_name') is not None:
         print("session")
         sobj = studentregistration.objects.filter(college_code=request.session.get('session_name')).first()
@@ -29,7 +30,7 @@ def login(request):
     else:
         obj = collegeverification.objects.all()
         print("ref")
-        return render(request, 'workshop/login.html', {'obj': obj})
+        return render(request, 'workshop/login.html', {'obj': obj,'array_obj':array_obj })
 
 
 def sign_in(request):
@@ -146,7 +147,14 @@ def team_ignite(request):
                 )
 
                 stu_obj.save()
-                return redirect('login')
+                cname = request.POST['college_name']
+                college_code = request.POST['invitation_code']
+                obj = collegeverification.objects.filter(Q(collegecode=college_code) & Q(collegename=cname)).first()
+                sobj = studentregistration.objects.filter(college_code=obj).first()
+                request.session['session_name'] = obj.collegecode
+                ob = request.session.get('session_name')
+                print("err")
+                return render(request, 'workshop/registered.html', {'sobj': sobj, 'obj': obj, 'ob': ob})
             else:
                 print('else')
                 return HttpResponse('you are already registered')
@@ -226,12 +234,15 @@ def contact_reg(request):
                 message=message
             )
             obj.save()
-            return HttpResponse("successfully sent message")
+            # return HttpResponse("successfully sent message")
+            redirect('contact')
         else:
             pass
-        return HttpResponse("not message")
+        # return HttpResponse("not message")
+        return render(request, 'workshop/contactus.html', { 'success': 'Messege sent'})
     except:
-        return HttpResponse("not message")
+        # return HttpResponse("not message")
+        redirect('contact')
 
 
 def logout(request):

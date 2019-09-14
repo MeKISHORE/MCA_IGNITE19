@@ -88,16 +88,16 @@ function validateForm()
 
 {% block body%}
 
-<div style="position:absolute;top:0px;width:100vw;height:100vh;padding:10px;">
-    <div class="container">
+<div style="position:absolute;top:0px;width:100vw;height:auto;padding:10px;">
+    <div class="container" style="margin-bottom:40px;">
         <div class="row">
             <div align="center" class="col-sm-12">
                 <h1 class="title">Registration Form</h1>
             </div>
-            <div class="col-sm-12 col-xs-12 col-md-12 box" >
+            <div align="center" class="col-sm-12 col-xs-12 col-md-12 box" >
                 <form action="{% url 'team_ignite' %}" name="vform" method="POST" onsubmit="return validateForm()" enctype="multipart/form-data">{% csrf_token %}
                     <table style="width:100%">
-                        <tr><td colspan="2"><input type="text" class="form-input" name="college_name" maxlength="100" value="{{ obj.collegename }}" disabled/></td></tr>
+                        <tr><td colspan="2"><input type="text" class="form-input" name="college_name" maxlength="100" value="{{ obj.collegename }}" readonly/></td></tr>
                         <tr><td colspan="2"><input type="text" class="form-input" name="invitation_code" value="{{ obj.collegecode }}" READONLY/></td></tr>
                         <tr><td class="deta" style="width:120px;font-size:18px;">Invitation file</td><td> <input type="file" class="form-input" name="invitation_file" id="invitation" onchange="validatePDF(this,this.id)" required /></td></tr>
                         <tr><td colspan="2">  <input type="text" class="form-input placeholder-fix" name="leader_name" minlength="3" maxlength="50" placeholder="Leader Name" required/></td></tr>

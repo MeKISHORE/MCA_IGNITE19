@@ -10,13 +10,13 @@
 {% block body%}
 
 <div style="position:absolute;top:0px;width:100vw;height:100vh;padding:8px;">
-    <h1 class="title">{{ event.event_name }}</h1>
+    <h1 class="title" style="margin: 57px 0px -20px 0px;font-size: 24px;letter-spacing: 8px;">{{ event.event_name }}</h1>
     <div class="codepen-container">
         <div id="icetab-container">
             <div class="icetab current-tab">About</div>
             <div class="icetab">Rules</div>
         </div>
-        <div id="icetab-content">
+        <div  id="icetab-content" style="box-shadow: 0px 20px 30px 3px #5cdaed;">
 
             <div class="tabcontent tab-active">
                                 <p class="events">{{ event_detail.description }}</p>

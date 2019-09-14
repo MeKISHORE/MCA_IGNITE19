@@ -537,6 +537,11 @@ nav ul li ul li a {
 						<img src="{% static 'media/nav1.png'%}" class="img-fluid" alt="nav" style="opacity:0.3">
 					</span>
         <div class="links" align="center" >
+             <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'aboutus' %}">About Us</a>
+             <a href="{% url 'event' %}">Events</a>
+            <a  href="{% url 'teams' %}">Teams</a>
+             <a  href="{% url 'gallery' %}">Gallery</a>
          <!--<a  href="{% url 'index' %}">Home</a>-->
             {% if ob is not None %}
             <a  href="{% url 'profile' %}">Profile</a>
@@ -544,10 +549,6 @@ nav ul li ul li a {
             {% else %}
             <a  href="{% url 'login' %}">Login</a>
             {% endif %}
-            <a href="{% url 'event' %}">Events</a>
-            <a  href="{% url 'gallery' %}">Gallery</a>
-            <a  href="{% url 'teams' %}">Teams</a>
-            <a href="{% url 'aboutus' %}">About Us</a>
             <a href="{% url 'contact' %}">Contact Us</a>
         </div>
 
@@ -584,16 +585,16 @@ nav ul li ul li a {
     <div class="nav-menu" >
         <div class="menu-list">
             <a class='glowBtn hover' href="{% url 'index' %}">Home</a><br>
+            <a class='glowBtn hover' href="{% url 'aboutus' %}">About Us</a><br>
+            <a class='glowBtn hover' href="{% url 'event' %}">Events</a><br>
+            <a class='glowBtn hover' href="{% url 'teams' %}">Teams</a><br>
+             <a class='glowBtn hover' href="{% url 'gallery' %}">Gallery</a><br>
             {% if ob is not None %}
             <a class='glowBtn hover' href="{% url 'profile' %}">Profile</a><br>
             <a class='glowBtn hover' href="{% url 'logout' %}">Logout</a><br>
             {% else %}
             <a class='glowBtn hover' href="{% url 'login' %}">Login</a><br>
             {% endif %}
-            <a class='glowBtn hover' href="{% url 'event' %}">Events</a><br>
-            <a class='glowBtn hover' href="{% url 'gallery' %}">Gallery</a><br>
-            <a class='glowBtn hover' href="{% url 'teams' %}">Teams</a><br>
-            <a class='glowBtn hover' href="{% url 'aboutus' %}">About Us</a><br>
             <a class='glowBtn hover' href="{% url 'contact' %}">Contact Us</a><br>
             <img src="{% static 'media/Engi19.png' %}" style="height:60px"> <img src="{% static 'media/DJFinal.png' %}" style="height:50px;margin-top:-5px;">
         <p style="font-size:15px;color:white;">Nit Surathkal Developer's</p>
