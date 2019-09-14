@@ -91,8 +91,8 @@ input[type=text] {
                 <div align="center" class="col-sm-12">
                     <h1 class="title " style="margin-top:60px;">Login</h1>
                 </div>
-                <div class="col-md-3"></div>
-                <div align="center" class="col-sm-12 col-xs-12 col-md-6 box" >
+                <div class="col-md-3 "></div>
+                <div align="center" class="col-sm-12 col-xs-12 col-md-6 box wow zoomIn" >
                     <img src="{% static 'media/login.gif'%}" style="width:150px;border-radius:50%;margin-bottom:20px;">
                     <form action="{% url 'sign_in' %}" method="POST">{% csrf_token %}
 

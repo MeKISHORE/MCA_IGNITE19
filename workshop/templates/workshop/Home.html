@@ -56,7 +56,7 @@ nav {
 	margin: 10px auto;
 	width: 218px;
 	display: inline-block;
-	margin-left:-100px;
+	    margin-left: -51px;
 	transform:scale(1.3);
 
 }
@@ -203,6 +203,10 @@ nav ul li ul li a {
 
     position:absolute;top:0px;left;0px;
 }
+.ignite{
+     position:absolute;top:0px;right;0px;width:100vw;display:none;
+
+}
 @media screen and (max-width: 769px) {
 
         .nav-menu{
@@ -214,6 +218,9 @@ nav ul li ul li a {
         .engi{
             bottom:0px;
             right:30vw;
+        }
+        .ignite{
+            display:none;
         }
         .djfinal{
 
@@ -255,6 +262,7 @@ nav ul li ul li a {
      <div class="djfinal" style=""><img  src="{% static 'media/DJFinal.png'%}" style="margin:5px;height:50px;"></div>
             <div class="engi" align="right" style=""><img src="{% static 'media/Engi19.png' %}" style="margin:5px;height:60px;"></div>
             <div class="nitk" style=""><img src="{% static 'media/nitk.png'%}" style="margin:5px;height:40px;"></div>
+            <div class="ignite" id="ignite" align="right" style=""><img src="{% static 'media/ignitelogo.png'%}" style="margin:5px;height:50px;"></div>
     <div id="div2" class="div2"  style="position:absolute;top:0px;opacity: 0">
         <svg id="circles" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 900 900" width="100vw">
             <g id="group-4">
@@ -530,7 +538,7 @@ nav ul li ul li a {
         <div class="bg"><div class="flare"><div class="grid">
             <div class="container">
 
-                <div onclick='setTimeout("showIt2()", 6000);'  class="start"><img class="ignite_center" src="{% static 'media/ignitelogo.png'%}" style="margin:5px;width:100%;margin-top:27%"></div>
+                <div onclick='setTimeout("showIt2()", 6000) & showignite();'  class="start"><img class="ignite_center" src="{% static 'media/ignitelogo.png'%}" style="margin:5px;width:100%;margin-top:27%"></div>
                 <div class="shape-contain"><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
 
             </div>
@@ -574,11 +582,16 @@ nav ul li ul li a {
 
                 <ul>
 
-                    <li><a href="#" class="facebook"><span class="fontawesome-facebook"></span></a></li>
-                    <li><a href="#" class="twitter"><span class="fontawesome-twitter"></span></a></li>
-                    <li><a href="#" class="google-plus"><span class="fontawesome-google-plus"></span></a></li>
-                    <li><a href="#" class="linkedin"><span class="fontawesome-linkedin"></span></a></li>
-                    <li><a href="#" class="github"><span class="fontawesome-github"></span></a></li>
+                      <li><a href="https://www.facebook.com/Ignite19nitk/" class="linkedin"><span class="fontawesome-facebook"></span></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCAZU4Xrfu2h-XrG94m9sOFw" class="google-plus"><i class="fa fa-youtube-play" style="font-size:22px;margin-top:10px;"></i></a></li>
+
+                    <li><a href="https://www.instagram.com/ignite_nitk/p/BmisDzaHpwS/" class="linkedin"><i class="fa fa-instagram" style="font-size:22px;margin-top:10px;"></i></a></li>
+                    <!--<li><a href="#" class="github"><span class="fontawesome-github"></span></a></li>-->
+                    <!--<li><a href="#" class="facebook"><span class="fontawesome-facebook"></span></a></li>-->
+                    <!--<li><a href="#" class="twitter"><span class="fontawesome-twitter"></span></a></li>-->
+                    <!--<li><a href="#" class="google-plus"><span class="fontawesome-google-plus"></span></a></li>-->
+                    <!--<li><a href="#" class="linkedin"><span class="fontawesome-linkedin"></span></a></li>-->
+                    <!--<li><a href="#" class="github"><span class="fontawesome-github"></span></a></li>-->
 
                 </ul>
 
@@ -628,6 +641,9 @@ nav ul li ul li a {
 	function showIt2() {
   document.getElementById("div2").style.opacity = ".6";
 }
+    function showignite(){
+         document.getElementById("ignite").style.display="block";
+    }
 </script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>

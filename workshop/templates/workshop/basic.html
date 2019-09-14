@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{% static './css/button.css'%}" />
     <link rel="stylesheet" type="text/css" href="{% static './css/preloader.css'%}" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/animate.css'%}">
 
     <title>{% block title %}{% endblock %}</title>
     {% block style %}{% endblock %}
@@ -155,7 +156,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
 <script  src="{% static './js/menu.js' %}"></script>
-
+<script src="{% static 'js/wow.min.js' %}"></script>
+              <script>
+              new WOW().init();
+              </script>
 {% block script %}{% endblock %}
 <script src="{% static 'js/scriptstar.js'%}"></script>
 <script src="{% static 'js/button.js'%}"></script>
