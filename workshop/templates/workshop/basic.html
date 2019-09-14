@@ -71,6 +71,14 @@
             display:none;
         }
 }
+{% if ob is not None %}
+            .menu-list {
+                margin-top: 20px;
+                }
+            .menu_back{
+                width:650px;
+            }
+{% endif %}
 
 </style>
 <body>
@@ -96,7 +104,7 @@
 
  <div class="main" align="center" >
                      <span>
-						<img src="{% static 'media/nav1.png'%}" class="img-fluid" alt="nav" style="opacity:0.3;height:100px;">
+						<img class="menu_back" src="{% static 'media/nav1.png'%}" class="img-fluid" alt="nav" style="opacity:0.3;height:100px;">
 					</span>
         <div class="links" align="center" >
          <a href="{% url 'index' %}">Home</a>
