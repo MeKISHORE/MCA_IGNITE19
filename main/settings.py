@@ -87,14 +87,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ignite_db',
-<<<<<<< Updated upstream
         'USER': 'ignite2019',
         'PASSWORD': 'Ignite@2019',
-=======
-        'USER': 'root',
-        'PASSWORD': '',
->>>>>>> Stashed changes
-        'HOST': '127.0.0.1',   # Or an IP Address that your DB is hosted on
+         'HOST': '127.0.0.1',   # Or an IP Address that your DB is hosted on
          'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",},
         'PORT': '3306',
     }
