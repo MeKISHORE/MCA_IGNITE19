@@ -24,6 +24,7 @@ urlpatterns = [
     # path('basic', views.basic, name='basic'),
     path('logout', views.logout, name='logout'),
     path('profile', views.profile, name='profile'),
+    path('home', views.home, name='home'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
