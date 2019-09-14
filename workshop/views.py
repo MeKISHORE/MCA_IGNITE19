@@ -14,6 +14,14 @@ def index(request):
         return render(request, 'workshop/Home.html', {'sobj': sobj, 'obj': obj, 'ob': ob})
     return render(request, 'workshop/Home.html')
 
+def home(request):
+    if request.session.get('session_name') is not None:
+        sobj = studentregistration.objects.filter(college_code=request.session.get('session_name')).first()
+        obj = collegeverification.objects.filter(collegecode=request.session.get('session_name')).first()
+        ob = request.session.get('session_name')
+        return render(request, 'workshop/home_new.html', {'sobj': sobj, 'obj': obj, 'ob': ob})
+    return render(request, 'workshop/home_new.html')
+
 
 def profile(request):
     return redirect('login')
@@ -250,7 +258,7 @@ def contact_reg(request):
 
 def logout(request):
     auth.logout(request)
-    return redirect('index')
+    return redirect('home')
 
 def event_detail(request, slug):
     event = events.objects.get(short_url=slug)
