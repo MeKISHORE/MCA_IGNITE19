@@ -102,7 +102,7 @@
          <a href="{% url 'index' %}">Home</a>
             <a href="{% url 'aboutus' %}">About Us</a>
              <a href="{% url 'event' %}">Events</a>
-            <a  href="{% url 'teams' %}">Teams</a>
+            <a  href="{% url 'team' %}">Teams</a>
              <a  href="{% url 'gallery' %}">Gallery</a>
          <!--<a  href="{% url 'index' %}">Home</a>-->
             {% if ob is not None %}
@@ -122,7 +122,7 @@
          <a class='glowBtn hover' href="{% url 'index' %}">Home</a><br>
             <a class='glowBtn hover' href="{% url 'aboutus' %}">About Us</a><br>
             <a class='glowBtn hover' href="{% url 'event' %}">Events</a><br>
-            <a class='glowBtn hover' href="{% url 'teams' %}">Teams</a><br>
+            <a class='glowBtn hover' href="{% url 'team' %}">Teams</a><br>
              <a class='glowBtn hover' href="{% url 'gallery' %}">Gallery</a><br>
             {% if ob is not None %}
             <a class='glowBtn hover' href="{% url 'profile' %}">Profile</a><br>
