@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,900');
+ @import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,300,400,500,600,700,800');
+
+
 a:hover,a:focus{
     outline: none;
     text-decoration: none;
@@ -49,7 +53,7 @@ a:hover,a:focus{
 .tab .tab-content{
     padding: 30px;
     background: #181717eb;
-
+    min-height: 400px;
     font-size: 17px;
     color: #fcd0a1;
     line-height: 30px;
@@ -67,6 +71,93 @@ a:hover,a:focus{
         margin-bottom: 15px;
     }
 }
+
+
+
+
+
+.profilebox {
+	width: 200px;
+	height: 200px;
+	background: #eee;
+	cursor: pointer;
+	float: left;
+	margin: 10px;
+}
+.profilebox1 {
+
+	background-position: center center;
+	background-size: cover;
+	perspective: 450px;
+	position: relative;
+}
+.profilebox .SocialIcons {
+	display: flex;
+	flex-direction: column;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 15px;
+	transform: rotateY(90deg);
+	transform-origin: left center 0;
+	transition: all 350ms ease;
+}
+.profilebox .SocialIcons a {
+	background: #ffffff none repeat scroll 0 0;
+	font-size: 20px;
+	height: 50px;
+	margin-bottom: 1px;
+	position: relative;
+	text-align: center;
+	width: 50px;
+}
+.profilebox .SocialIcons a i {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+.profilebox .SocialIcons a:nth-child(1) {
+}
+.profilebox .SocialIcons a:nth-child(2) {
+}
+.profilebox .SocialIcons a:nth-child(3) {
+}
+.profilebox:hover .SocialIcons {
+	opacity: 1;
+	left: 15px;
+	transform: rotateY(0deg);
+}
+.profilebox .profileInfo {
+    color:white;
+    font-weight:bold;
+	bottom: 0;
+	height: auto;
+	left: 0;
+	margin: 0 auto;
+	position: absolute;
+	right: 0;
+	width: 90%;
+	transform: rotatex(90deg);
+	transform-origin: bottom center 0;
+	transition: all 350ms ease;
+	opacity: 0;
+}
+.profilebox .profileInfo h3 {
+	font-size: 20px;
+	margin: 15px 0;
+	text-align: center;
+}
+.profilebox:hover .profileInfo {
+	opacity: 1;
+	bottom: 15px;
+	transform: rotatex(0deg);
+}
+
+
+
+
+
 
 
 /* A tiny wee bit of visual formating */
