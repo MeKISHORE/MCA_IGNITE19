@@ -37,53 +37,58 @@
 <div style="position:absolute;top:0px;width:100vw;height:100vh;padding:30px 8px 8px 8px;">
     <h1 class="title">Events</h1>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 wow pulse">
-                    <div class="tab" role="tabpanel">
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab">Tech Event</a></li>
-                            <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">Non Tech Events</a></li>
-                            <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">Online Events</a></li>
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content tabs" style="box-shadow: 0px 0px 10px 3px #f20e0e;">
-                            <div align="center" role="tabpanel" class="tab-pane active wow fadeIn" id="Section1">
-                                {% for i in tech %}
-
-                                <a href="{% url 'event_data' i.short_url %}">
-
-                                    <div class="card card-1" style="background:url('{{ i.event_image.url }}');background-size:cover;border:1px solid white;">
-                                        <p class="events" style="color:white;font-size:100%;margin-top:30%;">{{ i.event_name }}</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 wow pulse">
+                <div class="tab" role="tabpanel">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab">Tech Event</a></li>
+                        <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">Non Tech Events</a></li>
+                        <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">Online Events</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content tabs" style="box-shadow: 0px 0px 10px 3px #f20e0e;">
+                        <div align="center" role="tabpanel" class="tab-pane active wow fadeIn" id="Section1">
+                            {% for i in tech %}
+                            <a href="{% url 'event_data' i.short_url %}" class="wow jackInTheBox">
+                                <div class="profilebox profilebox1" style="background-image:url('{{ i.event_image.url }}');">
+                                    <div class="profileInfo" >
+                                        <h3>{{ i.event_name }}</h3>
                                     </div>
-                                    <!--<img class="event_img" src="{{ i.event_image.url }}" alt="img" style="width:100px;height:auto">-->
-                                </a>
+                                </div>
+                            </a>
 
-                                {% endfor %}
-                            </div>
-                            <div align="center" role="tabpanel" class="tab-pane wow fadeIn" id="Section2">
-                                {% for i in non_tech %}
 
-                                <a href="{% url 'event_data' i.short_url %}">
 
-                                    <div class="card card-1" style="background:url('{{ i.event_image.url }}');background-size:cover;border:1px solid white;">
-                                        <p class="events" style="color:white;font-size:100%;margin-top:30%;">{{ i.event_name }}</p>
+
+                            {% endfor %}
+                        </div>
+                        <div align="center" role="tabpanel" class="tab-pane wow fadeIn" id="Section2">
+                            {% for i in non_tech %}
+
+                            <a href="{% url 'event_data' i.short_url %}" class="wow jackInTheBox">
+                                <div class="profilebox profilebox1" style="background-image:url('{{ i.event_image.url }}');">
+                                    <div class="profileInfo" >
+                                        <h3>{{ i.event_name }}</h3>
                                     </div>
-                                    <!--<img class="event_img" src="{{ i.event_image.url }}" alt="img" style="width:100px;height:auto">-->
-                                </a>
+                                </div>
+                            </a>
 
-                                {% endfor %}
-                            </div>
-                            <div role="tabpanel" class="tab-pane wow fadeIn" id="Section3">
-                                <h3>Online</h3>
 
-                            </div>
+
+
+                            {% endfor %}
+                        </div>
+                        <div role="tabpanel" class="tab-pane wow fadeIn" id="Section3">
+                            <h3>Online</h3>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
 </div>
