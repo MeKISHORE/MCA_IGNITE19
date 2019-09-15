@@ -1,12 +1,10 @@
 {% extends 'workshop/basic.html'%}
 
-{% block title %}IGNITE TEAM{% endblock %}
+{% block title %}About Us{% endblock %}
 {% load static %}
 {% block style %}
-<!--<link rel="stylesheet" href="{% static 'css/stylestar.css' %}">-->
-
-<link rel="stylesheet" href="{% static 'css/event.css' %}">
-<link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <!--<link rel="stylesheet" href="{% static 'css/stylestar.css' %}">-->
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
 <style>
     .card {
   background: #fff;
@@ -42,31 +40,28 @@
 {% block body%}
 
 <div style="position:absolute;top:0px;width:100vw;height:100vh;padding:8px;">
-    <div class="container">
-        <div class="row">
-            <div align="center" class="col-sm-12">
-                <h1 class="title" style="margin: 57px 0px 20px 0px;font-size: 24px;letter-spacing: 8px;">{{ team.team_name }}</h1>
+        <div class="container">
+            <div class="row">
+                <div align="center" class="col-sm-12">
+                    <h1 class="title" style="margin: 57px 0px 20px 0px;font-size: 24px;letter-spacing: 8px;">{{ team.team_name }}</h1>
+                </div>
+            </div>
+            <div class="row box wow zoomIn" style="box-shadow: 0px 0px 10px 3px #f20e0e;">
+                <div align="center" class="col-sm-12" style="height: 500px;color:white;">
+
+                     {% for i in team_image %}
+                                 <div class="card card-1" style="background:url('{{ i.image.url }}');background-size:cover;border:1px solid white;">
+                                         <p class="events" style="color:white;font-size:100%;margin-top:30%;">{{ i.event_name }}</p>
+                                    </div>
+                                <!--<img class="event_img" src="{{ i.image.url }}" alt="img" style="width:100px;height:auto">-->
+                         {{ i.person_name }}
+
+
+                            {% endfor %}
+                                    </div>
+
             </div>
         </div>
-        <div class="row box wow zoomIn" style="box-shadow: 0px 0px 10px 3px #f20e0e;">
-            <div align="center" class="col-sm-12" style="height: 500px;color:white;">
-
-                {% for i in team_image %}
-
-                <a href="{% url 'team_image' i.short_url %}" class="wow jackInTheBox">
-                    <div class="profilebox profilebox1" style="background-image:url('{{ i.image.url }}');">
-                        <div class="profileInfo" >
-                            <h3>{{ i.event_name }}</h3>
-                        </div>
-                    </div>
-                </a>
-
-
-                {% endfor %}
-            </div>
-
-        </div>
-    </div>
 
 </div>
 
@@ -74,7 +69,7 @@
 
 
 {% endblock %}
-{% block script %}
-<!--<script src="{% static 'js/scriptstar.js'%}"></script>-->
+    {% block script %}
+    <!--<script src="{% static 'js/scriptstar.js'%}"></script>-->
 
 {% endblock %}
