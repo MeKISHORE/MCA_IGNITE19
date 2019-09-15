@@ -37,7 +37,7 @@
                         <div class="col-sm-3">{{ sobj.leader_email }}</div>
                         <div class="col-sm-3 pd-2">
                             <!----><a href="{{ sobj.leader_id}}">
-                            <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;">
+                    <a href="{{ sobj.leader_id.url}}"> <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;"></a>
                             </a>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
                         <div class="col-sm-3">{{ sobj.member1_id }}</div>
                         <div class="col-sm-3">
                             <!--{{ sobj.member1_file}}-->
-                              <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;">
+                    <a href="{{ sobj.member1_file.url}}"> <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;"></a>
                         </div>
                     </div>
 
@@ -58,7 +58,7 @@
                         <div class="col-sm-3">{{ sobj.member2_id }}</div>
                         <div class="col-sm-3">
                             <!--{{ sobj.member2_file}}-->
-                              <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;">
+                    <a href="{{ sobj.member2_file.url}}"> <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;"></a>
                         </div>
                     </div>
                     <div class="row stud">
@@ -67,7 +67,7 @@
                         <div class="col-sm-3">{{ sobj.member3_id }}</div>
                         <div class="col-sm-3">
                             <!--{{ sobj.member3_file}}-->
-                              <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;">
+                    <a href="{{ sobj.member3_file.url}}"> <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;"></a>
                         </div>
                     </div>
                     <div class="row stud">
@@ -76,7 +76,7 @@
                         <div class="col-sm-3">{{ sobj.member4_id }}</div>
                         <div class="col-sm-3">
                             <!--{{ sobj.member4_file}}-->
-                              <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;">
+                    <a href="{{ sobj.member4_file.url}}"> <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;"></a>
                         </div>
                     </div>
 
