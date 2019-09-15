@@ -3,8 +3,9 @@
 {% block title %}About Us{% endblock %}
 {% load static %}
 {% block style %}
-    <!--<link rel="stylesheet" href="{% static 'css/stylestar.css' %}">-->
-    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+<!--<link rel="stylesheet" href="{% static 'css/stylestar.css' %}">-->
+<!--<link rel="stylesheet" href="{% static 'css/about.css' %}">-->
+<link rel="stylesheet" href="{% static 'css/event.css' %}">
 <style>
     .card {
   background: #fff;
@@ -40,28 +41,27 @@
 {% block body%}
 
 <div style="position:absolute;top:0px;width:100vw;height:100vh;padding:8px;">
-        <div class="container">
-            <div class="row">
-                <div align="center" class="col-sm-12">
-                    <h1 class="title" style="margin: 57px 0px 20px 0px;font-size: 24px;letter-spacing: 8px;">{{ team.team_name }}</h1>
-                </div>
-            </div>
-            <div class="row box wow zoomIn" style="box-shadow: 0px 0px 10px 3px #f20e0e;">
-                <div align="center" class="col-sm-12" style="height: 500px;color:white;">
-
-                     {% for i in team_image %}
-                                 <div class="card card-1" style="background:url('{{ i.image.url }}');background-size:cover;border:1px solid white;">
-                                         <p class="events" style="color:white;font-size:100%;margin-top:30%;">{{ i.event_name }}</p>
-                                    </div>
-                                <!--<img class="event_img" src="{{ i.image.url }}" alt="img" style="width:100px;height:auto">-->
-                         {{ i.person_name }}
-
-
-                            {% endfor %}
-                                    </div>
-
+    <div class="container">
+        <div class="row">
+            <div align="center" class="col-sm-12">
+                <h1 class="title" style="margin: 57px 0px 20px 0px;font-size: 24px;letter-spacing: 8px;">{{ team.team_name }}</h1>
             </div>
         </div>
+        <div class="row" >
+            <div align="center" class="col-sm-12 box wow zoomIn" style="height: 500px;color:white;box-shadow: 0px 0px 10px 3px #f20e0e;">
+
+                {% for i in team_image %}
+
+                <div class="profilebox profilebox1" style="background-image:url('{{ i.image.url }}');">
+                    <div class="profileInfo" >
+                        <h3>{{ i.event_name }}{{ i.person_name }}</h3>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
 
 </div>
 
@@ -69,7 +69,7 @@
 
 
 {% endblock %}
-    {% block script %}
-    <!--<script src="{% static 'js/scriptstar.js'%}"></script>-->
+{% block script %}
+<!--<script src="{% static 'js/scriptstar.js'%}"></script>-->
 
 {% endblock %}
