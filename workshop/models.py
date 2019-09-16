@@ -39,7 +39,7 @@ class studentregistration(models.Model):
     member4_file = models.FileField(upload_to='document/studentid/', default='', blank=True)
 
     def __str__(self):
-        return self.college_code.collegecode+" - " +self.college_code.collegename
+        return self.college_code.collegecode + " - " + self.college_code.collegename
 
 
 class contact_us(models.Model):
@@ -50,28 +50,28 @@ class contact_us(models.Model):
     college_name = models.CharField(max_length=100)
     message = models.TextField()
 
-
     def __str__(self):
         return self.college_name
 
-class events(models.Model):
-        event_name = models.CharField(max_length=100)
-        belongs_to = models.CharField(max_length=100)
-        active = models.BooleanField(default=True)
-        short_url=models.CharField(max_length=100,unique=True)
-        event_image = models.FileField(upload_to='event/images/', default='', blank=True)
 
-        def __str__(self):
-            return self.event_name
+class events(models.Model):
+    event_name = models.CharField(max_length=100)
+    belongs_to = models.CharField(max_length=100)
+    active = models.BooleanField(default=True)
+    short_url = models.CharField(max_length=100, unique=True)
+    event_image = models.FileField(upload_to='event/images/', default='', blank=True)
+
+    def __str__(self):
+        return self.event_name
 
 
 class event_details(models.Model):
-        event_name = models.ForeignKey(events, on_delete=models.CASCADE)
-        description=models.TextField()
-        rules=models.TextField()
+    event_name = models.ForeignKey(events, on_delete=models.CASCADE)
+    description = models.TextField()
+    rules = models.TextField()
 
-        def __str__(self):
-            return self.event_name.event_name
+    def __str__(self):
+        return self.event_name.event_name
 
 
 class teams(models.Model):
@@ -85,12 +85,17 @@ class teams(models.Model):
 
 
 class team_images(models.Model):
-        team_name = models.ForeignKey(teams, on_delete=models.CASCADE)
-        person_name=models.CharField(max_length=100)
-        image = models.FileField(upload_to='teams/images/', default='', blank=True)
+    team_name = models.ForeignKey(teams, on_delete=models.CASCADE)
+    person_name = models.CharField(max_length=100)
+    image = models.FileField(upload_to='teams/images/', default='', blank=True)
 
-        def __str__(self):
-            return self.team_name.team_name
+    def __str__(self):
+        return self.team_name.team_name
 
 
+class team_group_image(models.Model):
+    team_name = models.ForeignKey(teams, on_delete=models.CASCADE)
+    image = models.FileField(upload_to='teams/images/', default='', blank=True)
 
+    def __str__(self):
+        return self.team_name.team_name

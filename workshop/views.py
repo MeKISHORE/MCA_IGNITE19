@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.db.models import Q
 from django.contrib.auth.models import auth
 
-from .models import studentregistration, collegeverification, contact_us, events, event_details,teams,team_images
+from .models import studentregistration, collegeverification, contact_us, events, event_details,teams,team_images, team_group_image
 
 
 def index(request):
@@ -265,10 +265,11 @@ def event_detail(request, slug):
     event_detail=event_details.objects.get(event_name_id=event.id)
     return render(request, 'workshop/event_detail.html',{'event': event, 'event_detail': event_detail })
 
-def team_image(request, slug):
+def team_image(request, slug ):
     team = teams.objects.get(short_url=slug)
     team_image = team_images.objects.filter(team_name_id=team.id)
-    return render(request, 'workshop/team_image.html',{'team': team, 'team_image': team_image })
+    team_group_img = team_group_image.objects.filter(team_name_id=team.id)
+    return render(request, 'workshop/team_image.html',{'team': team, 'team_image': team_image,'team_group_img': team_group_img })
 
 
 
