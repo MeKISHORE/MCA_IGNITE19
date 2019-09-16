@@ -6,26 +6,12 @@
 
 <link rel="stylesheet" href='{% static "./css/event.css" %}'>
 <style>
+.profilebox1{
 
-    .card {
-  background: #fff;
-  border-radius: 2px;
-  display: inline-block;
-  height: 190px;
-  margin: 1rem;
-  position: relative;
-  width: 190px;
+    border-radius:20px;
 
 }
 
-.card-1 {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-}
-
-.card-1:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
 @media only screen and (max-width: 600px) {
   .
 }
@@ -81,7 +67,20 @@
                             {% endfor %}
                         </div>
                         <div role="tabpanel" class="tab-pane wow fadeIn" id="Section3">
-                            <h3>Online</h3>
+                           {% for i in online_event %}
+
+                            <a href="{% url 'event_data' i.short_url %}" class="wow jackInTheBox">
+                                <div class="profilebox profilebox1" style="background-image:url('{{ i.event_image.url }}');">
+                                    <div class="profileInfo" >
+                                        <h3>{{ i.event_name }}</h3>
+                                    </div>
+                                </div>
+                            </a>
+
+
+
+
+                            {% endfor %}
 
                         </div>
                     </div>
