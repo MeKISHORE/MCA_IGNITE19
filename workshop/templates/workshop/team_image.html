@@ -48,8 +48,12 @@
             </div>
         </div>
         <div class="row" >
-            <div align="center" class="col-sm-12 box wow zoomIn" style="height: 500px;color:white;box-shadow: 0px 0px 10px 3px #f20e0e;">
+            <div align="center" class="col-sm-12 box wow zoomIn" style="height: auto;padding:10px;color:white;box-shadow: 0px 0px 10px 3px #f20e0e;">
 
+                 {% for i in team_group_img %}
+                   <img src="{{i.image.url}}" style="width:100%;">
+
+                {% endfor %}
                 {% for i in team_image %}
 
                 <div class="profilebox profilebox1" style="background-image:url('{{ i.image.url }}');">
