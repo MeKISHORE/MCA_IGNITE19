@@ -33,7 +33,7 @@
     <div class="container">
         <div class="row">
             <div align="center" class="col-sm-12">
-                <h1 class="title" style="margin-top:60px;">Teams</h1>
+                <h1 class="title" style="margin-top:60px;">{{team}}</h1>
             </div>
         </div>
         <div class="row box wow zoomIn" style="box-shadow: 0px 0px 10px 3px #f20e0e;">
@@ -48,6 +48,9 @@
                 <div  class="profilebox profilebox1" style="background-image:url('{{ i.image.url }}');">
                     <div  class="profileInfo" >
                         <h3 style="margin-bottom:-40px;text-align:right">{{ i.event_name }}{{ i.person_name }}</h3>
+                        {% if forloop.first %}
+                            <h1 style="font-size:20px;position:absolute;top:-155px;left:-20px;background:white;padding:5px;color:black">Team Head</h1>
+                         {% endif %}
                     </div>
                 </div>
                 {% endfor %}
