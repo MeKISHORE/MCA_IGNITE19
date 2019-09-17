@@ -11,6 +11,25 @@
     border-radius:20px;
 
 }
+.profileInfo h3{
+
+    color:white;
+}
+.overlay{
+
+    width:100%;
+    height:100%;
+    border-radius:20px;
+    transition:background 1s;
+
+
+}
+.profilebox:hover .overlay{
+
+background:rgb(26, 26, 26, .8);
+
+}
+
 
 @media only screen and (max-width: 600px) {
   .
@@ -39,8 +58,10 @@
                             {% for i in tech %}
                             <a href="{% url 'event_data' i.short_url %}" class="wow jackInTheBox">
                                 <div class="profilebox profilebox1" style="background-image:url('{{ i.event_image.url }}');">
+                                    <div class="overlay">
                                     <div class="profileInfo" >
                                         <h3>{{ i.event_name }}</h3>
+                                    </div>
                                     </div>
                                 </div>
                             </a>
@@ -54,10 +75,13 @@
                             {% for i in non_tech %}
 
                             <a href="{% url 'event_data' i.short_url %}" class="wow jackInTheBox">
+
                                 <div class="profilebox profilebox1" style="background-image:url('{{ i.event_image.url }}');">
+                                     <div class="overlay">
                                     <div class="profileInfo" >
                                         <h3>{{ i.event_name }}</h3>
                                     </div>
+                                     </div>
                                 </div>
                             </a>
 

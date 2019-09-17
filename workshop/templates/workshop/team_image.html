@@ -24,8 +24,10 @@
 }
 
 </style>
+<script>
 
 
+</script>
 {% endblock %}
 {% block body%}
 
@@ -44,15 +46,16 @@
 
                 {% endfor %}
                 {% for i in team_image %}
-
+                <a>
                 <div  class="profilebox profilebox1" style="background-image:url('{{ i.image.url }}');">
                     <div  class="profileInfo" >
                         <h3 style="margin-bottom:-55px;text-align:right;">{{ i.event_name }}{{ i.person_name }}</h3>
-                        {% if forloop.first %}
-                            <h1 style="font-size:20px;position:fixed;top:-25px;left:-15px;background:white;padding:5px;color:black">Team Head</h1>
-                         {% endif %}
+                            <!--{% if forloop.first and team is not "Management" %}-->
+                                <!--<h1 style="font-size:20px;position:fixed;top:-25px;left:-15px;background:white;padding:5px;color:black">Team Head</h1>-->
+                            <!--{% endif %}-->
                     </div>
                 </div>
+                    </a>
                 {% endfor %}
             </div>
 
