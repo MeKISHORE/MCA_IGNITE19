@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="row box wow zoomIn" style="box-shadow: 0px 0px 10px 3px #f20e0e;	background: #181717eb;">
-            <div align="center" class="col-sm-12" style="height: auto;color:white;margin:10px;">
+            <div align="center" class="col-sm-12" style="height: auto;color:white;margin-top:10px;margin-bottom:10px;">
 
                {% for i in team_group_img %}
                    <img src="{{i.image.url}}" style="width:100%;">
@@ -48,7 +48,7 @@
                 {% endfor %}
                 {% for i in team_image %}
                 <a>
-                <div  class="profilebox profilebox1" style="background-image:url('{{ i.image.url }}');">
+                <div class="profilebox profilebox1" style="background-image:url('{{ i.image.url }}');">
                     <div  class="profileInfo" >
                         <h3 style="margin-bottom:-40px;text-align:right;text-transform:uppercase;">{{ i.event_name }}{{ i.person_name }}</h3>
                             {% if forloop.first and team.team_name != "Management"  %}
