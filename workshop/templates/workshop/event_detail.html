@@ -33,6 +33,12 @@
 }
 
 </style>
+<script>
+
+
+
+
+</script>
 {% endblock %}
 {% block body%}
 
@@ -40,29 +46,30 @@
     <h1 class="title">{{ event.event_name }}</h1>
 
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 wow pulse">
-                    <div class="tab" role="tabpanel">
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
-                            <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">Rules</a></li>
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content tabs" style="box-shadow: 0px 0px 10px 3px #f20e0e;">
-                            <div align="center" role="tabpanel" class="tab-pane active wow fadeIn" id="Section1">
-                                <p class="events">{{ event_detail.description }}</p>
-                            </div>
-                            <div align="center" role="tabpanel" class="tab-pane wow fadeIn" id="Section2">
-                                  <p class="events">{{ event_detail.rules }}</p>
-                            </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 wow pulse">
+                <div class="tab" role="tabpanel">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab">Description</a></li>
+                        <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">Rules</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content tabs" style="box-shadow: 0px 0px 10px 3px #f20e0e;">
+                        <div align="center" role="tabpanel" class="tab-pane active wow fadeIn" id="Section1">
+                            <p class="events">{{ event_detail.description }}</p>
 
                         </div>
+                        <div align="center" role="tabpanel" class="tab-pane wow fadeIn" id="Section2">
+                            <p class="events">{{ event_detail.rules }} </p>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
 
 </div>

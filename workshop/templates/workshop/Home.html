@@ -21,6 +21,7 @@
 
     <style>
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap');
 
 
 
@@ -52,7 +53,7 @@ a { text-decoration: none; }
 
 nav {
    position:absolute;
-   bottom:20px;
+   bottom:10px;
 	margin: 10px auto;
 	width: 218px;
 	display: inline-block;
@@ -192,29 +193,62 @@ nav ul li ul li a {
   font-size: 35px;
   margin: 40px 0px;
 }
-.djfinal{
 
-    position:absolute;bottom:0px;left;0px;
-}
-.engi{
-    position:absolute;width:100vw;bottom:-8px;
-}
-.nitk{
-     padding:15px;
-    position:absolute;
-    top:0px;
-    left;0px;
-}
 .ignite{
      position:absolute;
      top:0px;
      right;0px;
      width:100vw;
      display:none;
-     padding:5px;
+     padding:7px;
      text-align:right;
-
 }
+.djfinal{
+
+    position:absolute;bottom: 0px;left;0px;
+}
+.engi{
+    position:absolute;width:100vw;bottom:-8px;
+}
+.nitk{
+    position:absolute;
+    top:0px;
+    left;0px;
+    color:white;
+}
+.nitk>p{
+    margin-top:10px;
+     font-family: 'Open Sans Condensed', sans-serif;
+     font-size:20px;
+}
+.djfinal>img{ height:60px;margin:10px;}
+.engi>img{ height:80px;margin:10px;}
+.nitk>img{ height:70px;margin:10px;}
+.ignite>img{ height:50px;margin:10px;}
+
+
+.tagline{
+        position:absolute;
+        bottom:130px;
+        width:100%;
+        color:white;
+        font-size:30px;
+        font-family: 'Great Vibes', cursive;
+}
+.neon {
+    color: #fff;
+    text-justify:inter-word;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;
+}
+
 @media screen and (max-width: 769px) {
 
         .nav-menu{
@@ -223,28 +257,40 @@ nav ul li ul li a {
         .main{
             display:none;
         }
+
+        .ignite img{
+               margin: 5px 65px;
+        }
+        .djfinal{
+
+        left:30vw;
+        bottom: ;
+        }
         .engi{
-            bottom:0px;
+            bottom:2px;
             right:30vw;
         }
 
         .ignite {
               display:none;
         }
-        .ignite img{
-               margin: 5px 61px;
-        }
-        .djfinal{
+        .djfinal>img{ height:50px;}
+        .engi>img{ height:60px;margin-bottom:-0px;}
+        .nitk>img{ height:40px;}
+        .ignite>img{ height:50px;}
 
-        left:30vw;
+        .nitk>p{
 
-        }
+            font-size:15px;
+            }
 }
 @media screen and (min-width: 769px) {
 
         nav {
             bottom: -42px;
         }
+
+
 
 }
 {% if ob is not None %}
@@ -256,11 +302,9 @@ nav ul li ul li a {
             }
 {% endif %}
 
+
+
   </style>
-
-
-
-
 </head>
 <body>
 <div style="position:fixed;width:100vw;height:100vh;">
@@ -272,10 +316,10 @@ nav ul li ul li a {
     </div>
     <!--<div class="custom-contain">-->
     <canvas id="projector" style="position:absolute;top:0px;">Your browser does not support the Canvas element.</canvas>
-     <div class="djfinal" style=""><img  src="{% static 'media/DJFinal.png'%}" style="margin:0px 0px 13px 4px;height:50px;"></div>
-            <div class="engi" align="right" style=""><img src="{% static 'media/Engi19.png' %}" style="height:60px;"></div>
-            <div class="nitk" style=""><img src="{% static 'media/nitk.png'%}" style="margin:5px;height:40px;"></div>
-            <div class="ignite" id="ignite" ><img src="{% static 'media/ignitelogo.png'%}" style="height:50px;"></div>
+            <div class="djfinal"><img  src="{% static 'media/DJFinal.png'%}"></div>
+            <div class="engi" align="right" ><img src="{% static 'media/Engi19.png' %}"></div>
+    <div class="nitk" ><img src="{% static 'media/nitk.png'%}" style="float:left"><p style="float:left;text-align:left">National Institute <br>Of Technology <br>Karnataka</p></div>
+            <div class="ignite" id="ignite" ><img src="{% static 'media/ignitelogo.png'%}"></div>
     <div id="div2" class="div2"  style="position:absolute;top:0px;opacity: 0">
         <svg id="circles" xmlns="https://www.w3.org/2000/svg" viewBox="0 0 900 900" width="100vw">
             <g id="group-4">
@@ -586,7 +630,9 @@ nav ul li ul li a {
 
 
 
-
+    <div class="tagline">
+        <p class="neon">Light the fire with action Ignite the Spark with cause </p>
+    </div>
     <nav>
 
         <ul class="clearfix">
@@ -598,7 +644,7 @@ nav ul li ul li a {
                       <li><a href="https://www.facebook.com/Ignite19nitk/" target="_blank" class="linkedin"><span class="fontawesome-facebook"></span></a></li>
                     <li><a href="https://www.youtube.com/channel/UCAZU4Xrfu2h-XrG94m9sOFw" target="_blank" class="google-plus"><i class="fa fa-youtube-play" style="font-size:22px;margin-top:10px;"></i></a></li>
 
-                    <li><a href="https://www.instagram.com/ignite_nitk/" target="_blank" class="linkedin"><i class="fa fa-instagram" style="font-size:22px;margin-top:10px;"></i></a></li>
+                    <li><a href="https://www.instagram.com/nitkignite/" target="_blank" class="linkedin"><i class="fa fa-instagram" style="font-size:22px;margin-top:10px;"></i></a></li>
                     <!--<li><a href="#" class="github"><span class="fontawesome-github"></span></a></li>-->
                     <!--<li><a href="#" class="facebook"><span class="fontawesome-facebook"></span></a></li>-->
                     <!--<li><a href="#" class="twitter"><span class="fontawesome-twitter"></span></a></li>-->
