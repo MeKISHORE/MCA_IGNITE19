@@ -194,6 +194,22 @@ def aboutus(request):
         return render(request, 'workshop/aboutus.html', {'sobj': sobj, 'obj': obj, 'ob': ob})
     return render(request, 'workshop/aboutus.html')
 
+def sponsor(request):
+    if request.session.get('session_name') is not None:
+        sobj = studentregistration.objects.filter(college_code=request.session.get('session_name')).first()
+        obj = collegeverification.objects.filter(collegecode=request.session.get('session_name')).first()
+        ob = request.session.get('session_name')
+        return render(request, 'workshop/sponsor.html', {'sobj': sobj, 'obj': obj, 'ob': ob})
+    return render(request, 'workshop/sponsor.html')
+
+def media_cover(request):
+    if request.session.get('session_name') is not None:
+        sobj = studentregistration.objects.filter(college_code=request.session.get('session_name')).first()
+        obj = collegeverification.objects.filter(collegecode=request.session.get('session_name')).first()
+        ob = request.session.get('session_name')
+        return render(request, 'workshop/media_cover.html', {'sobj': sobj, 'obj': obj, 'ob': ob})
+    return render(request, 'workshop/media_cover.html')
+
 
 def gallery(request):
     if request.session.get('session_name') is not None:
@@ -263,6 +279,7 @@ def logout(request):
 def event_detail(request, slug):
     event = events.objects.get(short_url=slug)
     event_detail=event_details.objects.get(event_name_id=event.id)
+    # print(event_detail.rules)
     return render(request, 'workshop/event_detail.html',{'event': event, 'event_detail': event_detail })
 
 def team_image(request, slug ):

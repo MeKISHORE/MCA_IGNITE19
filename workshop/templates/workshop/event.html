@@ -90,9 +90,8 @@ background:rgb(26, 26, 26, .8);
 
                             {% endfor %}
                         </div>
-                        <div role="tabpanel" class="tab-pane wow fadeIn" id="Section3">
-                           {% for i in online_event %}
-
+                        <div align="center" role="tabpanel" class="tab-pane wow fadeIn" id="Section3">
+                           {% for i in online %}
                             <a href="{% url 'event_data' i.short_url %}" class="wow jackInTheBox">
                                 <div class="profilebox profilebox1" style="background-image:url('{{ i.event_image.url }}');">
                                     <div class="profileInfo" >
@@ -100,9 +99,6 @@ background:rgb(26, 26, 26, .8);
                                     </div>
                                 </div>
                             </a>
-
-
-
 
                             {% endfor %}
 

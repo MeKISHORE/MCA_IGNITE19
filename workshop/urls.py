@@ -25,6 +25,8 @@ urlpatterns = [
     path('logout', views.logout, name='logout'),
     path('profile', views.profile, name='profile'),
     path('home', views.home, name='home'),
+    path('sponsor', views.sponsor, name='sponsor'),
+    path('media_cover', views.media_cover, name='media_cover'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
