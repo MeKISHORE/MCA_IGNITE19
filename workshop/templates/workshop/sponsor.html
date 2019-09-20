@@ -13,13 +13,20 @@
         box-shadow: 0px 0px 10px 3px #f20e0e;
         height:100%;
         padding:5px;
-        background: #181717eb;
+        background: white;
         text-align:justify;
         text-justify:inter-word;
         margin:20px;
     }
     .margin{
         margin-bottom:20px;
+    }
+
+    .big>img, .kamath>img, .kla>img, .bell>img{
+
+        height:5vw;
+        min-height:150px;
+        margin:1vw;
     }
 
 </style>
@@ -31,14 +38,26 @@
         <div class="container">
             <div class="row">
                 <div align="center" class="col-sm-12">
-                    <h1 class="title" style="margin-top:60px;">Sponsor's</h1>
+                    <h1 class="title" style="margin-top:60px;">Previous Year Sponsor's</h1>
                 </div>
             </div>
-            <div class="row" >
-                <div class="col-sm-12 margin">
-                    <div class="det wow zoomIn" >
-
+            <div class="row det" >
+                <div align="center" class="col-sm-6 margin ">
+                    <div class=" wow zoomIn sponsor bell" >
+                            <img src="{% static 'media/bell.png'%}">
                      </div>
+                    <div class=" wow zoomIn sponsor big" >
+                            <img src="{% static 'media/big.png'%}">
+                     </div>
+                </div>
+                <div align="center" class="col-sm-6 margin ">
+                    <div class=" wow zoomIn sponsor kamath" >
+                            <img src="{% static 'media/kamath.png'%}">
+                     </div>
+                    <div class=" wow zoomIn sponsor kla" >
+                            <img src="{% static 'media/kla.png'%}">
+                     </div>
+
                 </div>
 
             </div>
