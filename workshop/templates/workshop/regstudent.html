@@ -10,6 +10,9 @@
     text-align:left;
     background:white;
 }
+.tbl th{
+    padding-right:10px;
+}
 .pointer {cursor: pointer;}
 </style>
 <script language="JavaScript">
@@ -206,9 +209,13 @@ function validateForm()
     </div>
     <div class="help pointer" style="position:fixed;top:115px;right:-40px;width:100px;color:white;background:#be1425d6;padding:5px;border-radius:10px 0px 0px 10px;" onclick="disp_on();" ><i class="fa fa-question-circle" aria-hidden="true"></i> Help</div>
     <div align="center"  style="position:fixed;top:110px;right:0px;">
-        <div class="alert alert-dismissible fade show contact" id="contact" role="alert">
+        <div class="alert  alert-dismissible fade show contact" id="contact" role="alert">
         <strong>Contact</strong><BR>
-            Lab Kishore : 8757240210
+            <table class="tbl">
+                <tr><th>Lab Kishore</th><td>8757240210</td></tr>
+                <tr><th>Rockey Kumar</th><td>8102306237</td></tr>
+            </table>
+
         <button type="button" class="close" onclick="disp_off();" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
