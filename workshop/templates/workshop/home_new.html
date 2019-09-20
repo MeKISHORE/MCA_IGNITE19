@@ -198,7 +198,7 @@ nav ul li ul li a {
 
 .ignite{
      position:absolute;
-     top:0px;
+     top:-5px;
      right;0px;
      width:100vw;
      display:none;
@@ -238,18 +238,31 @@ nav ul li ul li a {
         font-size:3.2vw;
         font-family: 'Great Vibes', cursive;
 }
+
 .neon {
     color: #fff;
     text-justify:inter-word;
-  text-shadow:
-    0 0 5px #fff,
-    0 0 10px #fff,
+
+
+    text-shadow:
+    0 0 1px #fff,
     0 0 20px #fff,
-    0 0 40px #0ff,
-    0 0 80px #0ff,
-    0 0 90px #0ff,
-    0 0 100px #0ff,
-    0 0 150px #0ff;
+    0 0 80px #00ffbf ,
+    0 0 10px #00ffbf ;
+}
+.big{
+
+    position: absolute;
+    bottom:10px;
+    right:10vw;
+    opacity:0.3;
+
+}
+.big>img {
+
+    width:10vw;
+    min-width:60px;
+
 }
 
 @media screen and (max-width: 769px) {
@@ -294,7 +307,10 @@ nav ul li ul li a {
         nav {
             bottom: -42px;
         }
+        .big{
+            right:23vw;
 
+            }
 
 
 }
@@ -601,6 +617,10 @@ nav ul li ul li a {
             </div>
         </div></div>
         </div>
+    </div>
+
+    <div class="big">
+             <img src="{% static 'media/big.png'%}" >
     </div>
 
 

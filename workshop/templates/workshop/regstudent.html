@@ -5,7 +5,12 @@
 
 <link rel="stylesheet" href="{% static 'css/collegereg.css'%}">
 <style>
-
+.contact{
+    display:none;
+    text-align:left;
+    background:white;
+}
+.pointer {cursor: pointer;}
 </style>
 <script language="JavaScript">
 
@@ -89,6 +94,7 @@ function validateForm()
 {% block body%}
 
 <div style="position:absolute;top:0px;width:100vw;height:auto;padding:10px;">
+
     <div class="container" style="margin-bottom:40px;">
         <div class="row">
             <div align="center" class="col-sm-12">
@@ -191,14 +197,43 @@ function validateForm()
                             <input type="file" class="form-input" name="member4_file" id="" placeholder="" onchange="validatePDF(this,this.id)" required/>
                         </div>
                     </div>
+
                     <input type="submit" name="submit" id="submit" class="btn btn-default submit" value="Register"/>
                 </form>
+
             </div>
         </div>
     </div>
+    <div class="help pointer" style="position:fixed;top:115px;right:-40px;width:100px;color:white;background:#be1425d6;padding:5px;border-radius:10px 0px 0px 10px;" onclick="disp_on();" ><i class="fa fa-question-circle" aria-hidden="true"></i> Help</div>
+    <div align="center"  style="position:fixed;top:110px;right:0px;">
+        <div class="alert alert-dismissible fade show contact" id="contact" role="alert">
+        <strong>Contact</strong><BR>
+            Lab Kishore : 8757240210
+        <button type="button" class="close" onclick="disp_off();" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+
+</div>
+
 </div>
 
 {% endblock%}
 {% block script%}
+<script>
+    function disp_on(){
+
+    document.getElementById('contact').style.display="block";
+
+    }
+    function disp_off(){
+
+    document.getElementById('contact').style.display="none";
+
+    }
+
+
+</script>
+
 
 {% endblock%}
