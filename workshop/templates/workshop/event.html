@@ -1,130 +1,95 @@
 {% extends 'workshop/basic.html'%}
-
 {% block title %}Events{% endblock %}
 {% load static %}
 {% block style %}
-
-<link rel="stylesheet" href='{% static "./css/event.css" %}'>
-<style>
-.profilebox1{
-
-    border-radius:20px;
-
-}
-.profileInfo h3{
-
-    color:white;
-}
-.overlay{
-
-    width:100%;
-    height:100%;
-    border-radius:20px;
-    transition:background 1s;
-    <!--background:rgb(51, 51, 51, .8);-->
-
-
-}
-.profilebox:hover .overlay{
-
-background:rgb(26, 26, 26, .6);
-<!--transform: scale(1.1);-->
-<!--background:none;-->
-
-}
-
-
-@media only screen and (max-width: 600px) {
-  .
-}
-
-</style>
+    <link rel="stylesheet" href='{% static "./css/event.css" %}'>
+    <style>
+        .profilebox1{
+            border-radius:20px;
+        }
+        .profileInfo h3{
+            color:white;
+        }
+        .overlay{
+            width:100%;
+            height:100%;
+            border-radius:20px;
+            transition:background 1s;
+        <!--background:rgb(51, 51, 51, .8);-->
+        }
+        .profilebox:hover .overlay{
+            background:rgb(26, 26, 26, .6);
+        <!--transform: scale(1.1);-->
+        <!--background:none;-->
+        }
+        @media only screen and (max-width: 600px) {
+            .
+        }
+    </style>
 {% endblock %}
 {% block body%}
+    <div style="position:absolute;top:0px;width:100vw;height:100vh;padding:30px 8px 8px 8px;">
+        <h1 class="title">Events</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wow pulse">
+                    <div class="tab" role="tabpanel">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab">Tech Event</a></li>
+                            <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">Non Tech Events</a></li>
+                            <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">Online Events</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content tabs" style="box-shadow: 0px 0px 10px 3px #f20e0e;">
+                            <div align="center" role="tabpanel" class="tab-pane active wow fadeIn" id="Section1">
+                                {% for i in tech %}
+                                    <a href="{% url 'event_data' i.short_url %}" class="wow jackInTheBox">
+                                        <div class="profilebox profilebox1" style="background-image:url('{{ i.event_image.url }}');">
+                                            <div class="overlay">
+                                                <div class="profileInfo" >
+                                                    <h1 style="font-size:20px;position:fixed;bottom:-25px;left:0px;background:#0f4c5c;;padding:5px;color:white">{{ i.event_name }}</h1>
 
-<div style="position:absolute;top:0px;width:100vw;height:100vh;padding:30px 8px 8px 8px;">
-    <h1 class="title">Events</h1>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 wow pulse">
-                <div class="tab" role="tabpanel">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab">Tech Event</a></li>
-                        <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">Non Tech Events</a></li>
-                        <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">Online Events</a></li>
-                    </ul>
-                    <!-- Tab panes -->
-                    <div class="tab-content tabs" style="box-shadow: 0px 0px 10px 3px #f20e0e;">
-                        <div align="center" role="tabpanel" class="tab-pane active wow fadeIn" id="Section1">
-                            {% for i in tech %}
-                            <a href="{% url 'event_data' i.short_url %}" class="wow jackInTheBox">
-                                <div class="profilebox profilebox1" style="background-image:url('{{ i.event_image.url }}');">
-                                    <div class="overlay">
-                                    <div class="profileInfo" >
-                                         <h1 style="font-size:20px;position:fixed;bottom:-25px;left:0px;background:#0f4c5c;;padding:5px;color:white">{{ i.event_name }}</h1>
-
-                                        <!--<h3>{{ i.event_name }}</h3>-->
-                                    </div>
-                                    </div>
-                                </div>
-                            </a>
-
-
-
-
-                            {% endfor %}
-                        </div>
-                        <div align="center" role="tabpanel" class="tab-pane wow fadeIn" id="Section2">
-                            {% for i in non_tech %}
-
-                            <a href="{% url 'event_data' i.short_url %}" class="wow jackInTheBox">
-
-                                <div class="profilebox profilebox1" style="background-image:url('{{ i.event_image.url }}');">
-                                     <div class="overlay">
-                                    <div class="profileInfo" >
-                                         <h1 style="font-size:20px;position:fixed;bottom:-25px;left:0px;background:#0f4c5c;;padding:5px;color:white">{{ i.event_name }}</h1>
-
-                                        <!--<h3>{{ i.event_name }}</h3>-->
-                                    </div>
-                                     </div>
-                                </div>
-                            </a>
-
-
-
-
-                            {% endfor %}
-                        </div>
-                        <div align="center" role="tabpanel" class="tab-pane wow fadeIn" id="Section3">
-                           {% for i in online %}
-                            <a href="{% url 'event_data' i.short_url %}" class="wow jackInTheBox">
-                                <div class="profilebox profilebox1" style="background-image:url('{{ i.event_image.url }}');">
-                                    <div class="profileInfo" >
-                                         <h1 style="font-size:20px;position:fixed;bottom:-25px;left:0px;background:#0f4c5c;;padding:5px;color:white">{{ i.event_name }}</h1>
-
-                                        <!--<h3>{{ i.event_name }}</h3>-->
-                                    </div>
-                                </div>
-                            </a>
-
-                            {% endfor %}
-
+                                                    <!--<h3>{{ i.event_name }}</h3>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                {% endfor %}
+                            </div>
+                            <div align="center" role="tabpanel" class="tab-pane wow fadeIn" id="Section2">
+                                {% for i in non_tech %}
+                                    <a href="{% url 'event_data' i.short_url %}" class="wow jackInTheBox">
+                                        <div class="profilebox profilebox1" style="background-image:url('{{ i.event_image.url }}');">
+                                            <div class="overlay">
+                                                <div class="profileInfo" >
+                                                    <h1 style="font-size:20px;position:fixed;bottom:-25px;left:0px;background:#0f4c5c;;padding:5px;color:white">{{ i.event_name }}</h1>
+                                                    <!--<h3>{{ i.event_name }}</h3>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                {% endfor %}
+                            </div>
+                            <div align="center" role="tabpanel" class="tab-pane wow fadeIn" id="Section3">
+                                {% for i in online %}
+                                    <a href="{% url 'event_data' i.short_url %}" class="wow jackInTheBox">
+                                        <div class="profilebox profilebox1" style="background-image:url('{{ i.event_image.url }}');">
+                                            <div class="profileInfo" >
+                                                <h1 style="font-size:20px;position:fixed;bottom:-25px;left:0px;background:#0f4c5c;;padding:5px;color:white">{{ i.event_name }}</h1>
+                                                <!--<h3>{{ i.event_name }}</h3>-->
+                                            </div>
+                                        </div>
+                                    </a>
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-</div>
-<!-- partial -->
-
-
+    <!-- partial -->
 {% endblock %}
 {% block script %}
-
-<script  src="{% static './js/events.js' %}"></script>
 {% endblock %}

@@ -35,6 +35,7 @@ a:link{
 .open {
   position: fixed;
   background: url('../media/menu_back.jpg');
+  background-size: cover;
   /*background: #280201;*/
   /*background-image: url('https://i.pinimg.com/originals/81/66/ce/8166ce752069e7df3a55b993fe9ae1d4.jpg');*/
 
