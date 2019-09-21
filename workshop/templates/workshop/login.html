@@ -5,6 +5,26 @@
 
     <link rel="stylesheet" href="{% static 'css/collegereg.css'%}">
     <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #be1425d6;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #be1425d6;
+        }
         .clg_list{
             width:100%;
             border:1px solid #8b0c03;
@@ -14,6 +34,24 @@
         }
         input,select {
             margin:10px 0px 10px 0px;
+        }
+        .rules h4,p{
+            color:white;
+        }
+        .rules{
+            box-shadow: 0px 0px 10px 3px #f20e0e;
+            background: #181717eb;
+            padding:15px;
+            margin-bottom: 20px;
+            overflow-y: scroll;
+            height:580px;
+        }
+        .login{
+            margin-bottom: 40px;
+
+        }
+        .scrollable-element {
+            scrollbar-color: blue;
         }
         @media screen and (max-width: 600px) {
 
@@ -69,28 +107,53 @@
                 <div align="center" class="col-sm-12">
                     <h1 class="title " style="margin-top:60px;">Login</h1>
                 </div>
-                <div class="col-md-3 "></div>
-                <div align="center" class="col-sm-12 col-xs-12 col-md-6 box wow zoomIn" >
-                    <img src="{% static 'media/login.gif'%}" style="width:150px;border-radius:50%;margin-bottom:20px;">
-                    <form action="{% url 'sign_in' %}" method="POST">{% csrf_token %}
-                        <div class="autocomplete" style="width:100%;">
-                            <input id="myInput" type="text" name="cname" required placeholder="College Name">
-                        </div>
-                        <input type="email" class="form-input placeholder-fix" name="leader_email" placeholder="Leader email id" required/>
-                        <input type="password" class="form-input placeholder-fix" name="college_code" placeholder="College Code"required/>
-                        <a href="contact" style="text-align:right;width:100%;margin:5px 0px 5px 0px;">Forgot College Code ?</a><br>
-                        <input type="submit" name="submit" id="submit" class="btn btn-default submit" value="Login"/>
-                    </form>
-                    {#-------------------------- alert ----------------#}
-                    {% if error is not None %}
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <strong></strong> {{ error }}
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    {% endif %}
-                    {#-------------------------- alert ----------------#}
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="wow zoomIn rules">
+                        <h4 style="text-align: center;">Rules</h4>
+                        <p>1.	Each college team must be having exactly 5 participants from MCA only.</p>
+                        <p>2.	Each team member has to carry his/her original college ID card and have to produce it at the time of team registration.</p>
+                        <p>3.	Each team has to carry a permission letter consisting of the names of each participant duly signed by the concerned authorities.</p>
+                        <p>4.	It’s compulsory for the teams to reach NITK for the inauguration ceremony which will be held on 11th of October, 2019.</p>
+                        <p>5.	The teams are advised to have some knowledge regarding the Django framework of Python. It might turn out to be useful for the team.</p>
+                        <p>6.	In case of discrepancy regarding any of the decisions the decision of team Ignite will be considered final.</p>
+                        <p>7.	The teams are advised to carry at least 2 laptops which might be useful for them during the entire sequence of events.</p>
+                        <p>8.	The services of accommodation and food will be provided by team Ignite from the evening of inauguration till the last day of Ignite.</p>
+                        <p>9.	The college teams are not allowed to leave the campus without the permission of the authorities.</p>
+                        <p>10.	The college teams are not allowed to go to the beach side without the permission of the authorities.</p>
+                        <p>11.	Any kind of misconduct or misbehaviour by the team members can lead to the disqualification of the entire team from the event.</p>
+                        <p>12.	Any attempt made to damage the property of the college can lead to strict actions against the entire team.</p>
+
+
+                    </div>
+                </div>
+                <div align="center" class="col-sm-12 col-xs-12 col-md-6 ">
+                    <div class="box wow zoomIn login">
+                        <img src="{% static 'media/login.gif'%}" style="width:150px;border-radius:50%;margin-bottom:20px;">
+                        <form action="{% url 'sign_in' %}" method="POST">{% csrf_token %}
+                            <div class="autocomplete" style="width:100%;">
+                                <input id="myInput" type="text" name="cname" required placeholder="College Name">
+                            </div>
+                            <input type="email" class="form-input placeholder-fix" name="leader_email" placeholder="Leader email id" required/>
+                            <input type="password" class="form-input placeholder-fix" name="college_code" placeholder="College Code"required/>
+                            <a href="contact" style="text-align:right;width:100%;margin:5px 0px 5px 0px;">Forgot College Code ?</a><br>
+                            <input type="submit" name="submit" id="submit" class="btn btn-default submit" value="Login"/>
+                        </form>
+                        {#-------------------------- alert ----------------#}
+                        {% if error is not None %}
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong></strong> {{ error }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        {% endif %}
+                        {#-------------------------- alert ----------------#}
+                    </div>
+
                 </div>
             </div>
         </div>

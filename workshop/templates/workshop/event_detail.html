@@ -40,18 +40,16 @@
                             <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">Rules</a></li>
                         </ul>
                         <!-- Tab panes -->
-                        <div class="tab-content tabs" style="box-shadow: 0px 0px 10px 3px #f20e0e;">
-                            <div align="center" role="tabpanel" class="tab-pane active wow fadeIn" id="Section1">
-                                <div style="text-align:left;">
+                        <div class="tab-content tabs" style="box-shadow: 0px 0px 10px 3px #f20e0e;padding-left:10vw;">
+                            <div align="left" role="tabpanel" class="tab-pane active wow fadeIn" id="Section1">
                                     <p class="events">
                                         <script>
                                             var x='{{ event_detail.description }}';
                                             var y=x.replace(/~/g, '<br>');
                                             document.write(y); </script>
                                     </p>
-                                </div>
                             </div>
-                            <div align="center" role="tabpanel" class="tab-pane wow fadeIn" id="Section2">
+                            <div align="left" role="tabpanel" class="tab-pane wow fadeIn" id="Section2">
                                 <p class="events">
                                     <script>
                                         var x='{{ event_detail.rules }}';
