@@ -1,53 +1,37 @@
-
-
-
 {% extends 'workshop/basic.html'%}
-
 {% block title %}TEAMS{% endblock %}
 {% load static %}
 {% block style %}
-<!--<link rel="stylesheet" href="{% static 'css/stylestar.css' %}">-->
-
 <link rel="stylesheet" href="{% static 'css/event.css' %}">
 <!--<link rel="stylesheet" href="{% static 'css/about.css' %}">-->
-
 <style>
-
-.profileInfo h3{
-
-    opacity:0;
-    transition:opacity 1s;
+.profileInfo h4{
+    margin-bottom:-50px;
+    text-align:right;
+    text-transform:uppercase;
 }
-.profilebox:hover h3{
-
-    opacity:1;
-}
+{#.profilebox:hover h3{#}
+{##}
+{#    opacity:1;#}
+{#}#}
 .overlay{
-
     width:100%;
     height:100%;
     transition:background 1s;
-
-
 }
 .profilebox:hover .overlay{
-
-background:rgb(26, 26, 26, .5);
-
+    background:rgb(26, 26, 26, .5 );
 }
-
 </style>
 <script>
     var desi = ["Dean (SW)", "HOD MACS Dept.", "IGNITE Faculty Advisor", "Convenor", "President", "Vice President", "Treasurer", "Secretary", "Secretary", "Alumni & PR" ];
     var i=0;
-    var heads= ["Management", "Technical Team", "Website Team", "	Designing team", "	Android App Team", "Marketing Team", "Non - Technical Team", "Gaming team", "Decoration team", "Hospitality team", "Media & Coverage team", "Nexux"];
+    var heads= ["Technical Team", "Website Team", "	Designing team", "	Android App Team", "Marketing Team", "Non - Technical Team", "Gaming team", "Decoration team", "Hospitality team", "Media & Coverage team", "Nexux"];
     var j=0;
-
     var k='{{team.team_name}}';
     var k1=k+" Team";
     if( k == "TeamHead")
         k1="Team Heads"
-
 </script>
 {% endblock %}
 {% block body%}
@@ -61,22 +45,19 @@ background:rgb(26, 26, 26, .5);
         </div>
         <div class="row box wow zoomIn" style="box-shadow: 0px 0px 10px 3px #f20e0e;	background: #181717eb;">
             <div align="center" class="col-sm-12" style="height: auto;color:white;margin-top:10px;margin-bottom:10px;">
-
                {% for i in team_group_img %}
                    <img src="{{i.image.url}}" style="width:100%;">
-
                 {% endfor %}
                 {% for i in team_image %}
                 <a>
                 <div class="profilebox profilebox1" style="background-image:url('{{ i.image.url }}');">
                     <div class="overlay">
                     <div  class="profileInfo" >
-                        <h3 style="margin-bottom:-40px;text-align:right;text-transform:uppercase;">{{ i.event_name }}{{ i.person_name }}</h3>
+                        <h4>{{ i.event_name }}{{ i.person_name }}</h4>
                             {% if forloop.first and team.team_name != "Management"  and team.team_name != "TeamHead"%}
 
                                 <h1 style="font-size:20px;position:fixed;top:-25px;left:-15px;background:white;padding:5px;color:black;">Team Head</h1>
                             {% endif %}
-
                             {% if team.team_name == "Management"  %}
                         <h1 style="font-size:20px;position:fixed;bottom:-25px;left:0px;background:white;padding:5px;color:black"><script>document.write(desi[i++]);</script></h1>
                             {% endif %}
@@ -89,17 +70,10 @@ background:rgb(26, 26, 26, .5);
                     </a>
                 {% endfor %}
             </div>
-
         </div>
     </div>
-
 </div>
-
 <!-- partial -->
-
-
 {% endblock %}
 {% block script %}
-<!--<script src="{% static 'js/scriptstar.js'%}"></script>-->
-
 {% endblock %}

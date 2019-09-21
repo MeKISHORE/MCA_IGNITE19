@@ -3,101 +3,79 @@
 {% block title %}Team Details{% endblock %}
 {% load static %}
 {% block style %}
-
-<link rel="stylesheet" href="{% static 'css/registered.css' %}">
-
-<style>
-    .stud>div:hover{
-        transform:scale(0.98)
-    }
-
-</style>
-
-
+    <link rel="stylesheet" href="{% static 'css/registered.css' %}">
+    <style>
+        .stud>div:hover{
+            transform:scale(0.98)
+        }
+    </style>
 {% endblock %}
 {% block body%}
-
-<div style="position:absolute;top:0px;width:100vw;height:100vh;padding:8px;">
-    <div class="container">
-        <div class="row">
-            <div align="center" class="col-sm-12">
-                <h1 class="title">Teams detail</h1>
-                <div class="container box">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <p class="sub"> {{ obj.collegename }}</p>
+    <div style="position:absolute;top:0px;width:100vw;height:100vh;padding:8px;">
+        <div class="container">
+            <div class="row">
+                <div align="center" class="col-sm-12">
+                    <h1 class="title">Teams detail</h1>
+                    <div class="container box">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <p class="sub"> {{ obj.collegename }}</p>
+                            </div>
                         </div>
-
                     </div>
-                </div>
-                <div class="container stud box">
-                    <div class="row stud">
-                        <div class="col-sm-3">{{ sobj.leader_name }} (Leader)</div>
-                        <div class="col-sm-3">{{ sobj.leader_mobile }}</div>
-                        <div class="col-sm-3">{{ sobj.leader_email }}</div>
-                        <div class="col-sm-3 pd-2">
-                            <!----><a href="{{ sobj.leader_id}}">
-                    <a href="{{ sobj.leader_id.url}}"> <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;"></a>
+                    <div class="container stud box">
+                        <div class="row stud">
+                            <div class="col-sm-3">{{ sobj.leader_name }} (Leader)</div>
+                            <div class="col-sm-3">{{ sobj.leader_mobile }}</div>
+                            <div class="col-sm-3">{{ sobj.leader_email }}</div>
+                            <div class="col-sm-3 pd-2">
+                                <!----><a href="{{ sobj.leader_id}}">
+                                <a href="{{ sobj.leader_id.url}}"> <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;"></a>
                             </a>
+                            </div>
+                        </div>
+                        <div class="row stud">
+                            <div class="col-sm-3">{{ sobj.member1_name }}</div>
+                            <div class="col-sm-3">{{ sobj.member1_mobile }}</div>
+                            <div class="col-sm-3">{{ sobj.member1_id }}</div>
+                            <div class="col-sm-3">
+                                <!--{{ sobj.member1_file}}-->
+                                <a href="{{ sobj.member1_file.url}}"> <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;"></a>
+                            </div>
+                        </div>
+                        <div class="row stud">
+                            <div class="col-sm-3">{{ sobj.member2_name }}</div>
+                            <div class="col-sm-3">{{ sobj.member2_mobile }}</div>
+                            <div class="col-sm-3">{{ sobj.member2_id }}</div>
+                            <div class="col-sm-3">
+                                <!--{{ sobj.member2_file}}-->
+                                <a href="{{ sobj.member2_file.url}}"> <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;"></a>
+                            </div>
+                        </div>
+                        <div class="row stud">
+                            <div class="col-sm-3">{{ sobj.member3_name }}</div>
+                            <div class="col-sm-3">{{ sobj.member3_mobile }}</div>
+                            <div class="col-sm-3">{{ sobj.member3_id }}</div>
+                            <div class="col-sm-3">
+                                <!--{{ sobj.member3_file}}-->
+                                <a href="{{ sobj.member3_file.url}}"> <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;"></a>
+                            </div>
+                        </div>
+                        <div class="row stud">
+                            <div class="col-sm-3">{{ sobj.member4_name }}</div>
+                            <div class="col-sm-3">{{ sobj.member4_mobile }}</div>
+                            <div class="col-sm-3">{{ sobj.member4_id }}</div>
+                            <div class="col-sm-3">
+                                <!--{{ sobj.member4_file}}-->
+                                <a href="{{ sobj.member4_file.url}}"> <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;"></a>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="row stud">
-                        <div class="col-sm-3">{{ sobj.member1_name }}</div>
-                        <div class="col-sm-3">{{ sobj.member1_mobile }}</div>
-                        <div class="col-sm-3">{{ sobj.member1_id }}</div>
-                        <div class="col-sm-3">
-                            <!--{{ sobj.member1_file}}-->
-                    <a href="{{ sobj.member1_file.url}}"> <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;"></a>
-                        </div>
-                    </div>
-
-                    <div class="row stud">
-                        <div class="col-sm-3">{{ sobj.member2_name }}</div>
-                        <div class="col-sm-3">{{ sobj.member2_mobile }}</div>
-                        <div class="col-sm-3">{{ sobj.member2_id }}</div>
-                        <div class="col-sm-3">
-                            <!--{{ sobj.member2_file}}-->
-                    <a href="{{ sobj.member2_file.url}}"> <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;"></a>
-                        </div>
-                    </div>
-                    <div class="row stud">
-                        <div class="col-sm-3">{{ sobj.member3_name }}</div>
-                        <div class="col-sm-3">{{ sobj.member3_mobile }}</div>
-                        <div class="col-sm-3">{{ sobj.member3_id }}</div>
-                        <div class="col-sm-3">
-                            <!--{{ sobj.member3_file}}-->
-                    <a href="{{ sobj.member3_file.url}}"> <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;"></a>
-                        </div>
-                    </div>
-                    <div class="row stud">
-                        <div class="col-sm-3">{{ sobj.member4_name }}</div>
-                        <div class="col-sm-3">{{ sobj.member4_mobile }}</div>
-                        <div class="col-sm-3">{{ sobj.member4_id }}</div>
-                        <div class="col-sm-3">
-                            <!--{{ sobj.member4_file}}-->
-                    <a href="{{ sobj.member4_file.url}}"> <img src="{% static 'media/pdf.png'%}" style="width:50px;margin-left:4vw;"></a>
-                        </div>
-                    </div>
-
-
-
-
-
-
                 </div>
             </div>
         </div>
-
     </div>
-
-</div>
-
-<!-- partial -->
-
-
+    <!-- partial -->
 {% endblock %}
 {% block script %}
-
-
 {% endblock %}
