@@ -1,65 +1,173 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,500i,700,900');
+ @import url('https://fonts.googleapis.com/css?family=Raleway:100,100i,300,400,500,600,700,800');
 
-
-div {
-	box-sizing: border-box;
-	transition: all ease-in-out .5s;
-	-moz-transition: all ease-in-out .5s;
-	-webkit-transition: all ease-in-out .5s;
-}
-.icetab {
-	border: 2px solid #8b0c03;
-
-	display: inline-block;
-	border-bottom: 0px;
-	margin: 0px;
-    color: #fff;
-	cursor: pointer;
-	border-right: 0px;
-}
-.icetab:last-child {
-	border-right: 2px solid #8b0c03;
-}
-
-#icetab-content {
-	overflow: hidden;
-	position: relative;
-	border-top: 2px solid #8b0c03;
-}
-
-
-.tabcontent {
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	background: black;
-	width: 100%;
-	height:600px;
-	border-top: 0px;
-	border: 2px solid #8b0c03;
-	border-top: 0px;
-	transform: translateY(-100%);
-	-moz-transform: translateY(-100%);
-	-webkit-transform: translateY(-100%);
-}
-
-.tabcontent:first-child {
-	position: relative;
-}
-.tabcontent.tab-active {
-	border-top: 0px;
-	display: block;
-	transform: translateY(0%);
-	-moz-transform: translateY(0%);
-	-webkit-transform: translateY(0%);
-}
-
-
-/* A tiny wee bit of visual formating */
 body {
 	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
 	/*background: #666;*/
 	color: #454545;
 }
+
+a:hover,a:focus{
+    outline: none;
+    text-decoration: none;
+}
+.tab .nav-tabs{
+    border: none;
+    margin-bottom: 20px;
+}
+.tab .nav-tabs li a{
+    padding: 10px 20px;
+    margin-right: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fcd0a1;
+    text-transform: uppercase;
+    background: #0f4c5c;
+    border: none;
+    border-radius: 0;
+    position: relative;
+    transition: all 0.3s ease 0s;
+}
+.tab .nav-tabs li a:before,
+.tab .nav-tabs li a:after{
+    content: "";
+    width: 20%;
+    height: 3px;
+    background: #0f4c5c;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    transition: all 0.3s ease 0s;
+}
+.tab .nav-tabs li a:after{
+    top: auto;
+    left: auto;
+    bottom: -5px;
+    right: 0;
+}
+.tab .nav-tabs li a:hover:before,
+.tab .nav-tabs li a:hover:after,
+.tab .nav-tabs li.active a:before,
+.tab .nav-tabs li.active a:after{ width: 100%; }
+.tab .nav-tabs li a:hover,
+.tab .nav-tabs li.active a{
+    background: #9a031e;
+    color: #fcd0a1;
+    border: none;
+}
+.tab .tab-content{
+    padding: 30px;
+    background: #181717eb;
+    min-height: 400px;
+    font-size: 17px;
+    color: #fcd0a1;
+    line-height: 30px;
+    letter-spacing: 1px;
+    position: relative;
+}
+.tab .tab-content h3{
+    font-size: 24px;
+    margin-top: 0;
+}
+@media only screen and (max-width: 479px){
+    .tab .nav-tabs li{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
+
+
+
+
+
+.profilebox {
+	width: 200px;
+	height: 200px;
+	background: #eee;
+	cursor: pointer;
+	margin: 10px;
+}
+.profilebox1 {
+
+	background-position: center center;
+	background-size: cover;
+	perspective: 450px;
+	position: relative;
+}
+.profilebox .SocialIcons {
+	display: flex;
+	flex-direction: column;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 15px;
+	transform: rotateY(90deg);
+	transform-origin: left center 0;
+	transition: all 350ms ease;
+}
+.profilebox .SocialIcons a {
+	background: #ffffff none repeat scroll 0 0;
+	font-size: 20px;
+	height: 50px;
+	margin-bottom: 1px;
+	position: relative;
+	text-align: center;
+	width: 50px;
+}
+.profilebox .SocialIcons a i {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+.profilebox .SocialIcons a:nth-child(1) {
+}
+.profilebox .SocialIcons a:nth-child(2) {
+}
+.profilebox .SocialIcons a:nth-child(3) {
+}
+.profilebox:hover .SocialIcons {
+	opacity: 1;
+	left: 15px;
+	transform: rotateY(0deg);
+}
+.profilebox .profileInfo {
+    color:white;
+    font-weight:bold;
+	bottom: 0;
+	height: auto;
+	left: 0;
+	margin: 0 auto;
+	position: absolute;
+	right: 0;
+	width: 90%;
+	transform-origin: bottom center 0;
+	transition: all 350ms ease;
+	opacity: 0;
+	opacity: 1;
+	bottom: 60px;
+	 font-family: 'Open Sans Condensed', sans-serif;
+}
+.profilebox .profileInfo h3 {
+	font-size: 30px;
+	margin: 15px 0;
+	text-align: center;
+}
+.profilebox:hover .profileInfo h3{
+
+
+
+}
+
+
+
+
+
+
+
+/* A tiny wee bit of visual formating */
+
 .codepen-container {
   max-width: 700px;
   margin: 40px;
@@ -69,15 +177,15 @@ body {
 .title {
   color: #8b0c03;
   text-align: center;
-  letter-spacing: 14px;
+  letter-spacing: 6px;
   text-transform: uppercase;
   font-size: 35px;
   margin: 50px 0px 10px 0px;
 }
 .events {
   color: #fff;
-  text-align: center;
   text-transform: uppercase;
+     text-align:justify;text-justify:inter-word;
   font-size: 17px;
   margin: 10px 0px;
 }
@@ -97,4 +205,10 @@ body {
 }
 .current-tab {
 	background: #8b0c03;
+}
+
+
+.row{
+
+    margin-bottom:30px;
 }

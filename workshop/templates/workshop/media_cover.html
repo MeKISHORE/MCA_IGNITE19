@@ -1,0 +1,68 @@
+{% extends 'workshop/basic.html'%}
+
+{% block title %}Teaser's{% endblock %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+
+<style>
+    .det{
+
+        box-shadow: 0px 0px 10px 3px #f20e0e;
+        background: #181717eb;
+        margin:20px;
+    }
+    .det>iframe{
+
+        width:100%;
+        height:300px;
+
+    }
+    .margin{
+        margin-bottom:20px;
+    }
+    @media screen and (max-width: 769px) {
+
+        .det>iframe{
+
+        width:100%;
+        height:270px;
+
+    }
+    }
+
+</style>
+
+{% endblock %}
+{% block body%}
+
+<div style="position:absolute;top:0px;width:100vw;height:100vh;padding:8px;">
+        <div class="container">
+            <div class="row">
+                <div align="center" class="col-sm-12">
+                    <h1 class="title" style="margin-top:60px;">Teaser's & Promo</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div align="center" class="col-sm-6 margin">
+                    <div class="det wow zoomIn" >
+                       <iframe  src="https://www.youtube.com/embed/me6e1d0uu-Y?controls=0?&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  </div>
+                </div>
+                 <!--<div align="center" class="col-sm-6 margin">-->
+                    <!--<div class="det wow zoomIn" >-->
+                       <!--<iframe  src="https://www.youtube.com/embed/me6e1d0uu-Y?controls=0?&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  </div>-->
+                <!--</div>-->
+            </div>
+
+
+</div>
+
+<!-- partial -->
+
+
+{% endblock %}
+    {% block script %}
+    <!--<script src="{% static 'js/scriptstar.js'%}"></script>-->
+
+{% endblock %}

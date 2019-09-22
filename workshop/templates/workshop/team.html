@@ -3,43 +3,23 @@
 {% block title %}TEAMS{% endblock %}
 {% load static %}
 {% block style %}
-    <!--<link rel="stylesheet" href="{% static 'css/stylestar.css' %}">-->
+    <link rel="stylesheet" href="{% static 'css/event.css' %}">
     <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <style>
+        .overlay{
 
-<style>
-    .card {
-  background: #fff;
-  border-radius: 2px;
-  display: inline-block;
-  height: 180px;
-  margin: 1rem;
-  position: relative;
-  width: 180px;
-}
-
-.card-1 {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-}
-
-.card-1:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-}
-@media only screen and (max-width: 600px) {
-  .tabcontent {
-
-	    height:1400px;
-
-    }
-}
-
-</style>
-
-
+            width:100%;
+            height:100%;
+            border-radius:20px;
+            transition:background 1s;
+        }
+        .profilebox:hover .overlay{
+            background:rgb(26, 26, 26, .8);
+        }
+    </style>
 {% endblock %}
 {% block body%}
-
-<div style="position:absolute;top:0px;width:100vw;height:100vh;padding:8px;">
+    <div style="position:absolute;top:0px;width:100vw;height:100vh;padding:8px;">
         <div class="container">
             <div class="row">
                 <div align="center" class="col-sm-12">
@@ -47,29 +27,23 @@
                 </div>
             </div>
             <div class="row box wow zoomIn" style="box-shadow: 0px 0px 10px 3px #f20e0e;">
-                <div align="center" class="col-sm-12" style="height: auto;color:white;">
-
-                     {% for i in tm %}
-                                <a href="{% url 'team_image' i.short_url %}">
-                                <!--<p style="color: white">{{ i.team_name }}</p>-->
-                                <!--<img class="event_img" src="{{ i.event_image.url }}" alt="img" style="width:100px;height:auto">-->
-                                <div class="card card-1" style="background:url('{{ i.event_image.url }}');background-size:cover;border:1px solid white;">
-                                         <p class="events" style="color:white;font-size:100%;margin-top:30%;">{{ i.team_name }}</p>
+                <div align="center" class="col-sm-12" style="height: auto;color:white;margin:10px;">
+                    {% for i in tm %}
+                        <a href="{% url 'team_image' i.short_url %}" class="wow jackInTheBox">
+                            <div class="profilebox profilebox1" style="background-image:url('{{ i.event_image.url }}');border-radius:20px;">
+                                <div class="overlay">
+                                    <div class="profileInfo" >
+                                        <h3>{{ i.team_name }}</h3>
                                     </div>
-                                </a>
-                            {% endfor %}
-                                    </div>
-
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
             </div>
         </div>
-
-</div>
-
-<!-- partial -->
-
-
+    </div>
+    <!-- partial -->
 {% endblock %}
-    {% block script %}
-    <!--<script src="{% static 'js/scriptstar.js'%}"></script>-->
-
+{% block script %}
 {% endblock %}

@@ -3,57 +3,49 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
-    <link rel="stylesheet" href="{% static 'css/stylestar.css'%}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="icon"  type="image/png" href="{% static 'media/ignite.png'%}">
+    <link rel="stylesheet" type="text/css" href="{% static './css/cssreset-min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static './css/bootstrap.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static './css/normalize.min.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static './css/menu.css'%}" />
     <link rel="stylesheet" type="text/css" href="{% static './css/button.css'%}" />
     <link rel="stylesheet" type="text/css" href="{% static './css/preloader.css'%}" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static 'css/animate.css'%}">
     <script src="{% static 'js/wow.min.js' %}"></script>
-
-    <title>{% block title %}{% endblock %}</title>
     {% block style %}{% endblock %}
 </head>
 <style>
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
-.wow{
-
-    visibility:hidden;
-}
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
-
-.main,.links {
-
-      position:absolute;
-      top:0px;
-      width:100vw;
-
-}
-.links a{
-
-    font-size:20px;
-    text-decoration:none;
-    text-transform:uppercase;
-    margin:15px 10px 5px 10px;
-    color:white;
-
-     font-family: 'Open Sans Condensed', sans-serif;
-     transition: 1s transform;
-
-}
-.links a:hover{
-
-    transform:scale(1.25)
-}
-.topmenu{
-            display:none;
-        }
-@media screen and (max-width: 769px) {
-
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
+    canvas {
+        display: block;
+    }
+    .wow{
+        visibility:hidden;
+    }
+    .main,.links {
+        position:absolute;
+        top:0px;
+        width:100vw;
+    }
+    .links a{
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size:20px;
+        text-decoration:none;
+        text-transform:uppercase;
+        margin:15px 10px 5px 10px;
+        color:white;
+        transition: 1s transform;
+    }
+    .links a:hover{
+        transform:scale(1.25)
+    }
+    .topmenu{
+        display:none;
+    }
+    @media screen and (max-width: 769px) {
         .nav-menu{
             display:block;
         }
@@ -61,114 +53,97 @@
             display:none;
         }
         .engi_logo{
-
             margin-top:55px;
             margin-right:20px;
         }
         .topmenu{
             display:block;
         }
-}
-@media screen and (min-width: 769px) {
-
+    }
+    @media screen and (min-width: 769px) {
         nav {
             bottom: -42px;
         }
         .nav-menu{
             display:none;
         }
-}
-{% if ob is not None %}
-            .menu-list {
-                margin-top: 20px;
-                }
-            .menu_back{
-                width:650px;
-            }
-{% endif %}
-
+    }
+    {% if ob is not None %}
+        .menu-list {
+            margin-top: 20px;
+        }
+        .menu_back{
+            width:650px;
+        }
+    {% endif %}
 </style>
 <body>
 <!--PRELOADER-->
-
 <!--<div id="loader-wrapper">-->
 <!--<div id="loader"></div>-->
-
 <!--<div class="loader-section section-left"></div>-->
 <!--<div class="loader-section section-right"></div>-->
-
 <!--</div>-->
 <canvas id="c" style="position:fixed;top:0px;"></canvas>
-
 {% block body %}{% endblock %}
 <nav class="navbar navbar-inverse topmenu" style="position:fixed;top:0px;background:#000;width:100%;opacity:0.8;">
-     <img src="{% static 'media/nitk.png' %}" style="height:30px;width:auto;margin:15px 0px 0px 1px;">
-        <!--<ul class="nav navbar-nav" style="height:45px;">-->
-
-        <!--</ul>-->
-
-    </nav>
-
- <div class="main" align="center" >
+    <img src="{% static 'media/nitk.png' %}" style="height:30px;width:auto;margin:8px 0px 0px 1px;">
+    <!--<ul class="nav navbar-nav" style="height:45px;">-->
+    <!--</ul>-->
+    <img src="{% static 'media/ignitelogo.png'%}" style="height:40px;width:auto;margin:8px 0px 0px calc(55px + 10vw);">
+</nav>
+<div class="main" align="center" >
                      <span>
 						<img class="menu_back" src="{% static 'media/nav1.png'%}" class="img-fluid" alt="nav" style="opacity:0.3;height:100px;">
 					</span>
-        <div class="links" align="center" >
-         <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'aboutus' %}">About Us</a>
-             <a href="{% url 'event' %}">Events</a>
-            <a  href="{% url 'team' %}">Teams</a>
-             <a  href="{% url 'gallery' %}">Gallery</a>
-         <!--<a  href="{% url 'index' %}">Home</a>-->
-            {% if ob is not None %}
+    <div class="links" align="center" >
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'aboutus' %}">About Us</a>
+        <a href="{% url 'event' %}">Events</a>
+        <a  href="{% url 'team' %}">Teams</a>
+        <a  href="{% url 'gallery' %}">Gallery</a>
+        <!--<a  href="{% url 'index' %}">Home</a>-->
+        {% if ob is not None %}
             <a  href="{% url 'profile' %}">Profile</a>
             <a href="{% url 'logout' %}">Logout</a>
-            {% else %}
+        {% else %}
             <a  href="{% url 'login' %}">Login</a>
-            {% endif %}
-
-            <a href="{% url 'contact' %}">Contact Us</a>
-        </div>
-
+        {% endif %}
+        <a href="{% url 'contact' %}">Contact Us</a>
     </div>
-
+</div>
 <div class="nav-menu" style="position:fixed;top:0px;">
     <div class="menu-list">
-         <a class='glowBtn hover' href="{% url 'home' %}">Home</a><br>
-            <a class='glowBtn hover' href="{% url 'aboutus' %}">About Us</a><br>
-            <a class='glowBtn hover' href="{% url 'event' %}">Events</a><br>
-            <a class='glowBtn hover' href="{% url 'team' %}">Teams</a><br>
-             <a class='glowBtn hover' href="{% url 'gallery' %}">Gallery</a><br>
-            {% if ob is not None %}
+        <a class='glowBtn hover' href="{% url 'home' %}">Home</a><br>
+        <a class='glowBtn hover' href="{% url 'aboutus' %}">About Us</a><br>
+        <a class='glowBtn hover' href="{% url 'event' %}">Events</a><br>
+        <a class='glowBtn hover' href="{% url 'team' %}">Teams</a><br>
+        <a class='glowBtn hover' href="{% url 'gallery' %}">Gallery</a><br>
+        {% if ob is not None %}
             <a class='glowBtn hover' href="{% url 'profile' %}">Profile</a><br>
             <a class='glowBtn hover' href="{% url 'logout' %}">Logout</a><br>
-            {% else %}
+        {% else %}
             <a class='glowBtn hover' href="{% url 'login' %}">Login</a><br>
-            {% endif %}
-            <a class='glowBtn hover' href="{% url 'contact' %}">Contact Us</a><br>
-
+        {% endif %}
+        <a class='glowBtn hover' href="{% url 'contact' %}">Contact Us</a><br>
         <img src="{% static 'media/Engi19.png' %}" style="height:50px"> <img src="{% static 'media/DJFinal.png' %}" style="height:40px;">
-        <p style="font-size:15px;color:white;">Nit Surathkal Developer's</p>
+        <p style="font-size:15px;color:white;">NITK, Surathkal Developer's</p>
     </div>
-
     <div id="burger-wrap">
         <a class="burger"><span></span></a>
     </div>
-
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script>
+    new WOW().init();
+</script>
+<script src="{% static 'js/jquery.min.js'%}" type="text/javascript"></script>
+<script src="{% static 'js/bootstrap.min.js'%}" type="text/javascript"></script>
 <script  src="{% static './js/menu.js' %}"></script>
-
-              <script>
-              new WOW().init();
-              </script>
-{% block script %}{% endblock %}
+<script  src="{% static './js/jquery-3.3.1.slim.min.js' %}"></script>
 <script src="{% static 'js/scriptstar.js'%}"></script>
 <script src="{% static 'js/button.js'%}"></script>
 <script src="{% static 'js/preloader.js'%}"></script>
+{% block script %}
+{% endblock %}
 </body>
 </html>
