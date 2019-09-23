@@ -14,13 +14,12 @@
             width:100%;
             height:100%;
             border-radius:20px;
+            background:rgb(26, 26, 26, .6);
             transition:background 1s;
-        <!--background:rgb(51, 51, 51, .8);-->
         }
         .profilebox:hover .overlay{
-            background:rgb(26, 26, 26, .6);
-        <!--transform: scale(1.1);-->
-        <!--background:none;-->
+
+            background: none;
         }
         @media only screen and (max-width: 600px) {
             .
@@ -48,9 +47,9 @@
                                         <div class="profilebox profilebox1" style="background-image:url('{{ i.event_image.url }}');">
                                             <div class="overlay">
                                                 <div class="profileInfo" >
-                                                    <h1 style="font-size:20px;position:fixed;bottom:-25px;left:0px;background:#0f4c5c;;padding:5px;color:white">{{ i.event_name }}</h1>
+                                                    {#                                                    <h1 style="font-size:20px;position:fixed;bottom:-25px;left:0px;background:#0f4c5c;;padding:5px;color:white">{{ i.event_name }}</h1>#}
 
-                                                    <!--<h3>{{ i.event_name }}</h3>-->
+                                                    <h3>{{ i.event_name }}</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -63,8 +62,8 @@
                                         <div class="profilebox profilebox1" style="background-image:url('{{ i.event_image.url }}');">
                                             <div class="overlay">
                                                 <div class="profileInfo" >
-                                                    <h1 style="font-size:20px;position:fixed;bottom:-25px;left:0px;background:#0f4c5c;;padding:5px;color:white">{{ i.event_name }}</h1>
-                                                    <!--<h3>{{ i.event_name }}</h3>-->
+                                                    {#                                                    <h1 style="font-size:20px;position:fixed;bottom:-25px;left:0px;background:#0f4c5c;;padding:5px;color:white">{{ i.event_name }}</h1>#}
+                                                    <h3>{{ i.event_name }}</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -75,9 +74,11 @@
                                 {% for i in online %}
                                     <a href="{% url 'event_data' i.short_url %}" class="wow jackInTheBox">
                                         <div class="profilebox profilebox1" style="background-image:url('{{ i.event_image.url }}');">
-                                            <div class="profileInfo" >
-                                                <h1 style="font-size:20px;position:fixed;bottom:-25px;left:0px;background:#0f4c5c;;padding:5px;color:white">{{ i.event_name }}</h1>
-                                                <!--<h3>{{ i.event_name }}</h3>-->
+                                            <div class="overlay">
+                                                <div class="profileInfo" >
+                                                    {#                                                <h1 style="font-size:20px;position:fixed;bottom:-25px;left:0px;background:#0f4c5c;;padding:5px;color:white">{{ i.event_name }}</h1>#}
+                                                    <h3>{{ i.event_name }}</h3>
+                                                </div>
                                             </div>
                                         </div>
                                     </a>
