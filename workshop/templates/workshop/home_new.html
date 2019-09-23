@@ -2,18 +2,19 @@
 <html>
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-148497914-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148497914-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-  gtag('config', 'UA-148497914-1');
-</script>
+        gtag('config', 'UA-148497914-1');
+    </script>
     <title>IGNITE'19</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
+
     <link rel="icon"  type="image/png" href="{% static 'media/ignite.png'%}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{% static './css/cssreset-min.css'%}" type="text/css">
@@ -61,6 +62,10 @@
         nav > ul > li > a {
         {#background-color: #ded0bb;#}
             border: 4px solid #5a504a;
+             box-shadow:   0 0 1px #fff,
+                    0 0 5px #fff,
+                    0 0 5px #fff ;
+            background: #0e0e0e;
             border-radius: 50%;
             -moz-border-radius: 50%;
             -webkit-border-radius: 50%;
@@ -83,7 +88,10 @@
             border-radius: 16px;
             -moz-border-radius: 16px;
             -webkit-border-radius: 16px;
-            box-shadow: 0px 1px 2px #352f2c;
+            box-shadow:  0 0 1px #fff,
+                    0 0 5px #fff,
+                    0 0 5px #fff ;
+             background: #0e0e0e;
             display: block;
             height: 40px;
             left: 52px;
@@ -103,7 +111,7 @@
             content: "";
             display: block;
             height: 8px;
-           left: -11px;
+            left: -11px;
             position: absolute;
             bottom: 16px;
             transform: rotate(45deg);
@@ -193,6 +201,7 @@
             font-family: 'Open Sans Condensed', sans-serif;
             font-size:20px;
         }
+        .pointer {cursor: pointer;}
         .djfinal>img{ height:60px;margin:10px;}
         .engi>img{ height:80px;margin:10px;}
         .nitk>img{ height:70px;margin:10px;}
@@ -280,11 +289,7 @@
 </head>
 <body>
 <div style="position:fixed;width:100vw;height:100vh;">
-{#    <div id="loader-wrapper">#}
-{#        <div id="loader"></div>#}
-{#        <div class="loader-section section-left"></div>#}
-{#        <div class="loader-section section-right"></div>#}
-{#    </div>#}
+
     <!--<div class="custom-contain">-->
     <canvas id="projector" style="position:absolute;top:0px;">Your browser does not support the Canvas element.</canvas>
     <div class="djfinal"><img  src="{% static 'media/DJFinal.png'%}"></div>
@@ -565,7 +570,7 @@
         <div class="bg"><div class="flare"><div class="grid">
             <div class="container">
 
-                <div onclick='setTimeout("showIt2()", 6000) & showignite();'  class="start"><img class="ignite_center" src="{% static 'media/ignitelogo.png'%}" style="margin:5px;width:100%;margin-top:27%"><p style="margin-top:-180px;font-size: 20px; font-family: 'Merriweather', serif;opacity: 0.6">11-13 Oct</p></div>
+                <div onclick='setTimeout("showIt2()", 6000) & showignite();'  class="start pointer"><img class="ignite_center" src="{% static 'media/ignitelogo.png'%}" style="margin:5px;width:100%;margin-top:27%"><p style="margin-top:-180px;font-size: 20px; font-family: 'Merriweather', serif;opacity: 0.6">11-13 Oct</p></div>
                 <div class="shape-contain"><div class="shape"></div><div class="shape"></div><div class="shape"></div></div>
             </div>
         </div></div>
@@ -602,9 +607,9 @@
         <ul class="clearfix">
             <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
                 <ul>
-                    <li><a href="https://www.facebook.com/Ignite19nitk/" target="_blank" class="linkedin"><i class="fa fa-facebook-f"></i></a></li>
-                    <li><a href="https://www.youtube.com/channel/UCAZU4Xrfu2h-XrG94m9sOFw" target="_blank" class="google-plus"><i class="fa fa-youtube-play" style="font-size:22px;margin-top:10px;"></i></a></li>
-                    <li><a href="https://www.instagram.com/nitkignite/" target="_blank" class="linkedin"><i class="fa fa-instagram" style="font-size:22px;margin-top:10px;"></i></a></li>
+                    <li><a href="https://www.facebook.com/Ignite19nitk/" target="_blank" class="linkedin"><i class="fa fa-facebook-f" style="font-size:25px;margin-top:7px;"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCAZU4Xrfu2h-XrG94m9sOFw" target="_blank" class="google-plus"><i class="fa fa-youtube-play" style="font-size:25px;margin-top:7px;"></i></a></li>
+                    <li><a href="https://www.instagram.com/nitkignite/" target="_blank" class="linkedin"><i class="fa fa-instagram" style="font-size:25px;margin-top:7px;"></i></a></li>
                     <!--<li><a href="#" class="github"><span class="fontawesome-github"></span></a></li>-->
                     <!--<li><a href="#" class="facebook"><span class="fontawesome-facebook"></span></a></li>-->
                     <!--<li><a href="#" class="twitter"><span class="fontawesome-twitter"></span></a></li>-->
