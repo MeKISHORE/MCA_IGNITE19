@@ -4,6 +4,31 @@
 {% load static %}
 {% block style %}
     <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <script>
+
+        function validateForm() {
+            var fname=document.forms["vform"]["first_name"].value;
+            var lname=document.forms["vform"]["last_name"].value;
+            var email=document.forms["vform"]["email"].value;
+            var subject=document.forms["vform"]["subject"].value;
+            var college_name=document.forms["vform"]["college_name"].value;
+            var message=document.forms["vform"]["message"].value;
+
+
+
+            if(fname == "" && lname == "" && email == "" && subject == "" && college_name == "" && message == ""){
+                alert("Something is missing all fields are mandatory*");
+                return false;
+            }
+            if (!fname.match(/^[a-zA-Z]+$/) && !lname.match(/^[a-zA-Z]+$/))
+            {
+                alert('Only alphabets are allowed in Name');
+                return false;
+            }
+        }
+
+
+    </script>
 {% endblock %}
 {% block body%}
     <div style="position:absolute;top:0px;width:100vw;height:100vh;padding:10px;">
@@ -25,9 +50,9 @@
                 </div>
                 <div class="col-sm-6 ">
                     <p>Send Us a Message</p>
-                    <form action="{% url 'contact_reg' %}" method="POST">{% csrf_token %}
-                        <input type="text" name="first_name" class="form-control input_box" placeholder="First Name" required>
-                        <input type="text" name="last_name" class="form-control input_box" placeholder="Last Name" required>
+                    <form action="{% url 'contact_reg' %}" onsubmit="return validateForm()" name="vform" method="POST">{% csrf_token %}
+                        <input type="text" name="first_name" id="first_name" class="form-control input_box" placeholder="First Name" required>
+                        <input type="text" name="last_name" id="last_name" class="form-control input_box" placeholder="Last Name" required>
                         <input type="email" name="email" class="form-control input_box" placeholder="Your Email" required>
                         <input type="text" name="subject" class="form-control input_box" placeholder="Subject" required>
                         <input type="text" name="college_name" class="form-control input_box" placeholder="Your College Name" required>
@@ -40,7 +65,7 @@
                                 </button>
                             </div>
                         {% endif %}
-                        <button type="submit" class="btn send" style="margin: 10px;font-family:">Send Message <i class="fa fa-send-o"></i></button>
+                        <button type="submit" class="btn send" name="submit" id="submit" style="margin: 10px;font-family:">Send Message <i class="fa fa-send-o"></i></button>
                     </form>
                 </div>
             </div>
