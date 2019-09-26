@@ -178,11 +178,16 @@
         .ignite{
             position:absolute;
             top:-5px;
-            right;0px;
             width:100vw;
             display:none;
             padding:7px;
             text-align:right;
+        }
+        .kla{
+            position:absolute;
+            width:100vw;
+            color:navajowhite;
+            font-size: 1.5vw;
         }
         .djfinal{
             position:absolute;bottom: 0px;left;0px;
@@ -202,6 +207,7 @@
             font-size:20px;
         }
         .pointer {cursor: pointer;}
+        .kla>img{height:8vh;}
         .djfinal>img{ height:60px;margin:10px;}
         .engi>img{ height:80px;margin:10px;}
         .nitk>img{ height:70px;margin:10px;}
@@ -237,7 +243,13 @@
             min-width:60px;
         }
         @media screen and (max-width: 769px) {
-
+            .kla{
+                top:20vh;
+                font-size:15px;
+            }
+            .kla>img{
+                height:35px;
+            }
             .nav-menu{
                 display:block;
             }
@@ -270,6 +282,12 @@
             }
         }
         @media screen and (min-width: 769px) {
+
+            .kla{
+                top:44vh;
+                left:-23vw;
+            }
+
             nav {
                 bottom: -42px;
             }
@@ -289,13 +307,14 @@
 </head>
 <body>
 <div style="position:fixed;width:100vw;height:100vh;">
-    <div id="loader-wrapper">
+     <div id="loader-wrapper">
         <div id="loader"></div>
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
     </div>
     <!--<div class="custom-contain">-->
     <canvas id="projector" style="position:absolute;top:0px;">Your browser does not support the Canvas element.</canvas>
+    <div class="kla" ><label>Sponsored By</label><br><img src="{% static 'media/kla+.png' %}"></div>
     <div class="djfinal"><img  src="{% static 'media/DJFinal.png'%}"></div>
     <div class="engi" align="right" ><img src="{% static 'media/Engi19.png' %}"></div>
     <div class="nitk" ><img src="{% static 'media/nitk.png'%}" style="float:left"><p style="float:left;text-align:left">National Institute <br>Of Technology <br>Karnataka</p></div>
