@@ -184,7 +184,7 @@ a:hover,a:focus{
 }
 .events {
   color: #fff;
-  text-transform: uppercase;
+  text-transform: capitalize;
      text-align:justify;text-justify:inter-word;
   font-size: 17px;
   margin: 10px 0px;
@@ -198,7 +198,6 @@ a:hover,a:focus{
 }
 .icetab {
 	padding: 8px;
-	text-transform: uppercase;
 	text-transform: uppercase;
 	border: 2px solid #8b0c03;
 

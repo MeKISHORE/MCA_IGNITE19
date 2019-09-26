@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{% static 'css/preloader.css'%}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/bluestar.css'%}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/online.css'%}" type="text/css">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
         @import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap');
@@ -62,9 +63,9 @@
         nav > ul > li > a {
         {#background-color: #ded0bb;#}
             border: 4px solid #5a504a;
-             box-shadow:   0 0 1px #fff,
-                    0 0 5px #fff,
-                    0 0 5px #fff ;
+            box-shadow:   0 0 1px #fff,
+            0 0 5px #fff,
+            0 0 5px #fff ;
             background: #0e0e0e;
             border-radius: 50%;
             -moz-border-radius: 50%;
@@ -89,9 +90,9 @@
             -moz-border-radius: 16px;
             -webkit-border-radius: 16px;
             box-shadow:  0 0 1px #fff,
-                    0 0 5px #fff,
-                    0 0 5px #fff ;
-             background: #0e0e0e;
+            0 0 5px #fff,
+            0 0 5px #fff ;
+            background: #0e0e0e;
             display: block;
             height: 40px;
             left: 52px;
@@ -307,11 +308,11 @@
 </head>
 <body>
 <div style="position:fixed;width:100vw;height:100vh;">
-{#     <div id="loader-wrapper">#}
-{#        <div id="loader"></div>#}
-{#        <div class="loader-section section-left"></div>#}
-{#        <div class="loader-section section-right"></div>#}
-{#    </div>#}
+    {#     <div id="loader-wrapper">#}
+    {#        <div id="loader"></div>#}
+    {#        <div class="loader-section section-left"></div>#}
+    {#        <div class="loader-section section-right"></div>#}
+    {#    </div>#}
     <!--<div class="custom-contain">-->
     <canvas id="projector" style="position:absolute;top:0px;">Your browser does not support the Canvas element.</canvas>
     <div class="kla" ><label>Sponsored By</label><br><img src="{% static 'media/kla+.png' %}"></div>
@@ -602,69 +603,113 @@
     <div class="big">
         <img src="{% static 'media/big.png'%}" >
     </div>
-    <div class="main" align="center" >
+
+
+
+    {#  online events #}
+
+
+    <div id="live-chat" class="live-chat-transition">
+
+        <div id="chat-label" class="live-chat-transition">
+
+            <h4 class="live-chat-galaxie live-chat-transition">
+
+                Live Events
+
+                <img src="https://fgl.scene7.com/is/image/FGLSportsLtd/live-chat-up-arrow-icon?wid=15&fmt=png-alpha&op_sharpen=1&resMode=sharp2" alt="live-chat-up-arrow" class="live-chat-arrow live-chat-transition live-chat-up-arrow" />
+
+                <img src="https://fgl.scene7.com/is/image/FGLSportsLtd/live-chat-down-arrow-icon?wid=15&fmt=png-alpha&resMode=sharp2" alt="live-chat-down-arrow" class="live-chat-arrow live-chat-transition live-chat-down-arrow" />
+
+            </h4>
+
+        </div>
+        <div style="transform: rotate(90deg);background: #ddf0f6;height:67%;width: 159%;margin: 58px 0px 0px -59px;">
+            <div style="padding:5px;width:100%;">
+                <p style="margin:30px 0px 10px 0px;font-size:27px;text-decoration:none;"><a href=" http://ignite.nitk.ac.in/event/The_Flash" style="text-decoration: none;color:orange;">The Flash</a></p>
+                <span style="font-size:15px;margin-left: -107px;color:darkred">Submission:27th to 7th Oct</span>
+
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+</div>
+
+
+
+{# Menu #}
+
+<div class="main" align="center" >
                      <span>
 						<img class="menu_back" src="{% static 'media/nav1.png'%}" class="img-fluid" alt="nav" style="opacity:0.3;height:100px;">
 					</span>
-        <div class="links" align="center" >
-            <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'aboutus' %}">About Us</a>
-            <a href="{% url 'event' %}">Events</a>
-            <a  href="{% url 'team' %}">Teams</a>
-            <a  href="{% url 'gallery' %}">Gallery</a>
-            <!--<a  href="{% url 'index' %}">Home</a>-->
-            {% if ob is not None %}
-                <a  href="{% url 'profile' %}">Profile</a>
-                <a href="{% url 'logout' %}">Logout</a>
-            {% else %}
-                <a  href="{% url 'login' %}">Login</a>
-            {% endif %}
+    <div class="links" align="center" >
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'aboutus' %}">About Us</a>
+        <a href="{% url 'event' %}">Events</a>
+        <a  href="{% url 'team' %}">Teams</a>
+        <a  href="{% url 'gallery' %}">Gallery</a>
+        <!--<a  href="{% url 'index' %}">Home</a>-->
+        {% if ob is not None %}
+            <a  href="{% url 'profile' %}">Profile</a>
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a  href="{% url 'login' %}">Login</a>
+        {% endif %}
 
-            <a href="{% url 'contact' %}">Contact Us</a>
-        </div>
+        <a href="{% url 'contact' %}">Contact Us</a>
     </div>
-    <div class="tagline">
-        <p class="neon">Light the fire with action Ignite the Spark with cause </p>
+</div>
+<div class="tagline">
+    <p class="neon">Light the fire with action Ignite the Spark with cause </p>
+</div>
+<nav>
+    <ul class="clearfix">
+        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
+            <ul>
+                <li><a href="https://www.facebook.com/Ignite19nitk/" target="_blank" class="linkedin"><i class="fa fa-facebook-f" style="font-size:25px;margin-top:7px;"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UCAZU4Xrfu2h-XrG94m9sOFw" target="_blank" class="google-plus"><i class="fa fa-youtube-play" style="font-size:25px;margin-top:7px;"></i></a></li>
+                <li><a href="https://www.instagram.com/nitkignite/" target="_blank" class="linkedin"><i class="fa fa-instagram" style="font-size:25px;margin-top:7px;"></i></a></li>
+                <!--<li><a href="#" class="github"><span class="fontawesome-github"></span></a></li>-->
+                <!--<li><a href="#" class="facebook"><span class="fontawesome-facebook"></span></a></li>-->
+                <!--<li><a href="#" class="twitter"><span class="fontawesome-twitter"></span></a></li>-->
+                <!--<li><a href="#" class="google-plus"><span class="fontawesome-google-plus"></span></a></li>-->
+                <!--<li><a href="#" class="linkedin"><span class="fontawesome-linkedin"></span></a></li>-->
+                <!--<li><a href="#" class="github"><span class="fontawesome-github"></span></a></li>-->
+            </ul>
+        </li>
+    </ul>
+</nav>
+<!-- Menu -->
+<div class="nav-menu" >
+    <div class="menu-list">
+        <a class='glowBtn hover' href="{% url 'home' %}">Home</a><br>
+        <a class='glowBtn hover' href="{% url 'aboutus' %}">About Us</a><br>
+        <a class='glowBtn hover' href="{% url 'event' %}">Events</a><br>
+        <a class='glowBtn hover' href="{% url 'team' %}">Teams</a><br>
+        <a class='glowBtn hover' href="{% url 'gallery' %}">Gallery</a><br>
+        {% if ob is not None %}
+            <a class='glowBtn hover' href="{% url 'profile' %}">Profile</a><br>
+            <a class='glowBtn hover' href="{% url 'logout' %}">Logout</a><br>
+        {% else %}
+            <a class='glowBtn hover' href="{% url 'login' %}">Login</a><br>
+        {% endif %}
+        <a class='glowBtn hover' href="{% url 'contact' %}">Contact Us</a><br>
+        <img src="{% static 'media/Engi19.png' %}" style="height:60px;"> <img src="{% static 'media/DJFinal.png' %}" style="height:50px;margin-bottom: 7px;">
+        <p style="font-size:15px;color:white;">Nit Surathkal Developer's</p>
     </div>
-    <nav>
-        <ul class="clearfix">
-            <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
-                <ul>
-                    <li><a href="https://www.facebook.com/Ignite19nitk/" target="_blank" class="linkedin"><i class="fa fa-facebook-f" style="font-size:25px;margin-top:7px;"></i></a></li>
-                    <li><a href="https://www.youtube.com/channel/UCAZU4Xrfu2h-XrG94m9sOFw" target="_blank" class="google-plus"><i class="fa fa-youtube-play" style="font-size:25px;margin-top:7px;"></i></a></li>
-                    <li><a href="https://www.instagram.com/nitkignite/" target="_blank" class="linkedin"><i class="fa fa-instagram" style="font-size:25px;margin-top:7px;"></i></a></li>
-                    <!--<li><a href="#" class="github"><span class="fontawesome-github"></span></a></li>-->
-                    <!--<li><a href="#" class="facebook"><span class="fontawesome-facebook"></span></a></li>-->
-                    <!--<li><a href="#" class="twitter"><span class="fontawesome-twitter"></span></a></li>-->
-                    <!--<li><a href="#" class="google-plus"><span class="fontawesome-google-plus"></span></a></li>-->
-                    <!--<li><a href="#" class="linkedin"><span class="fontawesome-linkedin"></span></a></li>-->
-                    <!--<li><a href="#" class="github"><span class="fontawesome-github"></span></a></li>-->
-                </ul>
-            </li>
-        </ul>
-    </nav>
-    <!-- Menu -->
-    <div class="nav-menu" >
-        <div class="menu-list">
-            <a class='glowBtn hover' href="{% url 'home' %}">Home</a><br>
-            <a class='glowBtn hover' href="{% url 'aboutus' %}">About Us</a><br>
-            <a class='glowBtn hover' href="{% url 'event' %}">Events</a><br>
-            <a class='glowBtn hover' href="{% url 'team' %}">Teams</a><br>
-            <a class='glowBtn hover' href="{% url 'gallery' %}">Gallery</a><br>
-            {% if ob is not None %}
-                <a class='glowBtn hover' href="{% url 'profile' %}">Profile</a><br>
-                <a class='glowBtn hover' href="{% url 'logout' %}">Logout</a><br>
-            {% else %}
-                <a class='glowBtn hover' href="{% url 'login' %}">Login</a><br>
-            {% endif %}
-            <a class='glowBtn hover' href="{% url 'contact' %}">Contact Us</a><br>
-            <img src="{% static 'media/Engi19.png' %}" style="height:60px;"> <img src="{% static 'media/DJFinal.png' %}" style="height:50px;margin-bottom: 7px;">
-            <p style="font-size:15px;color:white;">Nit Surathkal Developer's</p>
-        </div>
-        <div id="burger-wrap">
-            <a class="burger"><span></span></a>
-        </div>
+    <div id="burger-wrap">
+        <a class="burger"><span></span></a>
     </div>
+</div>
 </div>
 <!--</div>-->
 <script type="text/javascript">
@@ -685,5 +730,6 @@
 <script src="{% static 'js/button.js'%}" type="text/javascript"></script>
 <script src="{% static 'js/preloader.js'%}" type="text/javascript"></script>
 <script src="{% static 'js/bluestar.js'%}" type="text/javascript"></script>
+<script src="{% static 'js/online.js'%}" type="text/javascript"></script>
 </body>
 </html>
