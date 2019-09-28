@@ -184,8 +184,7 @@ a:hover,a:focus{
 }
 .events {
   color: #fff;
-  text-transform: capitalize;
-     text-align:justify;text-justify:inter-word;
+  text-align:justify;text-justify:inter-word;
   font-size: 17px;
   margin: 10px 0px;
 }
