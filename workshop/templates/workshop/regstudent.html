@@ -13,6 +13,7 @@
             padding-right:10px;
         }
         .pointer {cursor: pointer;}
+        .lblf{color:white;}
     </style>
     <script language="JavaScript">
         <!--Validations-->
@@ -23,59 +24,59 @@
             var len = file.length;
             var ext = file.slice(len - 4, len);
             if(ext.toUpperCase() != ".PDF"){
-            {#    var FileSize = (objFileControl.files[0].size / 1024 / 1024)*3; // in MB#}
-            {#    if (FileSize > 3) {#}
-            {#        alert('File size exceeds 3 MB');#}
-            {#        // $(file).val(''); //for clearing with Jquery#}
-            {#        document.getElementById(id).value="";#}
-            {#    }#}
-            {#    else{#}
-            {#        formOK = true;#}
-            {#    }#}
-            {#}#}
-            {#else{#}
-                formOK = false;
-                alert("Only PDF files allowed.");
-                document.getElementById(id).value="";
+                {#    var FileSize = (objFileControl.files[0].size / 1024 / 1024)*3; // in MB#}
+                {#    if (FileSize > 3) {#}
+                {#        alert('File size exceeds 3 MB');#}
+                {#        // $(file).val(''); //for clearing with Jquery#}
+                {#        document.getElementById(id).value="";#}
+                {#    }#}
+                {#    else{#}
+                {#        formOK = true;#}
+                {#    }#}
+                {#}#}
+                    {#else{#}
+                    formOK = false;
+                    alert("Only PDF files allowed.");
+                    document.getElementById(id).value="";
+                }
             }
-        }
-        function validateForm()
-        {
-            var leadername=document.forms["vforms"]["leader_name"].value;
-            var colid=document.forms["vforms"]["college_id_of_leader"].value;
-            var leadermobile=document.forms["vfomms"]["leader_mobile"].value;
-            var email=document.forms["vforms"]["leader_mail_id"].value;
-            if(formOK == false){
-                alert("required pdf file only");
-                return false;
-            }
-            if(leadername=="" && invitationcode=="" && colid=="" && leadermobile=="" && email=="")
+            function validateForm()
             {
-                alert("leader filed must be filled");
-                return false;
-            }
-            if(document.forms["vforms"]["member1_name"].value=="" && document.forms["vforms"]["member1_e_mail"].value=="" && document.forms["vforms"]["member1_mobile"].value=="" && document.forms["vforms"]["member1_file"].value=="")
-            {
-                alert("member 1 filed must be filled");
-                return false;
-            }
-            if(document.forms["vforms"]["member2_name"].value=="" && document.forms["vforms"]["member2_e_mail"].value=="" && document.forms["vforms"]["member2_mobile"].value=="" && document.forms["vforms"]["member2_file"].value=="")
-            {
-                alert("member 2 filed must be filled");
-                return false;
-            }
-            if(document.forms["vforms"]["member3_name"].value=="" && document.forms["vforms"]["member3_e_mail"].value=="" && document.forms["vforms"]["member3_mobile"].value=="" && document.forms["vforms"]["member3_file"].value=="")
-            {
-                alert("member 3 filed must be filled");
-                return false;
-            }
+                var leadername=document.forms["vforms"]["leader_name"].value;
+                var colid=document.forms["vforms"]["college_id_of_leader"].value;
+                var leadermobile=document.forms["vfomms"]["leader_mobile"].value;
+                var email=document.forms["vforms"]["leader_mail_id"].value;
+                if(formOK == false){
+                    alert("required pdf file only");
+                    return false;
+                }
+                if(leadername=="" && invitationcode=="" && colid=="" && leadermobile=="" && email=="")
+                {
+                    alert("leader filed must be filled");
+                    return false;
+                }
+                if(document.forms["vforms"]["member1_name"].value=="" && document.forms["vforms"]["member1_e_mail"].value=="" && document.forms["vforms"]["member1_mobile"].value=="" && document.forms["vforms"]["member1_file"].value=="")
+                {
+                    alert("member 1 filed must be filled");
+                    return false;
+                }
+                if(document.forms["vforms"]["member2_name"].value=="" && document.forms["vforms"]["member2_e_mail"].value=="" && document.forms["vforms"]["member2_mobile"].value=="" && document.forms["vforms"]["member2_file"].value=="")
+                {
+                    alert("member 2 filed must be filled");
+                    return false;
+                }
+                if(document.forms["vforms"]["member3_name"].value=="" && document.forms["vforms"]["member3_e_mail"].value=="" && document.forms["vforms"]["member3_mobile"].value=="" && document.forms["vforms"]["member3_file"].value=="")
+                {
+                    alert("member 3 filed must be filled");
+                    return false;
+                }
 
-            if(document.forms["vforms"]["member4_name"].value=="" && document.forms["vforms"]["member4_e_mail"].value=="" && document.forms["vforms"]["member4_mobile"].value=="" && document.forms["vforms"]["member4_file"].value=="")
-            {
-                alert("member 4 filed must be filled");
-                return false;
+                if(document.forms["vforms"]["member4_name"].value=="" && document.forms["vforms"]["member4_e_mail"].value=="" && document.forms["vforms"]["member4_mobile"].value=="" && document.forms["vforms"]["member4_file"].value=="")
+                {
+                    alert("member 4 filed must be filled");
+                    return false;
+                }
             }
-        }
     </script>
 {% endblock%}
 {% block body%}
@@ -96,6 +97,7 @@
                             <tr><td colspan="2">  <input type="text" class="form-input placeholder-fix" name="leader_mobile" minlength="10" maxlength="10" placeholder="Mobile" required/></td></tr>
                             <tr><td colspan="2">    <input type="email" class="form-input placeholder-fix" name="leader_mail_id" maxlength="50" value="{{ email }}" readonly /></td></tr>
                         </table>
+                        <label style="color:white;text-decoration: underline;">note* upload students id card in file upload</label>
                         <div class="row">
                             <div class="col-sm-3">
                                 <input type="text" class="form-input placeholder-fix" name="member1_name" maxlength="50" placeholder="Member 1 Name" required/>
@@ -149,7 +151,7 @@
                                 <input type="text" class="form-input placeholder-fix" name="member4_mobile" minlength="10" maxlength="10" placeholder="Mobile" required/>
                             </div>
                             <div class="col-sm-3">
-                                <input type="file" class="form-input" name="member4_file" id="" placeholder="" onchange="validatePDF(this,this.id)" required/>
+                                <input type="file" class="form-input" name="member4_file"  placeholder="" onchange="validatePDF(this,this.id)"  required/>
                             </div>
                         </div>
                         <input type="submit" name="submit" id="submit" class="btn btn-default submit" value="Register"/>

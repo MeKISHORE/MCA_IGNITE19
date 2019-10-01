@@ -53,7 +53,7 @@
         font-size:20px;
         text-decoration:none;
         text-transform:uppercase;
-        margin:15px 10px 5px 10px;
+        margin:15px 5px 5px 5px;
         color:white;
         transition: 1s transform;
     }
@@ -91,7 +91,7 @@
             margin-top: 20px;
         }
         .menu_back{
-            width:650px;
+            width:670px;
         }
     {% endif %}
 </style>
@@ -117,9 +117,11 @@
     <div class="links" align="center" >
         <a href="{% url 'home' %}">Home</a>
         <a href="{% url 'aboutus' %}">About Us</a>
+         <a  href="{% url 'sponsor' %}">Sponsor's</a>
         <a href="{% url 'event' %}">Events</a>
         <a  href="{% url 'team' %}">Teams</a>
         <a  href="{% url 'gallery' %}">Gallery</a>
+
         <!--<a  href="{% url 'index' %}">Home</a>-->
         {% if ob is not None %}
             <a  href="{% url 'profile' %}">Profile</a>
@@ -134,8 +136,10 @@
     <div class="menu-list">
         <a class='glowBtn hover' href="{% url 'home' %}">Home</a><br>
         <a class='glowBtn hover' href="{% url 'aboutus' %}">About Us</a><br>
+        <a class='glowBtn hover' href="{% url 'sponsor' %}">Sponsor's</a><br>
         <a class='glowBtn hover' href="{% url 'event' %}">Events</a><br>
         <a class='glowBtn hover' href="{% url 'team' %}">Teams</a><br>
+
         <a class='glowBtn hover' href="{% url 'gallery' %}">Gallery</a><br>
         {% if ob is not None %}
             <a class='glowBtn hover' href="{% url 'profile' %}">Profile</a><br>

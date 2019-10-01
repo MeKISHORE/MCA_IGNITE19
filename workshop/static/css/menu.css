@@ -1,7 +1,5 @@
 /* Quick Style Setup */
 
-
-
 ul {
   list-style-type: none;
   padding: 0;
@@ -179,3 +177,4 @@ li .social-icons:hover {
 
 /* Disable scrollbar on Chrome and Safari browsers! */
 html::-webkit-scrollbar { width: 0 !important; height: 0 !important; }
+
