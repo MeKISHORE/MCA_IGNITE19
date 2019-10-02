@@ -21,20 +21,25 @@
             margin-bottom:20px;
         }
 
-        .big>img, .bell>img, .bhoom>img{
+        .sponsor{
+            padding:20px;
+        }
+        .sponsor h3{
+            position:relative;
+            top:-5px;
+            color:white;
+            text-shadow: 2px 2px 2px #f20e0e;
+        }
+        .big>img, .bell>img, .bhoom>img {
 
-           width:80%;
-            max-width: 200px;
-            margin:10%;
-        }
-        .kla>img{
-           width:80%;
-            margin:10%;
-        }
-        .ever>img{
             width:80%;
+            max-width: 150px;
 
-            margin:10%;
+        }
+        .kla>img , .ever>img{
+            width:80%;
+            max-width: 300px;
+
         }
 
     </style>
@@ -43,30 +48,51 @@
 {% block body%}
 
     <div style="position:absolute;top:0px;width:100vw;height:100vh;padding:8px;">
-        <div class="container">
+        <div  class="container">
             <div class="row">
                 <div align="center" class="col-sm-12">
                     <h1 class="title" style="margin-top:60px;">Sponsors</h1>
                 </div>
             </div>
             <div class="row det" >
-                <div align="center" class="col-sm-6 margin ">
-                    <div class=" wow zoomIn sponsor kla" >
-                        <img src="{% static 'media/kla+.png'%}">
-                    </div>
-                    <div class=" wow zoomIn sponsor big" >
-                        <img src="{% static 'media/BigFm92.png'%}">
-                    </div>
-                </div>
-                <div align="center" class="col-sm-6 margin ">
-                    <div class=" wow zoomIn sponsor ever" >
-                        <img src="{% static 'media/EverGreen_partner.png'%}">
-                    </div>
-                    <div class=" wow zoomIn sponsor bhoom" >
-                        <img src="{% static 'media/bhoom.png'%}">
+                <div align="center" class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class=" wow zoomIn sponsor kla" >
+                                <img src="{% static 'media/kla+.png'%}">
+                                 <h3>Title Sponsor</h3>
+                            </div>
+                        </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class=" wow zoomIn sponsor big" >
+                                <img src="{% static 'media/BigFm92.png'%}">
+                                <h3>Radio Partner</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class=" wow zoomIn sponsor ever" >
+                                <img src="{% static 'media/EverGreen_partner.png'%}">
+                                <h3>Clothing Partner</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class=" wow zoomIn sponsor bhoom" >
+                                <img src="{% static 'media/bhoom.png'%}">
+                                <h3>Travel Partner</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
 
             </div>
         </div>
