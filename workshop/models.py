@@ -99,3 +99,14 @@ class team_group_image(models.Model):
 
     def __str__(self):
         return self.team_name.team_name
+
+
+class score(models.Model):
+    username=models.CharField(max_length=30)
+    mail=models.EmailField(unique=True)
+    pswd=models.CharField(max_length=30)
+    colleg=models.CharField(max_length=50)
+    score=models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.username
