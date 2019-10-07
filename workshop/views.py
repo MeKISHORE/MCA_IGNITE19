@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.db.models import Q
 from django.contrib.auth.models import auth
 
-from .models import studentregistration, collegeverification, contact_us, events, event_details,teams,team_images, team_group_image
+from .models import studentregistration, collegeverification, contact_us, events, event_details,teams,team_images, team_group_image,score
 
 
 def index(request):
@@ -242,6 +242,15 @@ def contact(request):
     return render(request, 'workshop/contactus.html')
 
 
+def headndmentors(request):
+    if request.session.get('session_name') is not None:
+        sobj = studentregistration.objects.filter(college_code=request.session.get('session_name')).first()
+        obj = collegeverification.objects.filter(collegecode=request.session.get('session_name')).first()
+        ob = request.session.get('session_name')
+        return render(request, 'workshop/headndmentors.html', {'sobj': sobj, 'obj': obj, 'ob': ob, })
+    return render(request, 'workshop/headndmentors.html')
+
+
 def contact_reg(request):
     try:
         if request.method == 'POST':
@@ -288,6 +297,82 @@ def team_image(request, slug ):
     team_group_img = team_group_image.objects.filter(team_name_id=team.id)
     return render(request, 'workshop/team_image.html',{'team': team, 'team_image': team_image,'team_group_img': team_group_img })
 
+
+
+def reg_game(request, user_name, score_pass, score_mail, colleg):
+    try:
+        print(user_name)
+        print(score_pass)
+        print(score_mail)
+        print(colleg)
+        Score = score(
+            username=user_name,
+            mail=score_mail,
+            pswd=score_pass,
+            colleg=colleg,
+        )
+        print('inserted')
+        Score.save()
+        log()
+        return HttpResponse("run")
+    except:
+        print('except')
+        return HttpResponse("except")
+
+
+def show(request):
+    data = score.objects.all()
+    data = data.order_by('-score')[:30]
+    if request.session.get('session_name') is not None:
+        sobj = studentregistration.objects.filter(college_code=request.session.get('session_name')).first()
+        obj = collegeverification.objects.filter(collegecode=request.session.get('session_name')).first()
+        ob = request.session.get('session_name')
+        return render(request, 'workshop/scoreboard.html', {'sobj': sobj, 'obj': obj, 'ob': ob, 'data':data})
+    return render(request, 'workshop/scoreboard.html',{ 'data':data})
+
+
+
+
+def log(request, user_mail, score_pass):
+    try:
+        # print(user_mail)
+        # print(score_pass)
+        data = score.objects.all()
+        data = data.filter(mail=user_mail).first()
+        if data is not None:
+            if data.pswd == score_pass:
+                # print('data found')
+                return HttpResponse('data found')
+            else:
+                # print('data not found')
+                return HttpResponse('data wrong')
+        else:
+            # print('data not found')
+            return HttpResponse('data not found')
+    except:
+        # print('except')
+        return HttpResponse('except')
+
+
+def updte(request, user_mail, score_pass, score_update):
+    try:
+        # data = score.objects.all()
+        # print(user_mail)
+        # print(score_pass)
+        scoreup = score.objects.get(Q(mail=user_mail))
+        if scoreup.pswd == score_pass:
+            # print(scoreup.pswd)
+            a = int(scoreup.score)
+            b = int(score_update)
+            if a < b:
+                scoreup.score=b
+                scoreup.save()
+                # print("saved")
+
+        # print(scoreup.score)
+        return HttpResponse("yes")
+    except:
+        return HttpResponse("no")
 
 
 

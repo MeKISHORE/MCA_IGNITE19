@@ -1,0 +1,90 @@
+{% extends 'workshop/basic.html'%}
+
+{% block title %}Born 2 Kill{% endblock %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <style>
+        .det{
+
+            box-shadow: 0px 0px 10px 3px #f20e0e;
+            height:100%;
+            padding:5px;
+            background: #181717eb;
+            text-align:justify;
+            text-justify:inter-word;
+            margin-bottom:15px;
+        }
+        .margin{
+            margin-bottom:20px;
+            margin-top:15px;
+        }
+        .avatar {
+            vertical-align: middle;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1em;
+        }
+
+        .table{
+            margin-top: 20px;
+            color:#fff;
+        }
+
+        .table thead{
+            background:#111;
+            {#color:#fff;#}
+        }
+
+        .table tr th,.table tr td:nth-child(odd){
+            text-align:center;
+        }
+
+
+
+
+    </style>
+
+{% endblock %}
+{% block body%}
+    <div style="position:absolute;top:0px;width:100vw;height:100vh;padding:8px;">
+        <div class="container">
+            <div class="row">
+                <div align="center" class="col-sm-12">
+                    <h1 class="title" style="margin-top:60px;">Scoreboard</h1>
+                </div>
+            </div>
+            <div class="row" >
+                <div class="col-sm-12 margin">
+                    <div>
+                        <table id="socreboard" class="table striped">
+                            <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Username</th>
+                                <th>College</th>
+                                <th>Score</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for i in data %}
+                                <tr>
+                                    <th>{{ forloop.counter }}</th>
+                                    <th>{{ i.username }}</th>
+                                    <th>{{ i.colleg }}</th>
+                                    <th>{{ i.score }}</th>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- partial -->
+{% endblock %}
+{% block script %}
+    <!--<script src="{% static 'js/scriptstar.js'%}"></script>-->
+{% endblock %}

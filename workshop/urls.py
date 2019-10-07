@@ -27,6 +27,11 @@ urlpatterns = [
     path('home', views.home, name='home'),
     path('sponsor', views.sponsor, name='sponsor'),
     path('media_cover', views.media_cover, name='media_cover'),
+    path('headndmentors', views.headndmentors, name='headndmentors'),
+    path('score/<str:user_name>/<str:score_pass>/<str:score_mail>/<str:colleg>', views.reg_game, name='reg_game'),
+    path('log/<str:user_mail>/<str:score_pass>', views.log, name='log'),
+    path('updte/<str:user_mail>/<str:score_pass>/<str:score_update>', views.updte, name='updte'),
+    path('show/', views.show, name='show'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
