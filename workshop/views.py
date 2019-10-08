@@ -301,20 +301,27 @@ def team_image(request, slug ):
 
 def reg_game(request, user_name, score_pass, score_mail, colleg):
     try:
-        print(user_name)
-        print(score_pass)
-        print(score_mail)
-        print(colleg)
-        Score = score(
-            username=user_name,
-            mail=score_mail,
-            pswd=score_pass,
-            colleg=colleg,
-        )
-        print('inserted')
-        Score.save()
-        log()
-        return HttpResponse("run")
+        # print(user_name)
+        # print(score_pass)
+        # print(score_mail)
+        # print(colleg)
+        data=score.objects.all()
+        log1 = score.objects.filter(mail=score_mail).first()
+        log2 = score.objects.filter(username=user_name).first()
+        print(log1)
+        if log1 is None and log2 is None:
+            print('2')
+            Score = score(
+                username=user_name,
+                mail=score_mail,
+                pswd=score_pass,
+                colleg=colleg,
+            )
+            print('inserted')
+            Score.save()
+            return HttpResponse("run")
+        else:
+            return HttpResponse("unsuccesful")
     except:
         print('except')
         return HttpResponse("except")
