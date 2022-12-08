@@ -5,7 +5,7 @@ automium==0.2.6
 automium-web==0.1.1
 backcall==0.1.0
 bleach==3.1.0
-certifi==2018.11.29
+certifi==2022.12.7
 chardet==3.0.4
 Click==7.0
 cmake==3.14.4
